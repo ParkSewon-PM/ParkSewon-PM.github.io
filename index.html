@@ -79,75 +79,90 @@
             min-height: auto; 
             margin-top: 60px; background-color: var(--white);
             display: flex; flex-direction: column; align-items: center;
-            padding: 40px 20px 20px 20px; 
+            padding: 30px 20px 20px 20px;
             position: relative; z-index: 10;
         }
 
         .profile-container {
-            display: flex; gap: 60px; max-width: 1100px; width: 100%; align-items: flex-start;
+            display: flex; gap: 40px; max-width: 1100px; width: 100%; align-items: flex-start;
         }
 
         /* Profile Left (Image & Contact) */
-        .profile-left { display: flex; flex-direction: column; gap: 20px; width: 280px; flex-shrink: 0; }
+        .profile-left { display: flex; flex-direction: column; gap: 15px; width: 260px; flex-shrink: 0; }
         .profile-img-area {
             width: 100%; height: 350px;
             background: #f3f4f6; border-radius: 20px; overflow: hidden;
-            position: relative; box-shadow: 15px 15px 0px var(--primary-light);
+            position: relative; box-shadow: 10px 10px 0px var(--primary-light);
             display: flex; align-items: center; justify-content: center;
         }
         .profile-img-area img { width: 100%; height: 100%; object-fit: cover; }
         .profile-placeholder { font-size: 5rem; color: #cbd5e1; }
 
         .contact-box {
-            background: #f9fafb; padding: 20px; border-radius: 16px; border: 1px solid #eee;
+            background: #f9fafb; padding: 15px; border-radius: 16px; border: 1px solid #eee;
         }
-        .contact-item { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; font-size: 0.9rem; color: #555; }
+        .contact-item { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; font-size: 0.85rem; color: #555; }
         .contact-item:last-child { margin-bottom: 0; }
         .contact-icon { color: var(--dark); }
 
         /* Profile Right (Text) */
-        .profile-info { flex: 1; display: flex; flex-direction: column; gap: 30px; }
+        .profile-info { flex: 1; display: flex; flex-direction: column; gap: 20px; }
         
-        .hero-title { font-size: 3.5rem; font-weight: 900; line-height: 1.1; color: var(--dark); letter-spacing: -1px; margin-bottom: 10px; }
+        .hero-title { font-size: 3.2rem; font-weight: 900; line-height: 1.1; color: var(--dark); letter-spacing: -1px; margin-bottom: 5px; }
         .hero-title span { color: var(--primary); }
-        .hero-subtitle { font-size: 1.5rem; font-weight: 700; color: #666; margin-top: -10px; margin-bottom: 10px; }
+        .hero-subtitle { font-size: 1.4rem; font-weight: 700; color: #666; margin-top: -5px; margin-bottom: 10px; }
         
-        .hero-desc { font-size: 1.1rem; color: #4b5563; line-height: 1.7; word-break: keep-all; }
+        .hero-desc { font-size: 1.05rem; color: #4b5563; line-height: 1.6; word-break: keep-all; }
         .hero-desc strong { color: var(--dark); background: linear-gradient(to top, var(--primary-light) 50%, transparent 50%); }
 
         .info-grid {
-            display: grid; grid-template-columns: auto 1fr; gap: 15px 30px; 
-            margin-top: 10px; padding-top: 20px; border-top: 1px solid #eee;
+            display: grid; grid-template-columns: auto 1fr; gap: 10px 30px; 
+            margin-top: 10px; padding-top: 15px; border-top: 1px solid #eee;
+            align-items: flex-start;
         }
-        .info-label { font-weight: 700; color: #111; display: flex; align-items: center; gap: 6px; font-size: 0.95rem; min-width: 100px; }
-        .info-value { color: #555; font-size: 0.95rem; line-height: 1.5; }
+        .info-label { font-weight: 700; color: #111; display: flex; align-items: center; gap: 6px; font-size: 0.95rem; min-width: 100px; padding-top: 2px; }
+        .info-value { color: #555; font-size: 0.95rem; line-height: 1.6; }
         .highlight-text { color: var(--primary); font-weight: 700; }
+        
+        /* 정보 텍스트 디자인 개선 */
+        .info-school { font-weight: 700; color: #111; margin-right: 6px; }
+        .info-divider { color: #ccc; margin: 0 6px; font-size: 0.8rem; }
+        .info-detail { color: #555; }
+        .info-award-badge { 
+            display: inline-block; 
+            background: #fff9db; 
+            color: #d97706; 
+            font-size: 0.8rem; 
+            font-weight: 700; 
+            padding: 2px 8px; 
+            border-radius: 4px; 
+            border: 1px solid #fcd34d;
+            margin-top: 4px; 
+        }
 
         .skill-badges { display: flex; gap: 8px; flex-wrap: wrap; }
         .s-badge { background: #f3f4f6; padding: 4px 10px; border-radius: 6px; font-size: 0.85rem; font-weight: 600; color: #4b5563; border: 1px solid #e5e7eb; }
 
-        /* --- About Me (Philosophy & Essays) --- */
+        /* --- About Me --- */
         .about-section {
-            max-width: 1100px; width: 100%; margin-top: 40px;
-            display: grid; grid-template-columns: 1fr 1fr; gap: 30px;
+            max-width: 1100px; width: 100%; margin-top: 30px;
+            display: grid; grid-template-columns: 1fr 1fr; gap: 20px;
         }
         .about-card {
-            background: #fff; border: 1px solid #e5e8eb; border-radius: 16px; padding: 30px;
+            background: #fff; border: 1px solid #e5e8eb; border-radius: 16px; padding: 25px;
             box-shadow: 0 4px 20px rgba(0,0,0,0.02); transition: 0.3s;
         }
         .about-card:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
-        .about-title { font-size: 1.2rem; font-weight: 800; color: var(--dark); margin-bottom: 15px; display: flex; align-items: center; gap: 8px; }
-        .about-text { font-size: 0.95rem; color: #555; line-height: 1.7; }
+        .about-title { font-size: 1.1rem; font-weight: 800; color: var(--dark); margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
+        .about-text { font-size: 0.9rem; color: #555; line-height: 1.6; }
         .about-tag { font-size: 0.8rem; font-weight: 700; color: var(--primary); background: var(--primary-light); padding: 4px 8px; border-radius: 4px; margin-right: 5px; }
-
-        /* Full Width Interests */
         .interest-card { grid-column: 1 / -1; background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%); border: none; }
 
         /* Responsive Hero */
         @media (max-width: 900px) {
             .profile-container { flex-direction: column; align-items: center; }
             .profile-left { width: 100%; max-width: 300px; }
-            .profile-img-area { height: 300px; box-shadow: none; border: 5px solid var(--primary-light); margin: 0 auto; }
+            .profile-img-area { height: 350px; box-shadow: none; border: 5px solid var(--primary-light); margin: 0 auto; }
             .info-grid { grid-template-columns: 1fr; gap: 10px; }
             .hero-title { font-size: 2.5rem; text-align: center; }
             .hero-subtitle { text-align: center; font-size: 1.2rem; }
@@ -156,14 +171,20 @@
 
         /* --- Section Divider --- */
         .section-divider {
-            background: var(--dark); color: white; padding: 15px 0;
+            background: var(--dark); color: white; padding: 12px 0;
             text-align: center;
-            font-size: 1rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase;
-            margin-top: 30px;
+            font-size: 0.95rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase;
+            margin-top: 30px; 
+            margin-bottom: 0; 
+            border-bottom: 1px solid #333; 
         }
 
-        /* --- Navigation (Projects) --- */
-        .nav-container { display: flex; flex-direction: row; height: 60vh; width: 100%; background: #000; }
+        /* --- Navigation --- */
+        .nav-container { 
+            display: flex; flex-direction: row; height: 60vh; width: 100%; 
+            background: #000; 
+            margin-top: 0; 
+        }
         .nav-item {
             flex: 1; position: relative; border-right: 1px solid rgba(255,255,255,0.1);
             transition: var(--transition); cursor: pointer; overflow: hidden;
@@ -190,7 +211,7 @@
             .nav-desc { opacity: 1; transform: translateY(0); margin-top: 5px; }
         }
 
-        /* --- Modal (Classic Vertical) --- */
+        /* --- Modal --- */
         .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.85); z-index: 1000; opacity: 0; visibility: hidden; transition: 0.4s ease; display: flex; justify-content: center; align-items: center; backdrop-filter: blur(8px); }
         .modal-overlay.active { opacity: 1; visibility: visible; }
         .modal-container { width: 90%; max-width: 1100px; height: 90vh; background: #fff; border-radius: 20px; overflow-y: auto; position: relative; transform: translateY(50px); transition: 0.4s ease; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5); }
@@ -210,21 +231,10 @@
         .p-subtitle { font-size: 1.25rem; color: #666; font-weight: 400; margin-bottom: 15px; }
         
         .p-meta { 
-            display: inline-flex; 
-            align-items: center; 
-            gap: 12px; 
-            background: #fff; 
-            color: #495057; 
-            padding: 8px 24px; 
-            border-radius: 30px; 
-            font-size: 0.9rem; 
-            font-weight: 600; 
-            margin-top: 15px; 
-            border: 1px solid #e9ecef; 
-            box-shadow: 0 4px 12px rgba(0,0,0,0.04);
-            white-space: nowrap;
-            flex-wrap: wrap;
-            justify-content: center;
+            display: inline-flex; align-items: center; gap: 12px; background: #fff; color: #495057; 
+            padding: 8px 24px; border-radius: 30px; font-size: 0.9rem; font-weight: 600; 
+            margin-top: 15px; border: 1px solid #e9ecef; box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+            white-space: nowrap; flex-wrap: wrap; justify-content: center;
         }
         
         .p-section { background: white; border: 1px solid #e5e8eb; border-radius: 16px; padding: 40px; margin-bottom: 30px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05); }
@@ -232,7 +242,6 @@
         .p-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
         @media (max-width: 768px) { .p-grid-2 { grid-template-columns: 1fr; } }
 
-        /* Unified Box Styles */
         .gray-box { background: #f9f9f9; padding: 15px; border-radius: 8px; margin-bottom: 20px; border: 1px solid #eee; }
         .gray-box ul { list-style: none; padding-left: 5px; font-size: 0.95rem; }
         .gray-box li { margin-bottom: 12px; }
@@ -244,7 +253,6 @@
         .insight-box { background: var(--primary-light); border-left: 4px solid var(--primary); padding: 20px; border-radius: 0 8px 8px 0; color: #333; margin-top: 10px; }
         .insight-text { font-weight: 600; color: #111; margin-bottom: 0 !important; padding: 0 !important; background: none !important; }
 
-        /* KPT Box Style */
         .kpt-item { margin-bottom: 25px; padding-left: 15px; border-left: 4px solid #ddd; }
         .kpt-label { display: block; font-weight: 800; font-size: 1.1rem; margin-bottom: 8px; display: flex; align-items: center; gap: 8px; }
         .kpt-desc { font-size: 0.95rem; color: #555; line-height: 1.6; }
@@ -255,7 +263,6 @@
         .kpt-try { border-color: #007bff; }
         .kpt-try .kpt-label { color: #007bff; }
 
-        /* Data Chart (Vertical) */
         .v-chart-container { display: flex; justify-content: space-around; align-items: flex-end; gap: 20px; margin-top: 30px; height: 280px; padding-bottom: 20px; }
         .v-chart-group { flex: 1; display: flex; flex-direction: column; align-items: center; height: 100%; justify-content: flex-end; background: #fafafa; border-radius: 12px; padding: 15px; border: 1px solid #eee; transition: transform 0.3s; }
         .v-chart-group:hover { transform: translateY(-5px); border-color: #ddd; box-shadow: 0 10px 20px rgba(0,0,0,0.05); }
@@ -270,7 +277,6 @@
         .v-bar-kr::before { content: "Low Cost"; position: absolute; top: -22px; left: 50%; transform: translateX(-50%); font-size: 9px; color: var(--primary); font-weight: 800; white-space: nowrap; background: white; padding: 1px 4px; border-radius: 4px; border: 1px solid #ffdcdc; }
         @keyframes growUp { from { transform: scaleY(0); } to { transform: scaleY(1); } }
 
-        /* SVG Animation */
         .big-algo-container { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin: 20px 0; }
         .big-algo-box { background: #f8f9fa; border: 1px solid #eee; border-radius: 16px; padding: 30px; display: flex; flex-direction: column; align-items: center; transition: 0.3s; position: relative; }
         .big-algo-box:hover { box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
@@ -298,7 +304,6 @@
         @keyframes moveLegacy { 0% { offset-distance: 0%; opacity: 0; } 5% { offset-distance: 0%; opacity: 1; } 95% { offset-distance: 100%; opacity: 1; } 100% { offset-distance: 100%; opacity: 0; } }
         @keyframes moveCampus { 0% { offset-distance: 0%; opacity: 0; } 5% { offset-distance: 0%; opacity: 1; } 95% { offset-distance: 100%; opacity: 1; } 100% { offset-distance: 100%; opacity: 0; } }
 
-        /* Roadmap */
         .roadmap-stack { display: flex; flex-direction: column; gap: 30px; margin-top: 30px; }
         .roadmap-card { background: #fff; border: 1px solid #eee; border-radius: 16px; padding: 30px; display: flex; flex-direction: row; gap: 40px; align-items: center; transition: 0.3s; position: relative; overflow: hidden; }
         .roadmap-card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.08); border-color: var(--primary); }
@@ -337,6 +342,20 @@
         .label-green { color: #047857; border-right: 5px solid #10b981; border-left: none; }
         spline-viewer { width: 100%; height: 100%; display: block; touch-action: none; }
 
+        /* Lazy Loading Placeholder */
+        .spline-placeholder {
+            width: 100%; height: 100%;
+            background: #f0f0f0;
+            display: flex; flex-direction: column;
+            align-items: center; justify-content: center;
+            color: #666;
+            font-weight: 600;
+        }
+        .spline-loader {
+            margin-top: 10px;
+            font-size: 0.9rem;
+            color: #888;
+        }
     </style>
 </head>
 <body>
@@ -374,24 +393,22 @@
                     <h1 class="hero-title" id="hero-title">Engineering the Circulation of Value,<br><span>Go Bold</span> with Mercari</h1>
                     <h2 class="hero-subtitle" id="hero-subtitle">Ecosystem Architect & Product Manager</h2>
                     <p class="hero-desc" id="hero-desc">
-                        複雑な問題を構造化し、<strong>価値の循環</strong>を設計するPM、パク・セウォンです。<br>
-                        都市の交通網を最適化した視点で、これからは<strong>体験の摩擦</strong>をなくし、滑らかな<strong>エコシステム</strong>を構築します。<br>
-                        直感ではなく<strong>データに基づいた仮説検証</strong>を、慣習ではなく執拗な<strong>実行</strong>を通じて、市場が反応するインパクトを生み出します。
+                        複雑な問題を構造化し、<strong>価値の循環</strong>を設計するPM、パク・セウォンです。都市の交通網を最適化した視点で、これからは<strong>体験の摩擦</strong>をなくし、滑らかな<strong>エコシステム</strong>を構築します。<br>直感ではなく<strong>データに基づいた仮説検証</strong>を、慣習ではなく執拗な<strong>実行</strong>を通じて、市場が反応するインパクトを生み出します。
                     </p>
                 </div>
 
                 <div class="info-grid">
                     <div class="info-label"><i data-lucide="graduation-cap" size="16"></i> Education</div>
-                    <div class="info-value">
-                        <strong id="edu-uni">University of Seoul</strong><br>
-                        <span class="highlight-text">GPA: 4.41 / 4.5</span> (<span id="edu-major">Transportation Engineering</span>)<br>
-                        <span style="font-size:0.85rem; color:#666;" id="edu-gpa">🏆 理工系国家優秀奨学生 (全額奨学)</span>
+                    <!-- 한 줄로 통합된 Edu -->
+                    <div class="info-value" id="edu-info">
+                        <span class="info-school">University of Seoul</span><span class="info-divider">|</span> Transportation Engineering <span class="info-divider">|</span> <span class="highlight-text">GPA: 4.41 / 4.5</span><br>
+                        <span class="info-award-badge">🏆 理工系国家優秀奨学生 (全額奨学)</span>
                     </div>
                     
                     <div class="info-label"><i data-lucide="globe" size="16"></i> Exchange</div>
-                    <div class="info-value">
-                        <strong>Rikkyo University</strong> (Japan)<br>
-                        Data Science & Sociology
+                    <!-- 한 줄로 통합된 Exchange -->
+                    <div class="info-value" id="exchange-info">
+                        <span class="info-school">Rikkyo University</span><span class="info-divider">|</span> Data Science & Sociology
                     </div>
 
                     <div class="info-label"><i data-lucide="wrench" size="16"></i> Skills</div>
@@ -419,7 +436,7 @@
             <div class="about-card">
                 <div class="about-title"><i data-lucide="users" size="24" color="var(--primary)"></i> <span id="about-lead-title">Leadership & Soft Skills</span></div>
                 <p class="about-text" id="about-lead-desc">
-                    <strong>"調整するリーダーシップ (Coordinating Leadership)"</strong><br>
+                    <strong>"調整するリーダーシップ"</strong><br>
                     10カ国のグローバル大学および18の企業パートナーとコミュニケーションを取り、プロジェクトを調整した経験があります。多様なステークホルダーの言語を通訳し、共通の目標に向かってチームを整列させるコミュニケーションを目指します。
                 </p>
             </div>
@@ -506,15 +523,14 @@
         </div>
     </div>
 
-    <!-- ======================= TEMPLATES (JAPANESE - DEFAULT) ======================= -->
-    
+    <!-- Template Project 1 JP -->
     <div id="project1-content" style="display:none;">
         <div class="p-header">
-            <span class="p-badge">✈️ PROJECT 01</span>
+            <span class="p-badge">📂 PROJECT 01</span>
             <h1 class="p-title">Cross-border Commerce & Fintech Ecosystem</h1>
             <div class="p-meta">🗓️ Dec 2024 – Jan 2025 &nbsp;·&nbsp; 🧑‍✈️ Project Lead &nbsp;·&nbsp; 👥 Team: 4 Members</div>
             <div class="award-tag-container" style="margin-top:15px;">
-                <span class="award-tag award-gold">🏆 校内スタートアップ大会 3位</span>
+                <span class="award-tag award-gold">🏆 校内ビジネスコンテスト 3位</span>
                 <span class="award-tag award-gray">feat. Korea Startup Center</span>
             </div>
             <p class="p-subtitle">中古品で市場の隙間を開き、D2C拠点でエコシステムを完成させる</p>
@@ -529,7 +545,7 @@
                     <h3>🏗️ Structural Issue</h3>
                     <div class="gray-box">
                         <ul>
-                            <li><strong>Vendor Dependency (中間流通の弊害)</strong><span>オンライン(Qoo10など)とは異なり、オフライン進出時は現地ベンダーを必ず経由しなければならず、二重マージンが発生 → 価格競争力の喪失。</span></li>
+                            <li><strong>ベンダー依存</strong><span>オンライン(Qoo10など)とは異なり、オフライン進出時は現地ベンダーを必ず経由しなければならず、二重マージンが発生 → 価格競争力の喪失。</span></li>
                             <li><strong>Loss of Branding</strong><span>単純納品方式では、ブランドが意図したVMDや顧客経験(CX)をコントロールできない。</span></li>
                         </ul>
                     </div>
@@ -541,10 +557,10 @@
             </div>
             <div class="p-section">
                 <div class="p-sec-title">📊 02. Market Validation</div>
-                <p style="margin-bottom:25px; font-size:1.05rem; color:#333; font-weight:bold; text-align:center; border-bottom:1px solid #eee; padding-bottom:15px;">"Data Verification: 雷市場(KR) vs Mercari(JP)データで<br><span style="color:var(--primary);">『儲かる市場』</span>を見つける"</p>
+                <p style="margin-bottom:25px; font-size:1.05rem; color:#333; font-weight:bold; text-align:center; border-bottom:1px solid #eee; padding-bottom:15px;">"Data Verification: Bunjang (KR) vs Mercari (JP)データで<br><span style="color:var(--primary);">『儲かる市場』</span>を見つける"</p>
                 <div style="margin-bottom:25px; font-size:0.95rem; color:#555;">
-                    <div style="margin-bottom:15px;"><strong style="color:var(--primary);">🎯 Target Selection Criteria</strong><ul style="padding-left:25px; margin-top:5px; line-height:1.6;"><li><strong>High Liquidity:</strong> 日本のMZ世代の間でリセルが活発な『K-Fashion 3大将』および<strong>『K-POP レアグッズ』</strong>を選定</li><li><strong>Logistics Efficiency:</strong> 体積が小さく、越境配送時の<strong>ユニットエコノミクス</strong>が高い品目をフィルタリング</li></ul></div>
-                    <div><strong style="color:var(--primary);">🧾 Methodology & Verification</strong><p style="margin-top:5px; line-height:1.6; padding-left:25px;">韓国<strong>『雷市場(Bunjang)』</strong>と日本<strong>『Mercari』</strong>の実取引データをクローリングし、同一コンディション(Used-Good)商品の<strong>構造的な価格差(Arbitrage Price Gap)</strong>を立証。</p></div>
+                    <div style="margin-bottom:15px;"><strong style="color:var(--primary);">🎯 Target Selection Criteria</strong><ul style="padding-left:25px; margin-top:5px; line-height:1.6;"><li><strong>High Liquidity:</strong> 日本のZ世代の間でリセルが活発な『K-Fashion トップブランド』および<strong>『K-POP レアグッズ』</strong>を選定</li><li><strong>Logistics Efficiency:</strong> 体積が小さく、越境配送時の<strong>ユニットエコノミクス</strong>が高い品目をフィルタリング</li></ul></div>
+                    <div><strong style="color:var(--primary);">🧾 Methodology & Verification</strong><p style="margin-top:5px; line-height:1.6; padding-left:25px;">韓国<strong>『Bunjang (韓国のフリマアプリ)』</strong>と日本<strong>『Mercari』</strong>の実取引データをクローリングし、同一コンディション(Used-Good)商品の<strong>構造的な価格差(Arbitrage Price Gap)</strong>を立証。</p></div>
                 </div>
                 <div class="v-chart-container">
                     <div class="v-chart-group"><div class="v-chart-title">Brand A<br>(Wallet)</div><div class="v-chart-gap">Gap 57%</div><div class="v-bars"><div class="v-bar-col"><div class="v-bar v-bar-kr" style="height: 43%;"></div><div class="v-bar-label">KR</div></div><div class="v-bar-col"><div class="v-bar v-bar-jp" style="height: 100%;"></div><div class="v-bar-label">JP</div></div></div></div>
@@ -558,33 +574,111 @@
             <p style="margin-bottom:25px; font-size:1.05rem; font-weight:bold; color:#333; text-align:center; border-bottom:1px solid #eee; padding-bottom:15px;">"Hybrid Model: <span style="color:var(--primary);">C2Cで集客</span>し、<span style="color:#333;">B2Bで収益化</span>する"</p>
             <div class="sol-grid">
                 <div class="sol-card"><div class="emoji-icon">🎣</div><h4>Traffic Hook (C2C)</h4><p>トレンディな韓国古着を餌商品として配置し、初期集客を行い<strong>参入障壁を迂回</strong>。</p></div>
-                <div class="sol-card"><div class="emoji-icon">🏟️</div><h4>Offline Experience</h4><p>原宿『アイドルの控室』コンセプトストアで自発的なバイラル及びD2Cブランド体験を提供。</p></div>
+                <div class="sol-card"><div class="emoji-icon">🏟️</div><h4>Offline Experience</h4><p>原宿『アイドルの楽屋』コンセプトストアで自発的なバイラル及びD2Cブランド体験を提供。</p></div>
                 <div class="sol-card"><div class="emoji-icon">⚙️</div><h4>Tech & Logistics</h4><p>物流システムを構築し、全国物流網の確保と人件費削減を実現。</p></div>
             </div>
         </div>
         <div class="p-section" style="border: 2px solid var(--primary);">
-            <div class="p-sec-title" style="color: var(--primary);">📈 04. Growth Strategy & Roadmap</div>
+            <div class="p-sec-title">🏆 04. Growth Strategy & Roadmap</div>
             <p style="text-align:center; font-weight:bold; font-size:1.1rem; color:#444;">"From Store to Platform: 小売店から『ビジネスソリューション』へのピボット"</p>
             <div class="roadmap-stack">
-                <div class="roadmap-card"><div class="rm-header"><span class="rm-step">PHASE 1</span><span class="rm-icon">🚩</span><h3 class="rm-title">Expansion</h3><p class="rm-desc">拠点拡張</p></div><div class="rm-details"><div style="margin-bottom:15px; color:#555; font-size:0.95rem; line-height:1.6; border-bottom:1px solid #eee; padding-bottom:15px;">拠点拡張を通じたトラフィック及び物流網の確保。単純な店舗拡張ではなく、<strong>オムニチャネルネットワーク構築</strong>を目標とします。</div><div class="rm-item"><span class="rm-label">Action</span><span class="rm-text">成功モデルである原宿フラッグシップストアの運営方式(VMD、買取プロセス)を標準化し、大阪、九州など主要拠点へ拡張</span></div><div class="rm-item"><span class="rm-label">Logic</span><span class="rm-text">各拠点は単純な販売店ではなく<strong>地域C2C物流ハブ</strong>の役割を遂行。買取物量の確保及び自動化倉庫との連携で配送効率増大</span></div><div class="rm-item"><span class="rm-label">Goal</span><span class="rm-text">日本全域のMZ世代トラフィック確保及びプラットフォーム内で循環する『古着(Seed Inventory)』物流量の極大化</span></div></div></div>
-                <div class="roadmap-card"><div class="rm-header"><span class="rm-step">PHASE 2</span><span class="rm-icon">💸</span><h3 class="rm-title">Retention</h3><p class="rm-desc">決済/ロックイン</p></div><div class="rm-details"><div style="margin-bottom:15px; color:#555; font-size:0.95rem; line-height:1.6; border-bottom:1px solid #eee; padding-bottom:15px;">一度流入したユーザーが生態系内で絶えず取引するようにさせる<strong>好循環構造(フライホイール)</strong>を作ります。</div><div class="rm-item"><span class="rm-label">Key Feature</span><span class="rm-text"><strong>循環ポイントシステム:</strong> 顧客が古着販売(売却)時、現金の代わりに『専用ポイント』で精算を受けるよう誘導</span></div><div class="rm-item"><span class="rm-label">Incentive</span><span class="rm-text">ポイントで店舗内の新品(化粧品/衣類)購入時、<strong>手数料免除及び追加割引</strong>特典を提供</span></div><div class="rm-item"><span class="rm-label">Effect</span><span class="rm-text"><strong>Cash-out防止:</strong> 資金流出を防ぎ、『中古販売 → ポイント → 新品購入 → 再販売』と続くLTV極大化</span></div></div></div>
-                <div class="roadmap-card highlight"><div class="rm-header"><span class="rm-step" style="color:var(--primary);">PHASE 3</span><span class="rm-icon">🤝</span><h3 class="rm-title">Monetization</h3><p class="rm-desc">B2B Pivot</p></div><div class="rm-details"><div style="margin-bottom:15px; color:#555; font-size:0.95rem; line-height:1.6; border-bottom:1px solid #ffd1d1; padding-bottom:15px;">構築されたトラフィックとインフラを韓国企業に販売し、ビジネスモデルを<strong>B2Bソリューションへ高度化</strong>します。</div><div class="rm-item"><span class="rm-label" style="color:var(--primary);">Shift</span><span class="rm-text">B2C(単純小売業) → <strong>B2B(プラットフォームビジネス)</strong>へ収益モデルの軸を移動</span></div><div class="rm-item"><span class="rm-label" style="color:var(--primary);">Product A</span><span class="rm-text"><strong>Data Consulting:</strong> リアルタイム販売/行動データに基づき、韓国企業へ『日本進出ターゲティング及びVMDコンサルティング』提供</span></div><div class="rm-item"><span class="rm-label" style="color:var(--primary);">Product B</span><span class="rm-text"><strong>LaaS (Logistics-as-a-Service):</strong> 構築された物流網と拠点を<strong>『委託販売チャネル』</strong>として賃貸し手数料を受け取る</span></div></div></div>
+                <div class="roadmap-card"><div class="rm-header"><span class="rm-step">PHASE 1</span><span class="rm-icon">🚩</span><h3 class="rm-title">Expansion</h3><p class="rm-desc">拠点拡張</p></div><div class="rm-details"><div style="margin-bottom:15px; color:#555; font-size:0.95rem; line-height:1.6; border-bottom:1px solid #eee; padding-bottom:15px;">拠点拡張を通じたトラフィック及び物流網の確保。単純な店舗拡張ではなく、<strong>オムニチャネルネットワーク構築</strong>を目標とします。</div><div class="rm-item"><span class="rm-label">Action</span><span class="rm-text">成功モデルである原宿フラッグシップストアの運営方式(VMD、買取プロセス)を標準化し、大阪、九州など主要拠点へ拡張</span></div><div class="rm-item"><span class="rm-label">Logic</span><span class="rm-text">各拠点は単純な販売店ではなく<strong>地域C2C物流ハブ</strong>の役割を遂行。買取物量の確保及び自動化倉庫との連携で配送効率増大</span></div><div class="rm-item"><span class="rm-label">Goal</span><span class="rm-text">日本全域のZ世代トラフィック確保及びプラットフォーム内で循環する『古着』物流量の極大化</span></div></div></div>
+                <div class="roadmap-card"><div class="rm-header"><span class="rm-step">PHASE 2</span><span class="rm-icon">💸</span><h3 class="rm-title">Retention</h3><p class="rm-desc">決済/ロックイン</p></div><div class="rm-details"><div style="margin-bottom:15px; color:#555; font-size:0.95rem; line-height:1.6; border-bottom:1px solid #eee; padding-bottom:15px;">一度流入したユーザーが生態系内で絶えず取引するようにさせる<strong>フライホイール</strong>を作ります。</div><div class="rm-item"><span class="rm-label">Key Feature</span><span class="rm-text"><strong>循環ポイントシステム:</strong> 顧客が古着販売(売却)時、売上金を『専用ポイント』で受け取るよう誘導</span></div><div class="rm-item"><span class="rm-label">Incentive</span><span class="rm-text">ポイントで店舗内の新品(化粧品/衣類)購入時、<strong>手数料免除及び追加割引</strong>特典を提供</span></div><div class="rm-item"><span class="rm-label">Effect</span><span class="rm-text"><strong>キャッシュアウト防止:</strong> 資金流出を防ぎ、『中古販売 → ポイント → 新品購入 → 再販売』と続くLTV極大化</span></div></div></div>
+                <div class="roadmap-card highlight"><div class="rm-header"><span class="rm-step" style="color:var(--primary);">PHASE 3</span><span class="rm-icon">🤝</span><h3 class="rm-title">Monetization</h3><p class="rm-desc">B2B Pivot</p></div><div class="rm-details"><div style="margin-bottom:15px; color:#555; font-size:0.95rem; line-height:1.6; border-bottom:1px solid #ffd1d1; padding-bottom:15px;">構築されたトラフィックとインフラを韓国企業に販売し、ビジネスモデルを<strong>B2Bソリューションへ高度化</strong>します。</div><div class="rm-item"><span class="rm-label" style="color:var(--primary);">Shift</span><span class="rm-text">B2C (単純小売業) → <strong>B2B (プラットフォームビジネス)</strong>へ収益モデルの軸を移動</span></div><div class="rm-item"><span class="rm-label" style="color:var(--primary);">Product A</span><span class="rm-text"><strong>Data Consulting:</strong> リアルタイム販売/行動データに基づき、韓国企業へ『日本進出ターゲティング及びVMDコンサルティング』提供</span></div><div class="rm-item"><span class="rm-label" style="color:var(--primary);">Product B</span><span class="rm-text"><strong>LaaS (Logistics-as-a-Service):</strong> 構築された物流網と拠点を<strong>『委託販売チャネル』</strong>として賃貸し手数料を受け取る</span></div></div></div>
             </div>
         </div>
         <div class="p-section" style="background: #f8fafc; border-color: #e2e8f0;">
             <div class="p-sec-title">🏆 05. Outcome & Impact</div>
-            <div style="text-align:center; margin-bottom:30px;"><p style="font-size:1.1rem; font-weight:700; color:#333; line-height:1.6; word-break: keep-all;">"審査員を説得した核心は、大げさなビジョンではなく、<br><span style="color:var(--primary);">データで検証された現実的な戦略</span>でした。"</p><div class="award-tag-container" style="margin-top:15px; justify-content:center;"><span class="award-tag award-gold" style="font-size:1rem; padding:8px 20px;">🏆 校内スタートアップキャンプ 3位 (3rd Place)</span></div></div>
+            <div style="text-align:center; margin-bottom:30px;"><p style="font-size:1.1rem; font-weight:700; color:#333; line-height:1.6; word-break: keep-all;">"審査員を説得した核心は、大げさなビジョンではなく、<br><span style="color:var(--primary);">データで検証された現実的な戦略</span>でした。"</p><div class="award-tag-container" style="margin-top:15px; justify-content:center;"><span class="award-tag award-gold" style="font-size:1rem; padding:8px 20px;">🏆 学内ビジネスコンテスト 3位</span></div></div>
             <div class="gray-box" style="background: white; border: 1px solid #e2e8f0; padding: 30px;"><h4 style="margin-bottom:25px; font-size:1.1rem; color:#333; border-bottom:1px solid #eee; padding-bottom:15px;">📝 Key Evaluation Factor</h4><div style="display:flex; flex-direction:column; gap:20px;"><div style="background:#f9f9f9; padding:20px; border-radius:10px; border:1px solid #eee;"><strong style="display:block; color:var(--dark); margin-bottom:8px; font-size:1.05rem;">🎯 Realistic Roadmap</strong><p style="color:#555; line-height:1.6; margin:0; font-size:0.95rem; word-break: keep-all;">"一気にプラットフォームを構築するという虚像の目標の代わりに、<strong>C2Cから始まりB2Bへ漸進的に生態系を拡張</strong>するロードマップの現実性が際立つ。"</p></div><div style="background:#f9f9f9; padding:20px; border-radius:10px; border:1px solid #eee;"><strong style="display:block; color:var(--dark); margin-bottom:8px; font-size:1.05rem;">🔑 Sharp Problem Definition</strong><p style="color:#555; line-height:1.6; margin:0; font-size:0.95rem; word-break: keep-all;">"韓流ブランドが抱える『ベンダー依存性』と『マージン構造』の問題を正確に突き、これを解決する実質的なソリューションを提示した。"</p></div></div></div>
         </div>
         <div class="p-section">
             <div class="p-sec-title">🔄 06. Retrospective (KPT)</div>
-            <p style="text-align:center; font-weight:bold; color:#555; margin-bottom:25px;">"戦略は成功的でしたが、運営コスト(Hidden Cost)の変数を看過した点を回顧します。"</p>
+            <p style="text-align:center; font-weight:bold; color:#555; margin-bottom:25px;">"戦略は成功的でしたが、運営コストの変数を看過した点を回顧します。"</p>
             <div class="kpt-item kpt-keep"><span class="kpt-label"><i data-lucide="check-circle-2" size="20"></i> Keep</span><p class="kpt-desc"><strong>Data-Driven Approach:</strong> 『直感』ではなくクローリング<strong>データ</strong>を根拠に市場参入の可能性を検証した点。<br><strong>Strategic Detour:</strong> ベンダー社の反発という構造的な問題を予想し、正面突破の代わりにC2Cリセル市場を活用した迂回戦略を樹立し、現実的な参入路を確保した点。</p></div>
-            <div class="kpt-item kpt-problem"><span class="kpt-label"><i data-lucide="alert-triangle" size="20"></i> Problem</span><p class="kpt-desc"><strong>Margin Erosion (マージン予測エラー):</strong> 通関/検品遅延により発生する<strong>追加コスト(倉庫保管料、運営費)</strong>を考慮できなかった。リードタイム遅延が単純な時間問題ではなくユニットエコノミクスを悪化させ、最終マージン率が予想より低くなる結果を招いた。<br><strong>Optimistic CAC (コスト楽観):</strong> K-Popファンダムの自発的バイラルにのみ依存し、<strong>初期ユーザー獲得コスト(CAC)</strong>を過度に低く策定した。</p></div>
-            <div class="kpt-item kpt-try"><span class="kpt-label"><i data-lucide="rocket" size="20"></i> Try</span><p class="kpt-desc"><strong>Cost Buffer (コスト現実化):</strong> 海外物流の不確実性を勘案し、収益性分析時に物流費項目に<strong>10~15%の予備費(Buffer)</strong>を策定し<strong>保守的なマージン率</strong>を算出する。<br><strong>Smoke Test (マーケティング検証):</strong> 財務計画樹立前、少額パフォーマンスマーケティングで<strong>実際の転換単価(CPA)</strong>を測定する『スモークテスト』を先行し、現実的なCACを導出する。</p></div>
+            <div class="kpt-item kpt-problem"><span class="kpt-label"><i data-lucide="alert-triangle" size="20"></i> Problem</span><p class="kpt-desc"><strong>マージン侵食:</strong> 通関/検品遅延により発生する<strong>追加コスト</strong>を考慮できなかった。リードタイム遅延が単純な時間問題ではなくユニットエコノミクスを悪化させ、最終マージン率が予想より低くなる結果を招いた。<br><strong>楽観的なCAC見積もり:</strong> K-Popファンダムの自発的バイラルにのみ依存し、<strong>初期ユーザー獲得コスト (CAC)</strong>を過度に低く策定した。</p></div>
+            <div class="kpt-item kpt-try"><span class="kpt-label"><i data-lucide="rocket" size="20"></i> Try</span><p class="kpt-desc"><strong>コストバッファー:</strong> 海外物流の不確実性を勘案し、収益性分析時に物流費項目に<strong>10~15%の予備費</strong>を策定し<strong>保守的なマージン率</strong>を算出する。<br><strong>スモークテスト:</strong> 財務計画樹立前、少額パフォーマンスマーケティングで<strong>実際の転換単価 (CPA)</strong>を測定する『スモークテスト』を先行し、現実的なCACを導出する。</p></div>
+        </div>
+    </div>
+    <!-- Project 1 EN omitted for brevity, use same structure -->
+    <div id="project1-content-en" style="display:none;">
+        <div class="p-header">
+            <span class="p-badge">📂 PROJECT 01</span>
+            <h1 class="p-title">Cross-border Commerce & Fintech Ecosystem</h1>
+            <div class="p-meta">🗓️ Dec 2024 – Jan 2025 &nbsp;·&nbsp; 🧑‍✈️ Project Lead &nbsp;·&nbsp; 👥 Team: 4 Members</div>
+            <div class="award-tag-container" style="margin-top:15px;">
+                <span class="award-tag award-gold">🏆 3rd Place in Campus Startup Camp</span>
+                <span class="award-tag award-gray">feat. Korea Startup Center</span>
+            </div>
+            <p class="p-subtitle">Opening market gaps with pre-owned goods, completing the ecosystem with D2C hubs</p>
+        </div>
+        <div class="p-grid-2">
+            <div class="p-section">
+                <div class="p-sec-title">🔎 01. Problem Discovery</div>
+                <div class="prob-box">
+                    <h3 style="font-size:1.3rem; color:#111; margin-bottom:25px; text-align:left; font-weight:800; line-height:1.4;">"Online is 'Hype',<br>Offline is 'Disconnect'"</h3>
+                    <h3>🎤 Context</h3>
+                    <p>Captured structural pain points through In-depth Interviews with K-Beauty leader 'Amorepacific'.</p>
+                    <h3>🏗️ Structural Issue</h3>
+                    <div class="gray-box">
+                        <ul>
+                            <li><strong>Vendor Dependency</strong><span>Unlike online, offline entry requires local vendors, causing double margins → Loss of price competitiveness.</span></li>
+                            <li><strong>Loss of Branding</strong><span>Cannot control VMD or customer experience via simple supply methods.</span></li>
+                        </ul>
+                    </div>
+                    <div class="insight-box">
+                        <h3>💡 Insight</h3>
+                        <p class="insight-text">"Need a <span style="color:var(--primary);">D2C offline hub</span> targeting global fandoms of Hallyu Brands, where the brand controls 100% of price and experience."</p>
+                    </div>
+                </div>
+            </div>
+            <div class="p-section">
+                <div class="p-sec-title">📊 02. Market Validation</div>
+                <p style="margin-bottom:25px; font-size:1.05rem; color:#333; font-weight:bold; text-align:center; border-bottom:1px solid #eee; padding-bottom:15px;">"Data Verification: Finding 'Profitable Markets' via<br><span style="color:var(--primary);">Bunjang vs Mercari Data</span>"</p>
+                <div style="margin-bottom:25px; font-size:0.95rem; color:#555;">
+                    <div style="margin-bottom:15px;"><strong style="color:var(--primary);">🎯 Target Selection Criteria</strong><ul style="padding-left:25px; margin-top:5px; line-height:1.6;"><li><strong>High Liquidity:</strong> K-Fashion top 3 & <strong>Rare K-POP Goods</strong> actively resold by JP Gen-Z.</li><li><strong>Logistics Efficiency:</strong> Filtered items with high <strong>Unit Economics</strong> for cross-border shipping (small volume).</li></ul></div>
+                    <div><strong style="color:var(--primary);">🧾 Methodology & Verification</strong><p style="margin-top:5px; line-height:1.6; padding-left:25px;">Crawled transaction data from KR <strong>'Bunjang'</strong> and JP <strong>'Mercari'</strong> to prove structural <strong>Arbitrage Price Gap</strong> for identical Used-Good conditions.</p></div>
+                </div>
+                <div class="v-chart-container">
+                    <div class="v-chart-group"><div class="v-chart-title">Brand A<br>(Wallet)</div><div class="v-chart-gap">Gap 57%</div><div class="v-bars"><div class="v-bar-col"><div class="v-bar v-bar-kr" style="height: 43%;"></div><div class="v-bar-label">KR</div></div><div class="v-bar-col"><div class="v-bar v-bar-jp" style="height: 100%;"></div><div class="v-bar-label">JP</div></div></div></div>
+                    <div class="v-chart-group"><div class="v-chart-title">Brand B<br>(Apparel)</div><div class="v-chart-gap">Gap 54%</div><div class="v-bars"><div class="v-bar-col"><div class="v-bar v-bar-kr" style="height: 46%;"></div><div class="v-bar-label">KR</div></div><div class="v-bar-col"><div class="v-bar v-bar-jp" style="height: 100%;"></div><div class="v-bar-label">JP</div></div></div></div>
+                    <div class="v-chart-group"><div class="v-chart-title">K-Pop<br>Goods</div><div class="v-chart-gap">Gap 52%</div><div class="v-bars"><div class="v-bar-col"><div class="v-bar v-bar-kr" style="height: 48%;"></div><div class="v-bar-label">KR</div></div><div class="v-bar-col"><div class="v-bar v-bar-jp" style="height: 100%;"></div><div class="v-bar-label">JP</div></div></div></div>
+                </div>
+            </div>
+        </div>
+        <div class="p-section">
+            <div class="p-sec-title">🏗️ 03. Solution: Hybrid Model</div>
+            <p style="margin-bottom:25px; font-size:1.05rem; font-weight:bold; color:#333; text-align:center; border-bottom:1px solid #eee; padding-bottom:15px;">"Hybrid Model: <span style="color:var(--primary);">Hook with C2C</span>, <span style="color:#333;">Monetize with B2B</span>"</p>
+            <div class="sol-grid">
+                <div class="sol-card"><div class="emoji-icon">🎣</div><h4>Traffic Hook (C2C)</h4><p>Deploy trendy pre-owned K-fashion as bait products to <strong>bypass entry barriers</strong>.</p></div>
+                <div class="sol-card"><div class="emoji-icon">🏟️</div><h4>Offline Experience</h4><p>Provide D2C brand experience via Harajuku 'Idol Waiting Room' concept store.</p></div>
+                <div class="sol-card"><div class="emoji-icon">⚙️</div><h4>Tech & Logistics</h4><p>Establish nationwide logistics network and reduce labor costs via system.</p></div>
+            </div>
+        </div>
+        <div class="p-section" style="border: 2px solid var(--primary);">
+            <div class="p-sec-title">🏆 04. Growth Strategy & Roadmap</div>
+            <p style="text-align:center; font-weight:bold; font-size:1.1rem; color:#444;">"From Store to Platform: Pivot from Retail to 'Business Solution'"</p>
+            <div class="roadmap-stack">
+                <div class="roadmap-card"><div class="rm-header"><span class="rm-step">PHASE 1</span><span class="rm-icon">🚩</span><h3 class="rm-title">Expansion</h3><p class="rm-desc">Hub Expansion</p></div><div class="rm-details"><div style="margin-bottom:15px; color:#555; font-size:0.95rem; line-height:1.6; border-bottom:1px solid #eee; padding-bottom:15px;">Secure traffic and logistics network via hub expansion. Aiming for <strong>Omni-channel Network Construction</strong>, not just store opening.</div><div class="rm-item"><span class="rm-label">Action</span><span class="rm-text">Standardize successful Harajuku flagship operations (VMD, buying process) and expand to Osaka, Kyushu.</span></div><div class="rm-item"><span class="rm-label">Logic</span><span class="rm-text">Each hub acts as a <strong>Local C2C Logistics Hub</strong>. Increase efficiency by linking with automated warehouses.</span></div><div class="rm-item"><span class="rm-label">Goal</span><span class="rm-text">Secure JP Gen-Z traffic and maximize 'Seed Inventory' (used clothes) circulation.</span></div></div></div>
+                <div class="roadmap-card"><div class="rm-header"><span class="rm-step">PHASE 2</span><span class="rm-icon">💸</span><h3 class="rm-title">Retention</h3><p class="rm-desc">Payment/Lock-in</p></div><div class="rm-details"><div style="margin-bottom:15px; color:#555; font-size:0.95rem; line-height:1.6; border-bottom:1px solid #eee; padding-bottom:15px;">Create a <strong>Flywheel Structure</strong> where users continuously trade within the ecosystem.</div><div class="rm-item"><span class="rm-label">Key Feature</span><span class="rm-text"><strong>Circulation Point System:</strong> Induce sellers to receive settlement in 'Points' instead of cash.</span></div><div class="rm-item"><span class="rm-label">Incentive</span><span class="rm-text">Offer <strong>Fee Waiver & Discounts</strong> when purchasing new items (Cosmetics/Clothes) with points.</span></div><div class="rm-item"><span class="rm-label">Effect</span><span class="rm-text"><strong>Prevent Cash-out:</strong> Maximize LTV via 'Sell Used → Point → Buy New → Resell' cycle.</span></div></div></div>
+                <div class="roadmap-card highlight"><div class="rm-header"><span class="rm-step" style="color:var(--primary);">PHASE 3</span><span class="rm-icon">🤝</span><h3 class="rm-title">Monetization</h3><p class="rm-desc">B2B Pivot</p></div><div class="rm-details"><div style="margin-bottom:15px; color:#555; font-size:0.95rem; line-height:1.6; border-bottom:1px solid #ffd1d1; padding-bottom:15px;">Upgrade business model to <strong>B2B Solution</strong> by selling established traffic and infrastructure to KR companies.</div><div class="rm-item"><span class="rm-label" style="color:var(--primary);">Shift</span><span class="rm-text">Shift profit center from B2C (Retail) to <strong>B2B (Platform Business)</strong>.</span></div><div class="rm-item"><span class="rm-label" style="color:var(--primary);">Product A</span><span class="rm-text"><strong>Data Consulting:</strong> Provide 'Targeting & VMD Consulting' based on real-time sales/behavior data.</span></div><div class="rm-item"><span class="rm-label" style="color:var(--primary);">Product B</span><span class="rm-text"><strong>LaaS (Logistics-as-a-Service):</strong> Lease logistics network and hubs as <strong>'Consignment Sales Channels'</strong>.</span></div></div></div>
+            </div>
+        </div>
+        <div class="p-section" style="background: #f8fafc; border-color: #e2e8f0;">
+            <div class="p-sec-title">🏆 05. Outcome & Impact</div>
+            <div style="text-align:center; margin-bottom:30px;"><p style="font-size:1.1rem; font-weight:700; color:#333; line-height:1.6; word-break: keep-all;">"Key to persuasion was not a grand vision,<br>but a <span style="color:var(--primary);">realistic strategy verified by data</span>."</p><div class="award-tag-container" style="margin-top:15px; justify-content:center;"><span class="award-tag award-gold" style="font-size:1rem; padding:8px 20px;">🏆 3rd Place in Campus Startup Camp</span></div></div>
+            <div class="gray-box" style="background: white; border: 1px solid #e2e8f0; padding: 30px;"><h4 style="margin-bottom:25px; font-size:1.1rem; color:#333; border-bottom:1px solid #eee; padding-bottom:15px;">📝 Key Evaluation Factor</h4><div style="display:flex; flex-direction:column; gap:20px;"><div style="background:#f9f9f9; padding:20px; border-radius:10px; border:1px solid #eee;"><strong style="display:block; color:var(--dark); margin-bottom:8px; font-size:1.05rem;">🎯 Realistic Roadmap</strong><p style="color:#555; line-height:1.6; margin:0; font-size:0.95rem; word-break: keep-all;">"Highly praised for the realistic roadmap of <strong>Gradual Expansion starting from C2C to B2B</strong>, instead of a vain goal of building a platform at once."</p></div><div style="background:#f9f9f9; padding:20px; border-radius:10px; border:1px solid #eee;"><strong style="display:block; color:var(--dark); margin-bottom:8px; font-size:1.05rem;">🔑 Sharp Problem Definition</strong><p style="color:#555; line-height:1.6; margin:0; font-size:0.95rem; word-break: keep-all;">"Accurately struck the 'Vendor Dependency' and 'Margin Structure' issues of Hallyu brands and proposed practical solutions."</p></div></div></div>
+        </div>
+        <div class="p-section">
+            <div class="p-sec-title">🔄 06. Retrospective (KPT)</div>
+            <p style="text-align:center; font-weight:bold; color:#555; margin-bottom:25px;">"Strategy was successful, but reflect on overlooking Hidden Costs."</p>
+            <div class="kpt-item kpt-keep"><span class="kpt-label"><i data-lucide="check-circle-2" size="20"></i> Keep</span><p class="kpt-desc"><strong>Data-Driven Approach:</strong> Verified market entry feasibility based on crawled <strong>Data</strong>, not intuition.<br><strong>Strategic Detour:</strong> Anticipated structural issues (Vendor backlash) and established a realistic entry path via C2C resell market.</p></div>
+            <div class="kpt-item kpt-problem"><span class="kpt-label"><i data-lucide="alert-triangle" size="20"></i> Problem</span><p class="kpt-desc"><strong>Margin Erosion:</strong> Overlooked <strong>additional costs (Storage, OpEx)</strong> due to customs/inspection delays. Lead time delays worsened <strong>Unit Economics</strong>.<br><strong>Optimistic CAC:</strong> Underestimated initial <strong>CAC</strong> by relying solely on organic viral from K-Pop fandoms.</p></div>
+            <div class="kpt-item kpt-try"><span class="kpt-label"><i data-lucide="rocket" size="20"></i> Try</span><p class="kpt-desc"><strong>Cost Buffer:</strong> Will set <strong>10~15% Buffer</strong> for logistics costs to calculate <strong>Conservative Margin</strong>.<br><strong>Smoke Test:</strong> Will precede with a 'Smoke Test' to measure actual <strong>CPA</strong> via small-scale performance marketing before financial planning.</p></div>
         </div>
     </div>
 
+    <!-- Hidden Templates: Project 2 (Campus Delivery) -->
     <div id="project2-content" style="display:none;">
         <div class="p-header">
             <span class="p-badge" style="background:var(--primary); color:white;">☕ PROJECT 02</span>
@@ -702,7 +796,7 @@
         <div class="p-section">
             <div class="p-sec-title">💻 05. Tech & Verification (技術具現)</div>
             <p style="margin-bottom:20px; font-size:1.1rem; font-weight:bold; color:var(--dark); text-align:center;">
-                "Google OR-Toolsを活用した<br><span style="color:var(--primary);">VRP(Vehicle Routing Problem)</span> シミュレーション"
+                "Google OR-Toolsを活用した<br><span style="color:var(--primary);">VRP</span> シミュレーション"
             </p>
             <div style="display:flex; flex-direction:column; gap:15px;">
                 <div style="background:#f8f9fa; border:1px solid #eee; padding:20px; border-radius:8px;">
@@ -773,7 +867,7 @@
             <div class="kpt-item kpt-problem">
                 <span class="kpt-label"><i data-lucide="alert-triangle" size="20"></i> Problem</span>
                 <p class="kpt-desc">
-                    <strong>Peak Time Issue:</strong> 休み時間(10分)に注文と配達員が同時に殺到し、授業時間には両方消える<strong>『需給同調化』</strong>現象を発見。配達員も授業に行かなければならないため供給不足(Supply Crunch)発生。
+                    <strong>需給の同期:</strong> 休み時間(10分)に注文と配達員が同時に殺到し、授業時間には両方消える<strong>『需給同調化』</strong>現象を発見。配達員も授業に行かなければならないため供給不足発生。
                 </p>
             </div>
             <div class="kpt-item kpt-try">
@@ -786,6 +880,90 @@
         </div>
     </div>
 
+    <!-- Hidden Templates: Project 2 EN -->
+    <div id="project2-content-en" style="display:none;">
+        <div class="p-header">
+            <span class="p-badge" style="background:#333; color:white;">🚚 PROJECT 02</span>
+            <h1 class="p-title">Hyper-local P2P Delivery</h1>
+            <div class="p-meta">🗓️ Aug 2024 – Nov 2024 &nbsp;·&nbsp; 🛠️ PM & Python Dev &nbsp;·&nbsp; 👥 Team: 2 Members</div>
+            <p class="p-subtitle" style="margin-top:15px;">Campus Gig Economy converting movement data into logistics networks</p>
+        </div>
+        <div class="p-grid-2">
+            <div class="p-section">
+                <div class="p-sec-title">⚠️ 01. Problem Discovery</div>
+                <div class="prob-box">
+                    <h3 style="font-size:1.3rem; color:#111; margin-bottom:25px; text-align:left; font-weight:800; line-height:1.4;">"Potential Demand 'Explodes',<br>Last-mile trapped in 'Inefficiency'"</h3>
+                    <h3>📉 Inefficiency</h3>
+                    <p>Traditional riders move to 'catch orders'. But campuses have complex terrain (hills, security) and restricted entry, making last-mile costs abnormally high.</p>
+                    <h3>😩 Unmet Demand</h3>
+                    <p>Students want coffee but give up due to short break times (10~15 min) preventing round trips to cafes.</p>
+                    <div class="insight-box">
+                        <h3>💡 Insight</h3>
+                        <p class="insight-text">"No need for professional riders. <span style="color:var(--primary);">Students moving to that building anyway</span> can deliver."</p>
+                    </div>
+                </div>
+            </div>
+            <div class="p-section">
+                <div class="p-sec-title">🗺️ 02. Solution Strategy</div>
+                <p style="margin-bottom:20px; font-size:1.05rem; font-weight:bold; color:var(--dark); text-align:center; line-height:1.4;">"<span style="color:var(--primary);">Route-based</span> Dispatch, not Location-based"</p>
+                <div class="gray-box">
+                    <h4 style="margin-bottom:15px; font-size:1.1rem; color:#333; border-bottom:1px solid #ddd; padding-bottom:10px; display:flex; align-items:center; gap:6px;">🔄 Paradigm Shift</h4>
+                    <ul>
+                        <li><strong>(As-Is) Traditional:</strong> <span>Rider moves to order origin → Pickup → Delivery <span style="color:#e53e3e; font-weight:bold;">(Move to Deliver)</span></span></li>
+                        <li><strong>(To-Be) Proposed:</strong> <span>Orderer picks last-mile (dest), matches student moving there <span style="color:var(--primary); font-weight:bold;">(Deliver while Moving)</span></span></li>
+                    </ul>
+                </div>
+                <div class="gray-box" style="background:white; border-color:#eee;">
+                    <h3 style="font-size:1.1rem; color:var(--primary); margin-bottom:8px; display:flex; align-items:center; gap:6px;">⚙️ Mechanism</h3>
+                    <p style="font-size:0.95rem; color:#444; line-height:1.6; margin:0;">Student couriers pick up coffee <strong style="background:rgba(234, 53, 45, 0.1); padding:0 4px; color:#333;">"on their way to class"</strong>.<br><br>This drastically reduces <strong>Delivery Cost</strong> and maximizes mover efficiency.</p>
+                </div>
+            </div>
+        </div>
+        <div class="p-section" style="background:#f8fafc; border-color:#e2e8f0;">
+            <div class="p-sec-title">📊 03. Market Validation</div>
+            <p style="margin-bottom:20px; text-align:center; color:#555; font-weight:600;">"Beyond technical possibility, verifying <span style="color:var(--primary);">Willingness to Participate</span>"</p>
+            <div style="display:grid; grid-template-columns: 1fr 1fr; gap:20px;">
+                <div style="background:white; padding:20px; border-radius:12px; border:1px solid #eee; box-shadow:0 4px 10px rgba(0,0,0,0.03);"><div style="font-size:2rem; margin-bottom:10px;">🙋🏻‍♂️</div><h4 style="margin-bottom:8px; font-weight:800; color:#333;">User Survey</h4><p style="font-size:0.9rem; color:#666; line-height:1.6;">Surveyed 100 students. <span style="color:var(--primary); font-weight:800;">68%</span> positive response: <strong>"Will deliver if route matches 90%"</strong>.<br>Lowered psychological barrier by framing as <strong>'Monetizing Idle Time'</strong>.</p></div>
+                <div style="background:white; padding:20px; border-radius:12px; border:1px solid #eee; box-shadow:0 4px 10px rgba(0,0,0,0.03);"><div style="font-size:2rem; margin-bottom:10px;">💰</div><h4 style="margin-bottom:8px; font-weight:800; color:#333;">Unit Economics</h4><p style="font-size:0.9rem; color:#666; line-height:1.6;">Matched with fee under <strong>1,000 KRW (70% cheaper</strong> than standard 3,000 KRW).<br>Validated potential for <strong>Micro-delivery market</strong>.</p></div>
+            </div>
+        </div>
+        <div class="p-section">
+            <div class="p-sec-title">💓 04. Algorithm Comparison</div>
+            <div class="big-algo-container">
+                <div class="big-algo-box"><div class="big-algo-title">🕰️ Legacy</div><div class="big-visual"><svg viewBox="0 0 300 250" width="100%" height="100%"><path d="M 40,200 L 100,154 L 30,50 L 220,80 L 260,170" class="svg-path" /><circle cx="40" cy="200" r="12" class="svg-node node-start" /><text x="40" y="230" class="svg-label">Rider</text><circle cx="100" cy="154" r="12" class="svg-node node-cafe" /><circle cx="30" cy="50" r="10" class="svg-node node-drop" /><text x="30" y="80" class="svg-label">Drop1</text><circle cx="220" cy="80" r="10" class="svg-node node-drop" /><text x="220" y="110" class="svg-label">Drop2</text><circle cx="260" cy="170" r="12" class="svg-node node-dest" /><text x="260" y="200" class="svg-label">Drop3</text><circle r="6" class="dot-legacy" class="anim-legacy"><animateMotion dur="6s" repeatCount="indefinite" rotate="auto"><mpath href="#legacy-path"/></animateMotion></circle></svg></div><div class="big-caption">Rider moves separately for pickup<br><span style="color:#ea352d; font-weight:bold; font-size:0.85rem;">(High Cost / Inefficient)</span></div></div>
+                <div class="big-algo-box"><div class="big-algo-title">⚡ Campus (Proposed)</div><div class="big-visual"><svg viewBox="0 0 300 250" width="100%" height="100%"><path id="campus-path-en" d="M 40,200 L 100,154 L 170,120 L 220,60 L 260,30" class="svg-path-main-dashed" />
+                    <circle cx="40" cy="200" r="12" class="svg-node node-start" /><text x="40" y="230" class="svg-label">Student</text><circle cx="100" cy="154" r="12" class="svg-node node-cafe" /><text x="100" y="130" class="svg-label">Cafe</text><circle cx="170" cy="120" r="10" class="svg-node node-drop" /><text x="170" y="150" class="svg-label">Drop1</text><circle cx="220" cy="60" r="10" class="svg-node node-drop" /><text x="220" y="90" class="svg-label">Drop2</text><circle cx="260" cy="30" r="12" class="svg-node node-dest" /><text x="260" y="15" class="svg-label">Class</text>
+                    <circle r="8" class="dot-campus"><animateMotion dur="6s" repeatCount="indefinite" rotate="auto"><mpath href="#campus-path-en"/></animateMotion></circle></svg></div><div class="big-caption">Pickup on the way to destination<br><span style="color:#ea352d; font-weight:bold; font-size:0.85rem;">(Low Cost / Optimized)</span></div></div>
+            </div>
+        </div>
+        <div class="p-section">
+            <div class="p-sec-title">💻 05. Tech & Verification</div>
+            <p style="margin-bottom:20px; font-size:1.1rem; font-weight:bold; color:var(--dark); text-align:center;">"VRP Simulation using <span style="color:var(--primary);">Google OR-Tools</span>"</p>
+            <div style="display:flex; flex-direction:column; gap:15px;">
+                <div style="background:#f8f9fa; border:1px solid #eee; padding:20px; border-radius:8px;"><h4 style="margin-bottom:8px; color:#333; font-size:1.05rem; display:flex; align-items:center; gap:6px;">🧬 Algorithm</h4><p style="font-size:0.95rem; color:#555; line-height:1.6;">Derived optimal routes using <strong>Google OR-Tools</strong> library to match multiple students (Vehicles) with orders (Nodes).</p></div>
+                <div class="p-grid-2" style="margin-top:0;">
+                    <div style="background:#fff; border:1px solid #eee; padding:20px; border-radius:8px;"><h4 style="margin-bottom:10px; color:#333; font-size:1.05rem; display:flex; align-items:center; gap:6px;">⚠️ Constraints</h4><p style="font-size:0.95rem; color:#555; line-height:1.6; margin-bottom:10px;">Set realistic variables as constraints, not just distance.</p><ul style="padding-left:20px; font-size:0.9rem; color:#444; line-height:1.8;"><li>Time Window (Class time)</li><li>Vertical Time (Building entry)</li><li><strong>Walking Speed</strong></li></ul></div>
+                    <div style="background:#fff5f5; border:1px solid #ffe0e0; padding:20px; border-radius:8px;"><h4 style="margin-bottom:10px; color:var(--primary); font-size:1.05rem; display:flex; align-items:center; gap:6px;">✅ Simulation Result</h4><p style="font-size:0.95rem; color:#333; line-height:1.6;">Modeled campus map data and simulated with Python.</p><div style="margin-top:15px; font-weight:bold; font-size:1.2rem; color:var(--primary); text-align:center;">Total Distance Reduced by<br><span style="font-size:2rem;">40%</span></div></div>
+                </div>
+            </div>
+        </div>
+        <div class="p-section" style="border: 2px solid var(--primary);">
+            <div class="p-sec-title">🏆 06. Outcome & Impact</div>
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px;">
+                <div style="background:#fff; padding:25px; border-radius:12px; border:1px solid #ffe0e0; text-align:center;"><div style="font-size:2.5rem; margin-bottom:10px;">📉</div><h4 style="font-weight:800; color:#333; margin-bottom:10px;">Cost Efficiency</h4><p style="color:#555; font-size:0.95rem; line-height:1.6;">Converted 40% distance reduction to cost.<br>Delivery cost <strong>3,000 KRW → 900 KRW</strong>.<br><span style="color:var(--primary); font-weight:800;">70% Saving Effect</span> proven.</p></div>
+                <div style="background:#fff; padding:25px; border-radius:12px; border:1px solid #eee; text-align:center;"><div style="font-size:2.5rem; margin-bottom:10px;">📦</div><h4 style="font-weight:800; color:#333; margin-bottom:10px;">Deliverable</h4><p style="color:#555; font-size:0.95rem; line-height:1.6;">Developed <strong>Google OR-Tools Optimal Route Matching</strong> algorithm prototype based on actual campus map.</p></div>
+            </div>
+        </div>
+        <div class="p-section">
+            <div class="p-sec-title">💡 07. Retrospective (KPT)</div>
+            <p style="text-align:center; font-weight:bold; color:#555; margin-bottom:25px;">"Discovered realistic operation issues (Supply-Demand Sync) and pondered improvements."</p>
+            <div class="kpt-item kpt-keep"><span class="kpt-label"><i data-lucide="check-circle-2" size="20"></i> Keep</span><p class="kpt-desc">Designed a model utilizing idle resources without extra labor input by approaching with <strong>Route-based</strong> instead of Location-based.</p></div>
+            <div class="kpt-item kpt-problem"><span class="kpt-label"><i data-lucide="alert-triangle" size="20"></i> Problem</span><p class="kpt-desc"><strong>Peak Time Issue:</strong> Discovered <strong>'Supply-Demand Sync'</strong> phenomenon where orders and couriers surge during breaks and vanish during classes. Supply Crunch occurred as couriers also had to attend class.</p></div>
+            <div class="kpt-item kpt-try"><span class="kpt-label"><i data-lucide="rocket" size="20"></i> Try</span><p class="kpt-desc"><strong>Dynamic Pricing:</strong> Induce supply by paying 1.5x incentives during specific times (during class, free periods).<br><strong>Pickup Zone:</strong> Optimize operations by installing 'Pickup Zones' near classrooms to reduce wait time to zero.</p></div>
+        </div>
+    </div>
+
+    <!-- Hidden Templates: Project 3 (Netcube) -->
     <div id="project3-content" style="display:none;">
         <div class="p-header">
             <span class="p-badge" style="background:var(--primary); color:white;">⚡ PROJECT 03</span>
@@ -812,13 +990,13 @@
                     <h3>⚠️ Issue Discovery</h3>
                     <div style="display:flex; flex-direction:column; gap:15px; margin-bottom:20px;">
                         <div style="background:#f9f9f9; border-left:4px solid #555; padding:15px; border-radius:0 4px 4px 0;">
-                            <strong style="display:block; color:#333; margin-bottom:5px;">🚨 Trigger (問題発見)</strong>
+                            <strong style="display:block; color:#333; margin-bottom:5px;">🚨 Trigger</strong>
                             <span style="font-size:0.95rem; color:#555; line-height:1.6;">
                                 初期開発された注文画面の<strong>『買収/売却ボタンの色』</strong>が通念(米国標準 vs アジア標準)と反対に適用され混乱を引き起こすヒューマンエラーを発見しました。グローバル統合マーケットプレイス環境でこれは致命的な誤作動の原因となりました。
                             </span>
                         </div>
                         <div style="background:#f9f9f9; border-left:4px solid #999; padding:15px; border-radius:0 4px 4px 0;">
-                            <strong style="display:block; color:#333; margin-bottom:5px;">📉 Root Cause (根本原因)</strong>
+                            <strong style="display:block; color:#333; margin-bottom:5px;">📉 Root Cause</strong>
                             <span style="font-size:0.95rem; color:#555; line-height:1.6;">
                                 我々の顧客は超短期売買をする『デイトレーダー』ではなく、再生可能エネルギーポートフォリオを管理する<strong>『機関担当者』</strong>でした。彼らに必要なのは『リアルタイム性』ではなく<strong>『正確性』と『条件比較』</strong>でした。HTSの複雑なUIは彼らに不要な認知的負荷を与えました。
                             </span>
@@ -837,7 +1015,7 @@
                 <div style="margin-bottom:25px;">
                     <h4 style="margin-bottom:10px; color:#333; font-size:1.05rem;">🚩 Goal: Structure Reform</h4>
                     <p style="font-size:0.95rem; color:#555; line-height:1.6;">
-                        "馴染みのないHTS構造の代わりに、情報の優先順位が明確な<strong>『掲示板(List)型』構造</strong>を導入すれば誤注文リスクを減らし信頼度を高められるだろう"という仮説を立て、<strong>『誤作動ゼロ & 学習コスト最小化』</strong>を目標にしました。
+                        "馴染みのないHTS構造の代わりに、情報の優先順位が明確な<strong>『リスト型』構造</strong>を導入すれば誤注文リスクを減らし信頼度を高められるだろう"という仮説を立て、<strong>『誤作動ゼロ & 学習コスト最小化』</strong>を目標にしました。
                     </p>
                 </div>
                 <div style="background:white; border:1px solid #eee; padding:20px; border-radius:12px;">
@@ -967,13 +1145,13 @@
             <div class="kpt-item kpt-keep">
                 <span class="kpt-label"><i data-lucide="check-circle-2" size="20"></i> Keep</span>
                 <p class="kpt-desc">
-                    <strong>Data-Driven Persuasion:</strong> 『慣習』にこだわるステークホルダーたちに『視線追跡データ』と『文化的差異』という客観的根拠を提示し説得に成功した。
+                    <strong>データに基づく説得:</strong> 『慣習』にこだわるステークホルダーたちに『視線追跡データ』と『文化的な違い』という客観的根拠を提示し説得に成功した。
                 </p>
             </div>
             <div class="kpt-item kpt-problem">
                 <span class="kpt-label"><i data-lucide="alert-triangle" size="20"></i> Problem</span>
                 <p class="kpt-desc">
-                    <strong>Cost of Late Discovery:</strong> 致命的な設計ミスを製品が開発された後の『QA段階』になって発見した。これにより全面再設計の代わりにCSS修正という制限的解決策(Hotfix)を選択せざるを得なかった。
+                    <strong>Cost of Late Discovery:</strong> 致命的な設計ミスを製品が開発された後の『QA段階』になって発見した。これにより全面再設計の代わりにCSS修正という応急処置(Hotfix)を選択せざるを得なかった。
                 </p>
             </div>
             <div class="kpt-item kpt-try">
@@ -985,13 +1163,14 @@
         </div>
     </div>
 
+    <!-- Hidden Templates: Project 4 (EV) - JP -->
     <div id="project4-content" style="display:none;">
         <div class="p-header">
             <span class="p-badge" style="background:var(--primary); color:white;">🔋 PROJECT 04</span>
             <h1 class="p-title">Drive-to-Earn Reward Platform</h1>
             <div class="p-meta">🗓️ Jun 2021 – Aug 2021 &nbsp;·&nbsp; 🔎 Solo Researcher &nbsp;·&nbsp; 👤 Individual Project</div>
             <div class="award-tag-container" style="margin-top:20px; margin-bottom:20px;">
-                <span class="award-tag award-gold">🏆 2021 校内創業授業 最優秀</span>
+                <span class="award-tag award-gold">🏆 2021 校内ビジネスプランコンテスト 最優秀</span>
                 <span class="award-tag award-gray">Business Model Validation</span>
             </div>
             <p class="p-subtitle" style="line-height:1.6; color:#555;">
@@ -1016,100 +1195,60 @@
                 <div class="p-sec-title">🧠 02. Core Solution: Traffic Balancing</div>
                 <div class="prob-box">
                     <h3 style="color:#e53e3e;">🛑 Problem: Algorithm Blindspot</h3>
-                    <p>既存ナビゲーションは『時間/距離最小化』が目的です。したがって物理的に遠回りする迂回路は<strong>アルゴリズム上『捨てられる経路(Dead Route)』</strong>です。</p>
+                    <p>既存ナビゲーションは『時間/距離最小化』が目的です。したがって物理的に遠回りする迂回路は<strong>アルゴリズム上『捨てられる経路』</strong>です。</p>
                     <h3 style="color:var(--primary);">💡 Solution: Inverse Logic</h3>
-                    <p>"最短経路が混むといっても、迂回路は<strong>それ以上に非効率的(Longer Cost)</strong>です。<br>だから<strong>『補償』</strong>なしには絶対選択されません。"</p>
+                    <p>"最短経路が混むといっても、迂回路は<strong>それ以上に非効率的</strong>です。<br>だから<strong>『インセンティブ』</strong>なしには絶対選択されません。"</p>
                     <div class="insight-box">
                         <h3>⚙️ Logic</h3>
                         <p class="insight-text" style="font-weight:400; font-size:0.95rem;">
-                            ドライバーに<strong style="color:var(--primary);">損害を甘受するほどの確実な補償(Cash)</strong>を提示し、自然に交通量を<strong>非選好経路</strong>へ分散させます。
+                            ドライバーに<strong style="color:var(--primary);">損害を甘受するほどの確実な補償</strong>を提示し、自然に交通量を<strong>非選好経路</strong>へ分散させます。
                         </p>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- 3. Spline -->
+        <!-- 3. Spline (Lazy Load Optimized) -->
         <div class="p-section" style="margin-top:30px;">
             <div class="p-sec-title">🏙️ 03. Visualizing the Logic (Simulation)</div>
             <div class="spline-stack">
                 <div class="spline-box">
                     <div class="spline-label label-red"><span class="label-icon">🛑</span><div><strong>Legacy: Shortest Path</strong><br><span style="font-weight:400; font-size:0.75rem; opacity:0.8;">最短距離だが渋滞</span></div></div>
-                    <spline-viewer url="https://prod.spline.design/ThIpVEIWz2sU3wb2/scene.splinecode"></spline-viewer>
+                    <!-- Placeholder 1 -->
+                    <div class="spline-placeholder" data-url="https://prod.spline.design/ThIpVEIWz2sU3wb2/scene.splinecode">
+                        <div style="font-size:2rem;">🛑</div>
+                        <div class="spline-loader">Loading 3D Scene...</div>
+                    </div>
                 </div>
                 <div class="spline-box">
                     <div class="spline-label label-green"><span class="label-icon">⚡</span><div><strong>Proposal: Detour + Reward</strong><br><span style="font-weight:400; font-size:0.75rem; opacity:0.8;">迂回するが補償獲得 (Earn Cash)</span></div></div>
-                    <spline-viewer loading-anim-type="spinner-small-dark" url="https://prod.spline.design/cgbGHnndFCHpx6hk/scene.splinecode"></spline-viewer>
+                    <!-- Placeholder 2 -->
+                    <div class="spline-placeholder" data-url="https://prod.spline.design/cgbGHnndFCHpx6hk/scene.splinecode">
+                        <div style="font-size:2rem;">⚡</div>
+                        <div class="spline-loader">Loading 3D Scene...</div>
+                    </div>
                 </div>
             </div>
             <div class="big-caption" style="margin-top:30px; padding-top:20px; border-top:1px solid #eee; color:#555; font-size:0.95rem; line-height:1.6;">
                 既存ナビゲーションはアルゴリズム上<strong>『捨てられる経路』</strong>だった迂回路を、<br>確実な<strong>インセンティブ</strong>を通じて<strong>『選択される経路』</strong>へ再設計し交通量を分散させます。
             </div>
         </div>
-        <!-- 4. Business Model -->
+        <!-- ... (Rest of Project 4 Content: Business Model, Roadmap, etc.) ... -->
         <div class="p-section" style="margin-top:30px;">
             <div class="p-sec-title">💼 04. Business Model (3-Way)</div>
-            <p style="text-align:center; margin-bottom:20px; font-weight:bold; color:#555;">"トラフィックをフィンテック(Pay)と政府予算(Gov)へ転換"</p>
+            <p style="text-align:center; margin-bottom:20px; font-weight:bold; color:#555;">"トラフィックをフィンテックと政府予算へ転換"</p>
             <div class="sol-grid">
-                <div class="sol-card">
-                    <div class="emoji-icon">🛣️</div>
-                    <h4>En-route Ads</h4>
-                    <p>単純露出ではなく、経路上(On-route)提携店舗への<strong>迂回訪問</strong>誘導及び広告費受取</p>
-                </div>
-                <div class="sol-card">
-                    <div class="emoji-icon">💳</div>
-                    <h4>EV Pay Ecosystem</h4>
-                    <p>マイレージを<strong>自社PAY</strong>へ転換誘導。充電決済だけでなく<strong>周辺商圏(食堂/カフェ)決済</strong>まで拡張 (Mercari-Merpayモデル)</p>
-                </div>
-                <div class="sol-card">
-                    <div class="emoji-icon">🏛️</div>
-                    <h4>B2G Subsidy</h4>
-                    <p>交通量分散及び<strong>社会的混雑費用削減</strong>効果を立証し政府/自治体から<strong>補助金及び運営予算</strong>受取</p>
-                </div>
+                <div class="sol-card"><div class="emoji-icon">🛣️</div><h4>En-route Ads</h4><p>単純露出ではなく、経路上(On-route)提携店舗への<strong>迂回訪問</strong>誘導及び広告費受取</p></div>
+                <div class="sol-card"><div class="emoji-icon">💳</div><h4>EV Pay Ecosystem</h4><p>マイレージを<strong>自社PAY</strong>へ転換誘導。充電決済だけでなく<strong>周辺商圏(食堂/カフェ)決済</strong>まで拡張 </p></div>
+                <div class="sol-card"><div class="emoji-icon">🏛️</div><h4>B2G Subsidy</h4><p>交通量分散及び<strong>社会的混雑費用削減</strong>効果を立証し政府/自治体から<strong>補助金及び運営予算</strong>受取</p></div>
             </div>
         </div>
-        <!-- 5. Scalability Roadmap -->
+        <!-- ... (Scalability, Outcome, Retrospective - Same as before) ... -->
         <div class="p-section" style="border: 2px solid #333; margin-top:30px;">
             <div class="p-sec-title" style="color: #333;">🚀 05. Scalability Strategy</div>
             <div class="roadmap-stack">
-                <div class="roadmap-card">
-                    <div class="rm-header">
-                        <span class="rm-step">PHASE 1</span>
-                        <span class="rm-icon">🌱</span>
-                        <h3 class="rm-title">Seed</h3>
-                        <p class="rm-desc">基盤確保</p>
-                    </div>
-                    <div class="rm-details">
-                        <div class="rm-item"><span class="rm-label">Action</span><span class="rm-text">政府の『交通渋滞緩和課題』及びスマートシティプロジェクト受注 (初期資金及びデータ確保)</span></div>
-                        <div class="rm-item"><span class="rm-label">Strategy</span><span class="rm-text">マーケティング費ゼロ化: 補償システムを武器に初期EVユーザー確保 (CAC国費解決)</span></div>
-                         <div class="rm-item"><span class="rm-label">Sales</span><span class="rm-text"><strong>拠点営業戦略:</strong> 充電所運営社(CPO)と提携し電気自動車充電器をオフライントラフィックの<strong>『アンカー』</strong>として確保</span></div>
-                    </div>
-                </div>
-                <div class="roadmap-card highlight" style="border-color:#ea352d;">
-                    <div class="rm-header">
-                        <span class="rm-step" style="color:#ea352d;">PHASE 2</span>
-                        <span class="rm-icon">⚡</span>
-                        <h3 class="rm-title">Scale-up</h3>
-                        <p class="rm-desc">フィンテック拡張</p>
-                    </div>
-                    <div class="rm-details">
-                        <div class="rm-item"><span class="rm-label" style="color:#ea352d;">Action</span><span class="rm-text">確保された充電所拠点を中心に自社<strong>PAYシステム</strong>導入及び周辺加盟店拡大</span></div>
-                         <div class="rm-item"><span class="rm-label" style="color:#ea352d;">Target</span><span class="rm-text"><strong>『ゴールデンタイム』攻略:</strong> 充電待機時間(30~40分)の間に周辺商圏(カフェ/食堂/ショッピング)消費誘導</span></div>
-                        <div class="rm-item"><span class="rm-label" style="color:#ea352d;">Flywheel</span><span class="rm-text"><strong>『運転 → 積立 → 地域消費』</strong>の好循環構造を完成させ決済市場浸透</span></div>
-                    </div>
-                </div>
-                <div class="roadmap-card">
-                    <div class="rm-header">
-                        <span class="rm-step">PHASE 3</span>
-                        <span class="rm-icon">🏢</span>
-                        <h3 class="rm-title">Smart City</h3>
-                        <p class="rm-desc">データソリューション</p>
-                    </div>
-                    <div class="rm-details">
-                        <div class="rm-item"><span class="rm-label">Data</span><span class="rm-text">蓄積された移動/消費ビッグデータで交通量と商圏価値を分析し最適立地選定</span></div>
-                        <div class="rm-item"><span class="rm-label">Action</span><span class="rm-text"><strong>『総合ショッピングプラザ(充電+コマース)』</strong>直接建設及びランドマーク化</span></div>
-                        <div class="rm-item"><span class="rm-label">Ultimate</span><span class="rm-text">単純決済手数料を超え、移動/消費データに基づき都市設計を最適化する<strong>『MaaSデータソリューション』</strong>へ収益モデル多角化。</span></div>
-                    </div>
-                </div>
+                <div class="roadmap-card"><div class="rm-header"><span class="rm-step">PHASE 1</span><span class="rm-icon">🌱</span><h3 class="rm-title">Seed</h3><p class="rm-desc">基盤確保</p></div><div class="rm-details"><div class="rm-item"><span class="rm-label">Action</span><span class="rm-text">政府の『交通渋滞緩和課題』及びスマートシティプロジェクト受注 (初期資金及びデータ確保)</span></div><div class="rm-item"><span class="rm-label">Strategy</span><span class="rm-text">マーケティング費ゼロ化: 補償システムを武器に初期EVユーザー確保 (CAC国費解決)</span></div><div class="rm-item"><span class="rm-label">Sales</span><span class="rm-text"><strong>拠点営業戦略:</strong> 充電所運営社(CPO)と提携し電気自動車充電器をオフライントラフィックの<strong>『アンカー』</strong>として確保</span></div></div></div>
+                <div class="roadmap-card highlight" style="border-color:#ea352d;"><div class="rm-header"><span class="rm-step" style="color:#ea352d;">PHASE 2</span><span class="rm-icon">⚡</span><h3 class="rm-title">Scale-up</h3><p class="rm-desc">フィンテック拡張</p></div><div class="rm-details"><div class="rm-item"><span class="rm-label" style="color:#ea352d;">Action</span><span class="rm-text">確保された充電所拠点を中心に自社<strong>PAYシステム</strong>導入及び周辺加盟店拡大</span></div><div class="rm-item"><span class="rm-label" style="color:#ea352d;">Target</span><span class="rm-text"><strong>『ゴールデンタイム』攻略:</strong> 充電待機時間(30~40分)の間に周辺商圏(カフェ/食堂/ショッピング)消費誘導</span></div><div class="rm-item"><span class="rm-label" style="color:#ea352d;">Flywheel</span><span class="rm-text"><strong>『運転 → 積立 → 地域消費』</strong>の好循環構造を完成させ決済市場浸透</span></div></div></div>
+                <div class="roadmap-card"><div class="rm-header"><span class="rm-step">PHASE 3</span><span class="rm-icon">🏢</span><h3 class="rm-title">MaaS Data Solution</h3><p class="rm-desc">データソリューション</p></div><div class="rm-details"><div class="rm-item"><span class="rm-label">Data</span><span class="rm-text">蓄積された移動/消費ビッグデータで交通量と商圏価値を分析し最適立地選定</span></div><div class="rm-item"><span class="rm-label">Action</span><span class="rm-text"><strong>『総合ショッピングプラザ(充電+コマース)』</strong>直接建設及びランドマーク化</span></div><div class="rm-item"><span class="rm-label">Ultimate</span><span class="rm-text">単純決済手数料を超え、移動/消費データに基づき都市設計を最適化する<strong>『MaaSデータソリューション』</strong>へ収益モデル多角化。</span></div></div></div>
             </div>
         </div>
         <!-- 06. Outcome (NEW) -->
@@ -1120,7 +1259,7 @@
                     "単純なアイデアではなく、<span style="color:var(--primary);">ターゲットの購買力</span>に基づいた<br>ビジネスモデルの価値を立証し1位を受賞しました。"
                 </p>
                 <div class="award-tag-container" style="margin-top:15px; justify-content:center;">
-                    <span class="award-tag award-gold" style="font-size:1rem; padding:8px 20px;">🏆 校内ベンチャー創業授業 最優秀賞 (1st Place)</span>
+                    <span class="award-tag award-gold" style="font-size:1rem; padding:8px 20px;">🏆 校内ベンチャー創業授業 最優秀賞</span>
                 </div>
             </div>
             <div class="gray-box" style="background: white; border: 1px solid #e2e8f0; padding: 30px;">
@@ -1168,167 +1307,6 @@
         </div>
     </div>
 
-    <!-- Hidden Templates: EN Content (Already Provided Above) -->
-    <div id="project1-content-en" style="display:none;">
-        <div class="p-header">
-            <span class="p-badge">✈️ PROJECT 01</span>
-            <h1 class="p-title">Cross-border Commerce & Fintech Ecosystem</h1>
-            <div class="p-meta">🗓️ Dec 2024 – Jan 2025 &nbsp;·&nbsp; 🧑‍✈️ Project Lead &nbsp;·&nbsp; 👥 Team: 4 Members</div>
-            <div class="award-tag-container" style="margin-top:15px;">
-                <span class="award-tag award-gold">🏆 3rd Place in Campus Startup Camp</span>
-                <span class="award-tag award-gray">feat. Korea Startup Center</span>
-            </div>
-            <p class="p-subtitle">Opening market gaps with pre-owned goods, completing the ecosystem with D2C hubs</p>
-        </div>
-        <div class="p-grid-2">
-            <div class="p-section">
-                <div class="p-sec-title">🔎 01. Problem Discovery</div>
-                <div class="prob-box">
-                    <h3 style="font-size:1.3rem; color:#111; margin-bottom:25px; text-align:left; font-weight:800; line-height:1.4;">"Online is 'Hype',<br>Offline is 'Disconnect'"</h3>
-                    <h3>🎤 Context</h3>
-                    <p>Captured structural pain points through In-depth Interviews with K-Beauty leader 'Amorepacific'.</p>
-                    <h3>🏗️ Structural Issue</h3>
-                    <div class="gray-box">
-                        <ul>
-                            <li><strong>Vendor Dependency (Middleman):</strong><span>Unlike online, offline entry requires local vendors, causing double margins → Loss of price competitiveness.</span></li>
-                            <li><strong>Loss of Branding:</strong><span>Cannot control VMD or customer experience via simple supply methods.</span></li>
-                        </ul>
-                    </div>
-                    <div class="insight-box">
-                        <h3>💡 Insight</h3>
-                        <p class="insight-text">"Need a <span style="color:var(--primary);">D2C offline hub</span> targeting global fandoms of Hallyu Brands, where the brand controls 100% of price and experience."</p>
-                    </div>
-                </div>
-            </div>
-            <div class="p-section">
-                <div class="p-sec-title">📊 02. Market Validation</div>
-                <p style="margin-bottom:25px; font-size:1.05rem; color:#333; font-weight:bold; text-align:center; border-bottom:1px solid #eee; padding-bottom:15px;">"Data Verification: Finding 'Profitable Markets' via<br><span style="color:var(--primary);">Bunjang vs Mercari Data</span>"</p>
-                <div style="margin-bottom:25px; font-size:0.95rem; color:#555;">
-                    <div style="margin-bottom:15px;"><strong style="color:var(--primary);">🎯 Target Selection Criteria</strong><ul style="padding-left:25px; margin-top:5px; line-height:1.6;"><li><strong>High Liquidity:</strong> K-Fashion top 3 & <strong>Rare K-POP Goods</strong> actively resold by JP Gen-Z.</li><li><strong>Logistics Efficiency:</strong> Filtered items with high <strong>Unit Economics</strong> for cross-border shipping (small volume).</li></ul></div>
-                    <div><strong style="color:var(--primary);">🧾 Methodology & Verification</strong><p style="margin-top:5px; line-height:1.6; padding-left:25px;">Crawled transaction data from KR <strong>'Bunjang'</strong> and JP <strong>'Mercari'</strong> to prove structural <strong>Arbitrage Price Gap</strong> for identical Used-Good conditions.</p></div>
-                </div>
-                <div class="v-chart-container">
-                    <div class="v-chart-group"><div class="v-chart-title">Brand A<br>(Wallet)</div><div class="v-chart-gap">Gap 57%</div><div class="v-bars"><div class="v-bar-col"><div class="v-bar v-bar-kr" style="height: 43%;"></div><div class="v-bar-label">KR</div></div><div class="v-bar-col"><div class="v-bar v-bar-jp" style="height: 100%;"></div><div class="v-bar-label">JP</div></div></div></div>
-                    <div class="v-chart-group"><div class="v-chart-title">Brand B<br>(Apparel)</div><div class="v-chart-gap">Gap 54%</div><div class="v-bars"><div class="v-bar-col"><div class="v-bar v-bar-kr" style="height: 46%;"></div><div class="v-bar-label">KR</div></div><div class="v-bar-col"><div class="v-bar v-bar-jp" style="height: 100%;"></div><div class="v-bar-label">JP</div></div></div></div>
-                    <div class="v-chart-group"><div class="v-chart-title">K-Pop<br>Goods</div><div class="v-chart-gap">Gap 52%</div><div class="v-bars"><div class="v-bar-col"><div class="v-bar v-bar-kr" style="height: 48%;"></div><div class="v-bar-label">KR</div></div><div class="v-bar-col"><div class="v-bar v-bar-jp" style="height: 100%;"></div><div class="v-bar-label">JP</div></div></div></div>
-                </div>
-            </div>
-        </div>
-        <div class="p-section">
-            <div class="p-sec-title">🏗️ 03. Solution: Hybrid Model</div>
-            <p style="margin-bottom:25px; font-size:1.05rem; font-weight:bold; color:#333; text-align:center; border-bottom:1px solid #eee; padding-bottom:15px;">"Hybrid Model: <span style="color:var(--primary);">Hook with C2C</span>, <span style="color:#333;">Monetize with B2B</span>"</p>
-            <div class="sol-grid">
-                <div class="sol-card"><div class="emoji-icon">🎣</div><h4>Traffic Hook (C2C)</h4><p>Deploy trendy pre-owned K-fashion as bait products to <strong>bypass entry barriers</strong>.</p></div>
-                <div class="sol-card"><div class="emoji-icon">🏟️</div><h4>Offline Experience</h4><p>Provide D2C brand experience via Harajuku 'Idol Waiting Room' concept store.</p></div>
-                <div class="sol-card"><div class="emoji-icon">⚙️</div><h4>Tech & Logistics</h4><p>Establish nationwide logistics network and reduce labor costs via system.</p></div>
-            </div>
-        </div>
-        <div class="p-section" style="border: 2px solid var(--primary);">
-            <div class="p-sec-title" style="color: var(--primary);">📈 04. Growth Strategy & Roadmap</div>
-            <p style="text-align:center; font-weight:bold; font-size:1.1rem; color:#444;">"From Store to Platform: Pivot from Retail to 'Business Solution'"</p>
-            <div class="roadmap-stack">
-                <div class="roadmap-card"><div class="rm-header"><span class="rm-step">PHASE 1</span><span class="rm-icon">🚩</span><h3 class="rm-title">Expansion</h3><p class="rm-desc">Hub Expansion</p></div><div class="rm-details"><div style="margin-bottom:15px; color:#555; font-size:0.95rem; line-height:1.6; border-bottom:1px solid #eee; padding-bottom:15px;">Secure traffic and logistics network via hub expansion. Aiming for <strong>Omni-channel Network Construction</strong>, not just store opening.</div><div class="rm-item"><span class="rm-label">Action</span><span class="rm-text">Standardize successful Harajuku flagship operations (VMD, buying process) and expand to Osaka, Kyushu.</span></div><div class="rm-item"><span class="rm-label">Logic</span><span class="rm-text">Each hub acts as a <strong>Local C2C Logistics Hub</strong>. Increase efficiency by linking with automated warehouses.</span></div><div class="rm-item"><span class="rm-label">Goal</span><span class="rm-text">Secure JP Gen-Z traffic and maximize 'Seed Inventory' (used clothes) circulation.</span></div></div></div>
-                <div class="roadmap-card"><div class="rm-header"><span class="rm-step">PHASE 2</span><span class="rm-icon">💸</span><h3 class="rm-title">Retention</h3><p class="rm-desc">Payment/Lock-in</p></div><div class="rm-details"><div style="margin-bottom:15px; color:#555; font-size:0.95rem; line-height:1.6; border-bottom:1px solid #eee; padding-bottom:15px;">Create a <strong>Flywheel Structure</strong> where users continuously trade within the ecosystem.</div><div class="rm-item"><span class="rm-label">Key Feature</span><span class="rm-text"><strong>Circulation Point System:</strong> Induce sellers to receive settlement in 'Points' instead of cash.</span></div><div class="rm-item"><span class="rm-label">Incentive</span><span class="rm-text">Offer <strong>Fee Waiver & Discounts</strong> when purchasing new items (Cosmetics/Clothes) with points.</span></div><div class="rm-item"><span class="rm-label">Effect</span><span class="rm-text"><strong>Prevent Cash-out:</strong> Maximize LTV via 'Sell Used → Point → Buy New → Resell' cycle.</span></div></div></div>
-                <div class="roadmap-card highlight"><div class="rm-header"><span class="rm-step" style="color:var(--primary);">PHASE 3</span><span class="rm-icon">🤝</span><h3 class="rm-title">Monetization</h3><p class="rm-desc">B2B Pivot</p></div><div class="rm-details"><div style="margin-bottom:15px; color:#555; font-size:0.95rem; line-height:1.6; border-bottom:1px solid #ffd1d1; padding-bottom:15px;">Upgrade business model to <strong>B2B Solution</strong> by selling established traffic and infrastructure to KR companies.</div><div class="rm-item"><span class="rm-label" style="color:var(--primary);">Shift</span><span class="rm-text">Shift profit center from B2C (Retail) to <strong>B2B (Platform Business)</strong>.</span></div><div class="rm-item"><span class="rm-label" style="color:var(--primary);">Product A</span><span class="rm-text"><strong>Data Consulting:</strong> Provide 'Targeting & VMD Consulting' based on real-time sales/behavior data.</span></div><div class="rm-item"><span class="rm-label" style="color:var(--primary);">Product B</span><span class="rm-text"><strong>LaaS (Logistics-as-a-Service):</strong> Lease logistics network and hubs as <strong>'Consignment Sales Channels'</strong>.</span></div></div></div>
-            </div>
-        </div>
-        <div class="p-section" style="background: #f8fafc; border-color: #e2e8f0;">
-            <div class="p-sec-title">🏆 05. Outcome & Impact</div>
-            <div style="text-align:center; margin-bottom:30px;"><p style="font-size:1.1rem; font-weight:700; color:#333; line-height:1.6; word-break: keep-all;">"Key to persuasion was not a grand vision,<br>but a <span style="color:var(--primary);">realistic strategy verified by data</span>."</p><div class="award-tag-container" style="margin-top:15px; justify-content:center;"><span class="award-tag award-gold" style="font-size:1rem; padding:8px 20px;">🏆 3rd Place in Campus Startup Camp</span></div></div>
-            <div class="gray-box" style="background: white; border: 1px solid #e2e8f0; padding: 30px;"><h4 style="margin-bottom:25px; font-size:1.1rem; color:#333; border-bottom:1px solid #eee; padding-bottom:15px;">📝 Key Evaluation Factor</h4><div style="display:flex; flex-direction:column; gap:20px;"><div style="background:#f9f9f9; padding:20px; border-radius:10px; border:1px solid #eee;"><strong style="display:block; color:var(--dark); margin-bottom:8px; font-size:1.05rem;">🎯 Realistic Roadmap</strong><p style="color:#555; line-height:1.6; margin:0; font-size:0.95rem; word-break: keep-all;">"Highly praised for the realistic roadmap of <strong>Gradual Expansion starting from C2C to B2B</strong>, instead of a vain goal of building a platform at once."</p></div><div style="background:#f9f9f9; padding:20px; border-radius:10px; border:1px solid #eee;"><strong style="display:block; color:var(--dark); margin-bottom:8px; font-size:1.05rem;">🔑 Sharp Problem Definition</strong><p style="color:#555; line-height:1.6; margin:0; font-size:0.95rem; word-break: keep-all;">"Accurately struck the 'Vendor Dependency' and 'Margin Structure' issues of Hallyu brands and proposed practical solutions."</p></div></div></div>
-        </div>
-        <div class="p-section">
-            <div class="p-sec-title">🔄 06. Retrospective (KPT)</div>
-            <p style="text-align:center; font-weight:bold; color:#555; margin-bottom:25px;">"Strategy was successful, but reflect on overlooking Hidden Costs."</p>
-            <div class="kpt-item kpt-keep"><span class="kpt-label"><i data-lucide="check-circle-2" size="20"></i> Keep</span><p class="kpt-desc"><strong>Data-Driven Approach:</strong> Verified market entry feasibility based on crawled <strong>Data</strong>, not intuition.<br><strong>Strategic Detour:</strong> Anticipated structural issues (Vendor backlash) and established a realistic entry path via C2C resell market.</p></div>
-            <div class="kpt-item kpt-problem"><span class="kpt-label"><i data-lucide="alert-triangle" size="20"></i> Problem</span><p class="kpt-desc"><strong>Margin Erosion:</strong> Overlooked <strong>additional costs (Storage, OpEx)</strong> due to customs/inspection delays. Lead time delays worsened <strong>Unit Economics</strong>.<br><strong>Optimistic CAC:</strong> Underestimated initial <strong>CAC</strong> by relying solely on organic viral from K-Pop fandoms.</p></div>
-            <div class="kpt-item kpt-try"><span class="kpt-label"><i data-lucide="rocket" size="20"></i> Try</span><p class="kpt-desc"><strong>Cost Buffer:</strong> Will set <strong>10~15% Buffer</strong> for logistics costs to calculate <strong>Conservative Margin</strong>.<br><strong>Smoke Test:</strong> Will precede with a 'Smoke Test' to measure actual <strong>CPA</strong> via small-scale performance marketing before financial planning.</p></div>
-        </div>
-    </div>
-
-    <!-- Hidden Templates: Project 2 EN -->
-    <div id="project2-content-en" style="display:none;">
-        <div class="p-header">
-            <span class="p-badge" style="background:#333; color:white;">🚚 PROJECT 02</span>
-            <h1 class="p-title">Hyper-local P2P Delivery</h1>
-            <div class="p-meta">🗓️ Aug 2024 – Nov 2024 &nbsp;·&nbsp; 🛠️ PM & Python Dev &nbsp;·&nbsp; 👥 Team: 2 Members</div>
-            <p class="p-subtitle" style="margin-top:15px;">Campus Gig Economy converting movement data into logistics networks</p>
-        </div>
-        <div class="p-grid-2">
-            <div class="p-section">
-                <div class="p-sec-title">⚠️ 01. Problem Discovery</div>
-                <div class="prob-box">
-                    <h3 style="font-size:1.3rem; color:#111; margin-bottom:25px; text-align:left; font-weight:800; line-height:1.4;">"Potential Demand 'Explodes',<br>Last-mile trapped in 'Inefficiency'"</h3>
-                    <h3>📉 Inefficiency</h3>
-                    <p>Traditional riders move to 'catch orders'. But campuses have complex terrain (hills, security) and restricted entry, making last-mile costs abnormally high.</p>
-                    <h3>😩 Unmet Demand</h3>
-                    <p>Students want coffee but give up due to short break times (10~15 min) preventing round trips to cafes.</p>
-                    <div class="insight-box">
-                        <h3>💡 Insight</h3>
-                        <p class="insight-text">"No need for professional riders. <span style="color:var(--primary);">Students moving to that building anyway</span> can deliver."</p>
-                    </div>
-                </div>
-            </div>
-            <div class="p-section">
-                <div class="p-sec-title">🗺️ 02. Solution Strategy</div>
-                <p style="margin-bottom:20px; font-size:1.05rem; font-weight:bold; color:var(--dark); text-align:center; line-height:1.4;">"<span style="color:var(--primary);">Route-based</span> Dispatch, not Location-based"</p>
-                <div class="gray-box">
-                    <h4 style="margin-bottom:15px; font-size:1.1rem; color:#333; border-bottom:1px solid #ddd; padding-bottom:10px; display:flex; align-items:center; gap:6px;">🔄 Paradigm Shift</h4>
-                    <ul>
-                        <li><strong>(As-Is) Traditional:</strong> <span>Rider moves to order origin → Pickup → Delivery <span style="color:#e53e3e; font-weight:bold;">(Move to Deliver)</span></span></li>
-                        <li><strong>(To-Be) Proposed:</strong> <span>Orderer picks last-mile (dest), matches student moving there <span style="color:var(--primary); font-weight:bold;">(Deliver while Moving)</span></span></li>
-                    </ul>
-                </div>
-                <div class="gray-box" style="background:white; border-color:#eee;">
-                    <h3 style="font-size:1.1rem; color:var(--primary); margin-bottom:8px; display:flex; align-items:center; gap:6px;">⚙️ Mechanism</h3>
-                    <p style="font-size:0.95rem; color:#444; line-height:1.6; margin:0;">Student couriers pick up coffee <strong style="background:rgba(234, 53, 45, 0.1); padding:0 4px; color:#333;">"on their way to class"</strong>.<br><br>This drastically reduces <strong>Delivery Cost</strong> and maximizes mover efficiency.</p>
-                </div>
-            </div>
-        </div>
-        <div class="p-section" style="background:#f8fafc; border-color:#e2e8f0;">
-            <div class="p-sec-title">📊 03. Market Validation</div>
-            <p style="margin-bottom:20px; text-align:center; color:#555; font-weight:600;">"Beyond technical possibility, verifying <span style="color:var(--primary);">Willingness to Participate</span>"</p>
-            <div style="display:grid; grid-template-columns: 1fr 1fr; gap:20px;">
-                <div style="background:white; padding:20px; border-radius:12px; border:1px solid #eee; box-shadow:0 4px 10px rgba(0,0,0,0.03);"><div style="font-size:2rem; margin-bottom:10px;">🙋🏻‍♂️</div><h4 style="margin-bottom:8px; font-weight:800; color:#333;">User Survey</h4><p style="font-size:0.9rem; color:#666; line-height:1.6;">Surveyed 100 students. <span style="color:var(--primary); font-weight:800;">68%</span> positive response: <strong>"Will deliver if route matches 90%"</strong>.<br>Lowered psychological barrier by framing as <strong>'Monetizing Idle Time'</strong>.</p></div>
-                <div style="background:white; padding:20px; border-radius:12px; border:1px solid #eee; box-shadow:0 4px 10px rgba(0,0,0,0.03);"><div style="font-size:2rem; margin-bottom:10px;">💰</div><h4 style="margin-bottom:8px; font-weight:800; color:#333;">Unit Economics</h4><p style="font-size:0.9rem; color:#666; line-height:1.6;">Matched with fee under <strong>1,000 KRW (70% cheaper</strong> than standard 3,000 KRW).<br>Validated potential for <strong>Micro-delivery market</strong>.</p></div>
-            </div>
-        </div>
-        <div class="p-section">
-            <div class="p-sec-title">💓 04. Algorithm Comparison</div>
-            <div class="big-algo-container">
-                <div class="big-algo-box"><div class="big-algo-title">🕰️ Legacy</div><div class="big-visual"><svg viewBox="0 0 300 250" width="100%" height="100%"><path d="M 40,200 L 100,154 L 30,50 L 220,80 L 260,170" class="svg-path" /><circle cx="40" cy="200" r="12" class="svg-node node-start" /><text x="40" y="230" class="svg-label">Rider</text><circle cx="100" cy="154" r="12" class="svg-node node-cafe" /><circle cx="30" cy="50" r="10" class="svg-node node-drop" /><text x="30" y="80" class="svg-label">Drop1</text><circle cx="220" cy="80" r="10" class="svg-node node-drop" /><text x="220" y="110" class="svg-label">Drop2</text><circle cx="260" cy="170" r="12" class="svg-node node-dest" /><text x="260" y="200" class="svg-label">Drop3</text><circle r="6" class="dot-legacy" class="anim-legacy"><animateMotion dur="6s" repeatCount="indefinite" rotate="auto"><mpath href="#legacy-path"/></animateMotion></circle></svg></div><div class="big-caption">Rider moves separately for pickup<br><span style="color:#ea352d; font-weight:bold; font-size:0.85rem;">(High Cost / Inefficient)</span></div></div>
-                <div class="big-algo-box"><div class="big-algo-title">⚡ Campus (Proposed)</div><div class="big-visual"><svg viewBox="0 0 300 250" width="100%" height="100%"><path id="campus-path-en" d="M 40,200 L 100,154 L 170,120 L 220,60 L 260,30" class="svg-path-main-dashed" />
-                    <circle cx="40" cy="200" r="12" class="svg-node node-start" /><text x="40" y="230" class="svg-label">Student</text><circle cx="100" cy="154" r="12" class="svg-node node-cafe" /><text x="100" y="130" class="svg-label">Cafe</text><circle cx="170" cy="120" r="10" class="svg-node node-drop" /><text x="170" y="150" class="svg-label">Drop1</text><circle cx="220" cy="60" r="10" class="svg-node node-drop" /><text x="220" y="90" class="svg-label">Drop2</text><circle cx="260" cy="30" r="12" class="svg-node node-dest" /><text x="260" y="15" class="svg-label">Class</text>
-                    <circle r="8" class="dot-campus"><animateMotion dur="6s" repeatCount="indefinite" rotate="auto"><mpath href="#campus-path-en"/></animateMotion></circle></svg></div><div class="big-caption">Pickup on the way to destination<br><span style="color:#ea352d; font-weight:bold; font-size:0.85rem;">(Low Cost / Optimized)</span></div></div>
-            </div>
-        </div>
-        <div class="p-section">
-            <div class="p-sec-title">💻 05. Tech & Verification</div>
-            <p style="margin-bottom:20px; font-size:1.1rem; font-weight:bold; color:var(--dark); text-align:center;">"VRP Simulation using <span style="color:var(--primary);">Google OR-Tools</span>"</p>
-            <div style="display:flex; flex-direction:column; gap:15px;">
-                <div style="background:#f8f9fa; border:1px solid #eee; padding:20px; border-radius:8px;"><h4 style="margin-bottom:8px; color:#333; font-size:1.05rem; display:flex; align-items:center; gap:6px;">🧬 Algorithm</h4><p style="font-size:0.95rem; color:#555; line-height:1.6;">Derived optimal routes using <strong>Google OR-Tools</strong> library to match multiple students (Vehicles) with orders (Nodes).</p></div>
-                <div class="p-grid-2" style="margin-top:0;">
-                    <div style="background:#fff; border:1px solid #eee; padding:20px; border-radius:8px;"><h4 style="margin-bottom:10px; color:#333; font-size:1.05rem; display:flex; align-items:center; gap:6px;">⚠️ Constraints</h4><p style="font-size:0.95rem; color:#555; line-height:1.6; margin-bottom:10px;">Set realistic variables as constraints, not just distance.</p><ul style="padding-left:20px; font-size:0.9rem; color:#444; line-height:1.8;"><li>Time Window (Class time)</li><li>Vertical Time (Building entry)</li><li><strong>Walking Speed</strong></li></ul></div>
-                    <div style="background:#fff5f5; border:1px solid #ffe0e0; padding:20px; border-radius:8px;"><h4 style="margin-bottom:10px; color:var(--primary); font-size:1.05rem; display:flex; align-items:center; gap:6px;">✅ Simulation Result</h4><p style="font-size:0.95rem; color:#333; line-height:1.6;">Modeled campus map data and simulated with Python.</p><div style="margin-top:15px; font-weight:bold; font-size:1.2rem; color:var(--primary); text-align:center;">Total Distance Reduced by<br><span style="font-size:2rem;">40%</span></div></div>
-                </div>
-            </div>
-        </div>
-        <div class="p-section" style="border: 2px solid var(--primary);">
-            <div class="p-sec-title">🏆 06. Outcome & Impact</div>
-            <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px;">
-                <div style="background:#fff; padding:25px; border-radius:12px; border:1px solid #ffe0e0; text-align:center;"><div style="font-size:2.5rem; margin-bottom:10px;">📉</div><h4 style="font-weight:800; color:#333; margin-bottom:10px;">Cost Efficiency</h4><p style="color:#555; font-size:0.95rem; line-height:1.6;">Converted 40% distance reduction to cost.<br>Delivery cost <strong>3,000 KRW → 900 KRW</strong>.<br><span style="color:var(--primary); font-weight:800;">70% Saving Effect</span> proven.</p></div>
-                <div style="background:#fff; padding:25px; border-radius:12px; border:1px solid #eee; text-align:center;"><div style="font-size:2.5rem; margin-bottom:10px;">📦</div><h4 style="font-weight:800; color:#333; margin-bottom:10px;">Deliverable</h4><p style="color:#555; font-size:0.95rem; line-height:1.6;">Developed <strong>Google OR-Tools Optimal Route Matching</strong> algorithm prototype based on actual campus map.</p></div>
-            </div>
-        </div>
-        <div class="p-section">
-            <div class="p-sec-title">💡 07. Retrospective (KPT)</div>
-            <p style="text-align:center; font-weight:bold; color:#555; margin-bottom:25px;">"Discovered realistic operation issues (Supply-Demand Sync) and pondered improvements."</p>
-            <div class="kpt-item kpt-keep"><span class="kpt-label"><i data-lucide="check-circle-2" size="20"></i> Keep</span><p class="kpt-desc">Designed a model utilizing idle resources without extra labor input by approaching with <strong>Route-based</strong> instead of Location-based.</p></div>
-            <div class="kpt-item kpt-problem"><span class="kpt-label"><i data-lucide="alert-triangle" size="20"></i> Problem</span><p class="kpt-desc"><strong>Peak Time Issue:</strong> Discovered <strong>'Supply-Demand Sync'</strong> phenomenon where orders and couriers surge during breaks and vanish during classes. Supply Crunch occurred as couriers also had to attend class.</p></div>
-            <div class="kpt-item kpt-try"><span class="kpt-label"><i data-lucide="rocket" size="20"></i> Try</span><p class="kpt-desc"><strong>Dynamic Pricing:</strong> Induce supply by paying 1.5x incentives during specific times (during class, free periods).<br><strong>Pickup Zone:</strong> Optimize operations by installing 'Pickup Zones' near classrooms to reduce wait time to zero.</p></div>
-        </div>
-    </div>
-
     <!-- Hidden Templates: Project 3 EN -->
     <div id="project3-content-en" style="display:none;">
         <div class="p-header">
@@ -1367,7 +1345,79 @@
         </div>
         <div class="p-section">
             <div class="p-sec-title">🔄 03. UX Transformation</div>
-            <div class="big-algo-container"><div class="big-algo-box"><div class="big-algo-title" style="color:#888;">Before: HTS Style</div><div class="big-visual" style="display:flex; justify-content:center; align-items:center; background:#f0f0f0;"><div style="text-align:center; color:#999; font-weight:bold;">Legacy HTS UI Layout</div></div><div class="big-caption"><strong>Color Standard Conflict</strong><br><span style="font-size:0.85rem; color:#e53e3e;">Cognitive dissonance (Red=Up/Down?)</span></div></div><div class="big-algo-box interactive-demo" style="border:2px solid var(--primary);"><div class="big-algo-title" style="color:var(--primary);">After: Bulletin Style</div><div class="big-visual" style="display:flex; justify-content:center; align-items:center;"><div style="text-align:center; color:var(--primary); font-weight:bold;">Optimized List UI</div></div><div class="big-caption"><strong>Clear Hierarchy & List Type</strong><br><span style="font-size:0.85rem; color:var(--primary);">Intuitive & Zero Errors</span></div></div></div>
+            <div class="big-algo-container">
+                <div class="big-algo-box">
+                    <div class="big-algo-title" style="color:#888;">Before: HTS Style</div>
+                    <div class="big-visual" style="display:flex; justify-content:center; align-items:center; background:#f0f0f0;">
+                        <div style="width:85%; height:75%; display:grid; grid-template-columns: 1.5fr 1fr; grid-template-rows: 1fr auto; gap:6px;">
+                            <div style="background:#ddd; grid-row: 1 / 2; border-radius:2px;"></div>
+                            <div style="background:#e0e0e0; border-radius:2px; display:flex; flex-direction:column; gap:2px; padding:2px;">
+                                <div style="background:#ccc; height:6px; width:100%;"></div>
+                                <div style="background:#ccc; height:6px; width:100%;"></div>
+                                <div style="background:#ccc; height:6px; width:100%;"></div>
+                            </div>
+                            <div style="grid-column: 1 / 3; display:flex; gap:8px; justify-content:center; align-items:center; background:#fff; padding:8px; border:1px solid #ccc; border-radius:4px;">
+                                <div style="flex:1; height:28px; border-radius:4px; overflow:hidden; display:flex; position:relative; box-shadow:0 2px 3px rgba(0,0,0,0.1);">
+                                    <div style="flex:1; background:#ea352d;"></div>
+                                    <div style="flex:1; background:#28a745;"></div>
+                                    <span style="position:absolute; top:50%; left:50%; transform:translate(-50%, -50%); color:white; font-size:10px; font-weight:800; text-shadow:0 1px 2px rgba(0,0,0,0.5);">BUY</span>
+                                </div>
+                                <div style="flex:1; height:28px; border-radius:4px; overflow:hidden; display:flex; position:relative; box-shadow:0 2px 3px rgba(0,0,0,0.1);">
+                                    <div style="flex:1; background:#2b6cb0;"></div>
+                                    <div style="flex:1; background:#ea352d;"></div>
+                                    <span style="position:absolute; top:50%; left:50%; transform:translate(-50%, -50%); color:white; font-size:10px; font-weight:800; text-shadow:0 1px 2px rgba(0,0,0,0.5);">SELL</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="big-caption"><strong>Color Standard Conflict</strong><br><span style="font-size:0.85rem; color:#e53e3e;">Cognitive dissonance (Red=Up/Down?)</span></div>
+                </div>
+                <div class="big-algo-box interactive-demo" onclick="triggerListAnim(this)" style="border:2px solid var(--primary);">
+                    <div class="big-algo-title" style="color:var(--primary);">After: Bulletin Style</div>
+                    <div class="big-visual" style="display:flex; justify-content:center; align-items:center; position:relative; overflow:hidden;">
+                        <div class="abstract-list" style="display:flex; flex-direction:column; gap:10px; width:80%; height:80%;">
+                            <div style="background:var(--primary-light); height:45px; border-radius:6px; width:100%; display:flex; align-items:center; padding:0 15px; justify-content:space-between;">
+                                <div style="width:40%; height:8px; background:rgba(234,53,45,0.1); border-radius:2px;"></div>
+                                <div style="width:20%; height:20px; background:var(--primary); border-radius:4px; opacity:0.8;"></div>
+                            </div>
+                            <div style="background:var(--primary-light); height:45px; border-radius:6px; width:100%; display:flex; align-items:center; padding:0 15px; justify-content:space-between;">
+                                <div style="width:50%; height:8px; background:rgba(234,53,45,0.1); border-radius:2px;"></div>
+                                <div style="width:20%; height:20px; background:var(--primary); border-radius:4px; opacity:0.8;"></div>
+                            </div>
+                            <div style="background:var(--primary-light); height:45px; border-radius:6px; width:100%; display:flex; align-items:center; padding:0 15px; justify-content:space-between;">
+                                <div style="width:30%; height:8px; background:rgba(234,53,45,0.1); border-radius:2px;"></div>
+                                <div style="width:20%; height:20px; background:var(--primary); border-radius:4px; opacity:0.8;"></div>
+                            </div>
+                        </div>
+                        <div class="list-anim-overlay" style="display:none; position:absolute; top:0; left:0; width:100%; height:100%; background:white; flex-direction:column; padding:20px; box-sizing:border-box; z-index:10;">
+                            <div class="anim-elem" style="width:100%; display:flex; justify-content:space-between; margin-bottom:15px; border-bottom:1px solid #eee; padding-bottom:5px; animation-delay: 0.1s;">
+                                <div style="width:20%; height:8px; background:#2b6cb0; border-radius:2px;"></div>
+                                <div style="width:20%; height:8px; background:#ddd; border-radius:2px;"></div>
+                                <div style="width:20%; height:8px; background:#ddd; border-radius:2px;"></div>
+                            </div>
+                            <div class="anim-elem" style="width:100%; background:#f9f9f9; padding:10px; border-radius:6px; margin-bottom:10px; animation-delay: 0.2s;">
+                                <div style="width:30%; height:6px; background:#999; margin-bottom:5px; border-radius:2px;"></div>
+                                <div style="width:80%; height:10px; background:#fff; border:1px solid #ddd; border-radius:2px;"></div>
+                            </div>
+                            <div class="anim-elem" style="width:100%; display:flex; gap:5px; margin-bottom:15px; animation-delay: 0.3s;">
+                                <div style="flex:1; height:20px; background:#fff; border:1px solid #ddd; border-radius:4px;"></div>
+                                <div style="flex:1; height:20px; background:#fff; border:1px solid #ddd; border-radius:4px;"></div>
+                                <div style="flex:1; height:20px; background:#fff; border:1px solid #ddd; border-radius:4px;"></div>
+                            </div>
+                            <div class="anim-elem" style="width:100%; border:1px solid var(--primary); border-radius:6px; padding:8px; position:relative; animation-delay: 0.4s;">
+                                <div style="position:absolute; top:-6px; left:10px; background:white; padding:0 5px; font-size:8px; color:var(--primary); font-weight:bold;">Trade Terms</div>
+                                <div style="width:90%; height:6px; background:#eee; margin-bottom:4px;"></div>
+                                <div style="width:70%; height:6px; background:#eee; margin-bottom:4px;"></div>
+                                <div style="width:50%; height:6px; background:#eee;"></div>
+                            </div>
+                        </div>
+                        <div style="position:absolute; bottom:10px; right:10px; background:white; padding:5px 12px; border-radius:20px; border:1px solid var(--primary); color:var(--primary); font-size:0.75rem; font-weight:bold; box-shadow:0 2px 5px rgba(0,0,0,0.1); display:flex; align-items:center; gap:5px; z-index:20;">
+                            <span style="font-size:0.9rem;">👆</span> Click to Demo
+                        </div>
+                    </div>
+                    <div class="big-caption"><strong>Clear Hierarchy & List Type</strong><br><span style="font-size:0.85rem; color:var(--primary);">Intuitive & Zero Errors</span></div>
+                </div>
+            </div>
         </div>
         <div class="p-section" style="border: 2px solid var(--primary);">
             <div class="p-sec-title">🏆 04. Outcome & Impact</div>
@@ -1397,6 +1447,7 @@
             <p class="p-subtitle" style="line-height:1.6; color:#555;">Fintech model based on Traffic Dispersion Rewards</p>
         </div>
         <div class="p-grid-2">
+            <!-- 1. Market Analysis -->
             <div class="p-section">
                 <div class="p-sec-title">📊 01. Market Analysis & Opportunity</div>
                 <div class="prob-box">
@@ -1405,6 +1456,7 @@
                     <h3>📈 EV Infra Growth</h3><p>EV market predicted to grow 1,000% in 5 years, but infrastructure to consume <strong>Charging Wait Time (30~60 min)</strong> is severely lacking.</p>
                 </div>
             </div>
+            <!-- 2. Core Solution -->
             <div class="p-section">
                 <div class="p-sec-title">🧠 02. Core Solution: Traffic Balancing</div>
                 <div class="prob-box">
@@ -1414,44 +1466,97 @@
                 </div>
             </div>
         </div>
+        <!-- 3. Spline -->
         <div class="p-section" style="margin-top:30px;">
             <div class="p-sec-title">🏙️ 03. Visualizing the Logic (Simulation)</div>
             <div class="spline-stack">
-                <div class="spline-box"><div class="spline-label label-red"><span class="label-icon">🛑</span><div><strong>Legacy: Shortest Path</strong><br><span style="font-weight:400; font-size:0.75rem; opacity:0.8;">Shortest but Congested</span></div></div><spline-viewer url="https://prod.spline.design/ThIpVEIWz2sU3wb2/scene.splinecode"></spline-viewer></div>
-                <div class="spline-box"><div class="spline-label label-green"><span class="label-icon">⚡</span><div><strong>Proposal: Detour + Reward</strong><br><span style="font-weight:400; font-size:0.75rem; opacity:0.8;">Detour but Earn Cash</span></div></div><spline-viewer loading-anim-type="spinner-small-dark" url="https://prod.spline.design/cgbGHnndFCHpx6hk/scene.splinecode"></spline-viewer></div>
+                <div class="spline-box"><div class="spline-label label-red"><span class="label-icon">🛑</span><div><strong>Legacy: Shortest Path</strong><br><span style="font-weight:400; font-size:0.75rem; opacity:0.8;">Shortest but Congested</span></div></div>
+                <div class="spline-placeholder" data-url="https://prod.spline.design/ThIpVEIWz2sU3wb2/scene.splinecode">
+                    <div style="font-size:2rem;">🛑</div>
+                    <div class="spline-loader">Loading 3D Scene...</div>
+                </div>
+                </div>
+                <div class="spline-box"><div class="spline-label label-green"><span class="label-icon">⚡</span><div><strong>Proposal: Detour + Reward</strong><br><span style="font-weight:400; font-size:0.75rem; opacity:0.8;">Detour but Earn Cash</span></div></div>
+                <div class="spline-placeholder" data-url="https://prod.spline.design/cgbGHnndFCHpx6hk/scene.splinecode">
+                    <div style="font-size:2rem;">⚡</div>
+                    <div class="spline-loader">Loading 3D Scene...</div>
+                </div>
+                </div>
             </div>
             <div class="big-caption" style="margin-top:30px; padding-top:20px; border-top:1px solid #eee; color:#555; font-size:0.95rem; line-height:1.6;">Existing navigation treated detours as <strong>'Dead Routes'</strong>. We redesign them as <strong>'Chosen Routes'</strong> via <strong>Incentives (Coin)</strong> to disperse traffic.</div>
         </div>
+        <!-- 4. Business Model -->
         <div class="p-section" style="margin-top:30px;">
             <div class="p-sec-title">💼 04. Business Model (3-Way)</div>
             <p style="text-align:center; margin-bottom:20px; font-weight:bold; color:#555;">"Converting Traffic to Fintech (Pay) and Gov Budget"</p>
             <div class="sol-grid">
                 <div class="sol-card"><div class="emoji-icon">🛣️</div><h4>En-route Ads</h4><p>Not just impressions, but inducing <strong>Foot Traffic</strong> to partner stores on-route.</p></div>
-                <div class="sol-card"><div class="emoji-icon">💳</div><h4>EV Pay Ecosystem</h4><p>Induce mileage conversion to <strong>Own PAY</strong>. Expand to <strong>surrounding payments</strong> (Mercari-Merpay model).</p></div>
+                <div class="sol-card"><div class="emoji-icon">💳</div><h4>EV Pay Ecosystem</h4><p>Induce mileage conversion to <strong>Own PAY</strong>. Expand to <strong>surrounding payments</strong>.</p></div>
                 <div class="sol-card"><div class="emoji-icon">🏛️</div><h4>B2G Subsidy</h4><p>Prove traffic dispersion and <strong>Social Congestion Cost Reduction</strong> to receive <strong>Subsidies</strong>.</p></div>
             </div>
         </div>
+        <!-- 5. Scalability Roadmap -->
         <div class="p-section" style="border: 2px solid #333; margin-top:30px;">
             <div class="p-sec-title" style="color: #333;">🚀 05. Scalability Strategy</div>
             <div class="roadmap-stack">
-                <div class="roadmap-card"><div class="rm-header"><span class="rm-step">PHASE 1</span><span class="rm-icon">🌱</span><h3 class="rm-title">Seed</h3><p class="rm-desc">Foundation</p></div><div class="rm-details"><div class="rm-item"><span class="rm-label">Action</span><span class="rm-text">Secure government 'Traffic Relief' projects & Smart City projects (Seed funding & Data).</span></div><div class="rm-item"><span class="rm-label">Strategy</span><span class="rm-text">Zero Marketing Cost: Acquire initial EV users using Incentive system (CAC covered by gov).</span></div><div class="rm-item"><span class="rm-label">Sales</span><span class="rm-text"><strong>Spot Sales Strategy:</strong> Partner with CPOs to secure chargers as offline traffic <strong>'Anchors'</strong>.</span></div></div></div>
+                <div class="roadmap-card"><div class="rm-header"><span class="rm-step">PHASE 1</span><span class="rm-icon">🌱</span><h3 class="rm-title">Seed</h3><p class="rm-desc">Foundation</p></div><div class="rm-details"><div class="rm-item"><span class="rm-label">Action</span><span class="rm-text">Secure government 'Traffic Relief' projects & MaaS Data Solution projects (Seed funding & Data).</span></div><div class="rm-item"><span class="rm-label">Strategy</span><span class="rm-text">Zero Marketing Cost: Acquire initial EV users using Incentive system (CAC covered by gov).</span></div><div class="rm-item"><span class="rm-label">Sales</span><span class="rm-text"><strong>Spot Sales Strategy:</strong> Partner with CPOs to secure chargers as offline traffic <strong>'Anchors'</strong>.</span></div></div></div>
                 <div class="roadmap-card highlight" style="border-color:#ea352d;"><div class="rm-header"><span class="rm-step" style="color:#ea352d;">PHASE 2</span><span class="rm-icon">⚡</span><h3 class="rm-title">Scale-up</h3><p class="rm-desc">Fintech Expansion</p></div><div class="rm-details"><div class="rm-item"><span class="rm-label" style="color:#ea352d;">Action</span><span class="rm-text">Introduce <strong>PAY System</strong> centered on secured charger hubs and expand nearby merchants.</span></div><div class="rm-item"><span class="rm-label" style="color:#ea352d;">Target</span><span class="rm-text"><strong>'Golden Time' Strategy:</strong> Induce consumption in nearby commerce during charging wait time (30~40 min).</span></div><div class="rm-item"><span class="rm-label" style="color:#ea352d;">Flywheel</span><span class="rm-text">Complete <strong>'Drive → Earn → Local Spend'</strong> cycle to penetrate payment market.</span></div></div></div>
-                <div class="roadmap-card"><div class="rm-header"><span class="rm-step">PHASE 3</span><span class="rm-icon">🏢</span><h3 class="rm-title">Smart City</h3><p class="rm-desc">Data Solution</p></div><div class="rm-details"><div class="rm-item"><span class="rm-label">Data</span><span class="rm-text">Select optimal locations by analyzing accumulated movement/consumption big data.</span></div><div class="rm-item"><span class="rm-label">Action</span><span class="rm-text">Directly build and landmark <strong>'Charging + Commerce Plaza'</strong>.</span></div><div class="rm-item"><span class="rm-label">Ultimate</span><span class="rm-text">Diversify revenue to <strong>'MaaS Data Solution'</strong> optimizing urban design based on data.</span></div></div></div>
+                <div class="roadmap-card"><div class="rm-header"><span class="rm-step">PHASE 3</span><span class="rm-icon">🏢</span><h3 class="rm-title">MaaS Data Solution</h3><p class="rm-desc">Data Solution</p></div><div class="rm-details"><div class="rm-item"><span class="rm-label">Data</span><span class="rm-text">Select optimal locations by analyzing accumulated movement/consumption big data.</span></div><div class="rm-item"><span class="rm-label">Action</span><span class="rm-text">Directly build and landmark <strong>'Charging + Commerce Plaza'</strong>.</span></div><div class="rm-item"><span class="rm-label">Ultimate</span><span class="rm-text">Diversify revenue to <strong>'MaaS Data Solution'</strong> optimizing urban design based on data.</span></div></div></div>
             </div>
         </div>
         <!-- 06. Outcome (NEW) -->
         <div class="p-section" style="background: #f8fafc; border-color: #e2e8f0;">
             <div class="p-sec-title">🏆 06. Outcome & Impact</div>
-            <div style="text-align:center; margin-bottom:30px;"><p style="font-size:1.1rem; font-weight:700; color:#333; line-height:1.6; word-break: keep-all;">"Won 1st Place by proving business model value based on<br><span style="color:var(--primary);">Target's Buying Power</span>, not just an idea."</p><div class="award-tag-container" style="margin-top:15px; justify-content:center;"><span class="award-tag award-gold" style="font-size:1rem; padding:8px 20px;">🏆 1st Place in Venture Startup Class</span></div></div>
-            <div class="gray-box" style="background: white; border: 1px solid #e2e8f0; padding: 30px;"><h4 style="margin-bottom:25px; font-size:1.1rem; color:#333; border-bottom:1px solid #eee; padding-bottom:15px;">📝 Key Evaluation Factor</h4><div style="display:flex; flex-direction:column; gap:20px;"><div style="background:#f9f9f9; padding:20px; border-radius:10px; border:1px solid #eee;"><strong style="display:block; color:var(--dark); margin-bottom:8px; font-size:1.05rem;">🎯 Target Validation</strong><p style="color:#555; line-height:1.6; margin:0; font-size:0.95rem; word-break: keep-all;">Unlike 'Cashwalk' targeting pedestrians, targeted <strong>'High-spending Drivers'</strong> with superior ad rates, proving profitability.</p></div><div style="background:#f9f9f9; padding:20px; border-radius:10px; border:1px solid #eee;"><strong style="display:block; color:var(--dark); margin-bottom:8px; font-size:1.05rem;">🔑 Key Evaluation</strong><p style="color:#555; line-height:1.6; margin:0; font-size:0.95rem; word-break: keep-all;">"Highly evaluated for precise targeting strategy connecting 'Charging Wait Time' consumption gaps to Fintech (Payment)."</p></div></div></div>
+            <div style="text-align:center; margin-bottom:30px;">
+                <p style="font-size:1.1rem; font-weight:700; color:#333; line-height:1.6; word-break: keep-all;">
+                    "Won 1st Place by proving business model value based on<br><span style="color:var(--primary);">Target's Buying Power</span>, not just an idea."
+                </p>
+                <div class="award-tag-container" style="margin-top:15px; justify-content:center;">
+                    <span class="award-tag award-gold" style="font-size:1rem; padding:8px 20px;">🏆 1st Place in Venture Startup Class</span>
+                </div>
+            </div>
+            <div class="gray-box" style="background: white; border: 1px solid #e2e8f0; padding: 30px;">
+                <h4 style="margin-bottom:25px; font-size:1.1rem; color:#333; border-bottom:1px solid #eee; padding-bottom:15px;">📝 Key Evaluation Factor</h4>
+                <div style="display:flex; flex-direction:column; gap:20px;">
+                    <div style="background:#f9f9f9; padding:20px; border-radius:10px; border:1px solid #eee;">
+                        <strong style="display:block; color:var(--dark); margin-bottom:8px; font-size:1.05rem;">🎯 Target Validation</strong>
+                        <p style="color:#555; line-height:1.6; margin:0; font-size:0.95rem; word-break: keep-all;">
+                            Unlike 'Cashwalk' targeting pedestrians, targeted <strong>'High-spending Drivers'</strong> with superior ad rates, proving profitability.
+                        </p>
+                    </div>
+                    <div style="background:#f9f9f9; padding:20px; border-radius:10px; border:1px solid #eee;">
+                        <strong style="display:block; color:var(--dark); margin-bottom:8px; font-size:1.05rem;">🔑 Key Evaluation</strong>
+                        <p style="color:#555; line-height:1.6; margin:0; font-size:0.95rem; word-break: keep-all;">
+                            "Highly evaluated for precise targeting strategy connecting 'Charging Wait Time' consumption gaps to Fintech (Payment)."
+                        </p>
+                    </div>
+                </div>
+            </div>
         </div>
         <!-- 07. Retrospective -->
         <div class="p-section">
             <div class="p-sec-title">💡 07. Retrospective (KPT)</div>
-            <p style="text-align:center; font-weight:bold; color:#555; margin-bottom:25px;">"Reflecting on the eternal platform issue: 'Cold Start'."</p>
-            <div class="kpt-item kpt-keep"><span class="kpt-label"><i data-lucide="check-circle-2" size="20"></i> Keep</span><p class="kpt-desc"><strong>Behavioral Economics:</strong> Designed to change driver behavior through 'Incentive', not force, connecting it to Fintech.</p></div>
-            <div class="kpt-item kpt-problem"><span class="kpt-label"><i data-lucide="alert-triangle" size="20"></i> Problem</span><p class="kpt-desc"><strong>Dependency on Infra:</strong> Overlooked realistic barrier of securing charger network (Sales) without initial capital.</p></div>
-            <div class="kpt-item kpt-try"><span class="kpt-label"><i data-lucide="rocket" size="20"></i> Try</span><p class="kpt-desc"><strong>Anchor Tenant Strategy:</strong> Instead of nationwide expansion, use Density Strategy: Exclusive partnership with 1 CPO in specific area (e.g., Gangnam) to create a 'Success Case' first.</p></div>
+            <p style="text-align:center; font-weight:bold; color:#555; margin-bottom:25px;">
+                "Reflecting on the eternal platform issue: 'Cold Start'."
+            </p>
+            <div class="kpt-item kpt-keep">
+                <span class="kpt-label"><i data-lucide="check-circle-2" size="20"></i> Keep</span>
+                <p class="kpt-desc">
+                    <strong>Behavioral Economics:</strong> Designed to change driver behavior through 'Incentive', not force, connecting it to Fintech.
+                </p>
+            </div>
+            <div class="kpt-item kpt-problem">
+                <span class="kpt-label"><i data-lucide="alert-triangle" size="20"></i> Problem</span>
+                <p class="kpt-desc">
+                    <strong>Dependency on Infra:</strong> Overlooked realistic barrier of securing charger network (Sales) without initial capital.
+                </p>
+            </div>
+            <div class="kpt-item kpt-try">
+                <span class="kpt-label"><i data-lucide="rocket" size="20"></i> Try</span>
+                <p class="kpt-desc">
+                    <strong>Anchor Tenant Strategy:</strong> Instead of nationwide expansion, use Density Strategy: Exclusive partnership with 1 CPO in specific area (e.g., Gangnam) to create a 'Success Case' first.
+                </p>
+            </div>
         </div>
     </div>
 
@@ -1465,14 +1570,18 @@
             jp: {
                 "hero-title": `Engineering the Circulation of Value,<br><span>Go Bold</span> with Mercari`,
                 "hero-subtitle": "Ecosystem Architect & Product Manager",
-                "hero-desc": `複雑な問題を構造化し、<strong>価値の循環</strong>を設計するPM、パク・セウォンです。<br>都市の交通網を最適化した視点で、これからは<strong>体験の摩擦</strong>をなくし、滑らかな<strong>エコシステム</strong>を構築します。<br>直感ではなく<strong>データに基づいた仮説検証</strong>を、慣習ではなく執拗な<strong>実行</strong>を通じて、市場が反応するインパクトを生み出します。`,
-                "edu-uni": "University of Seoul",
-                "edu-major": "Transportation Engineering",
-                "edu-gpa": "🏆 理工系国家優秀奨学生 (全額奨学)",
+                "hero-desc": `複雑な問題を構造化し、<strong>価値の循環</strong>を設計するPM、パク・セウォンです。都市の交通網を最適化した視点で、これからは<strong>体験の摩擦</strong>をなくし、滑らかな<strong>エコシステム</strong>を構築します。<br>直感ではなく<strong>データに基づいた仮説検証</strong>を、慣習ではなく執拗な<strong>実行</strong>を通じて、市場が反応するインパクトを生み出します。`,
+                "edu-info": `
+                    <span class="info-school">University of Seoul</span><span class="info-divider">|</span> Transportation Engineering <span class="info-divider">|</span> <span class="highlight-text">GPA: 4.41 / 4.5</span><br>
+                    <span class="info-award-badge">🏆 理工系国家優秀奨学生 (全額奨学)</span>
+                `,
+                "exchange-info": `
+                    <span class="info-school">Rikkyo University</span><span class="info-divider">|</span> Data Science & Sociology
+                `,
                 "about-phil-title": "PM Philosophy",
                 "about-phil-desc": `<strong>"データは根拠となり、共感は方向となる。"</strong><br>数字の裏に隠れたユーザーの文脈を読み取ることを重要視します。交通工学的思考で<strong>システムのボトルネックと問題点を発見し改善</strong>する方式をプロダクトに適用し、不要な段階を減らして価値の流れを円滑にします。`,
                 "about-lead-title": "Leadership & Soft Skills",
-                "about-lead-desc": `<strong>"調整するリーダーシップ (Coordinating Leadership)"</strong><br>10カ国のグローバル大学および18の企業パートナーとコミュニケーションを取り、プロジェクトを調整した経験があります。多様なステークホルダーの言語を通訳し、共通の目標に向かってチームを整列させるコミュニケーションを目指します。`,
+                "about-lead-desc": `<strong>"調整するリーダーシップ"</strong><br>10カ国のグローバル大学および18の企業パートナーとコミュニケーションを取り、プロジェクトを調整した経験があります。多様なステークホルダーの言語を通訳し、共通の目標に向かってチームを整列させるコミュニケーションを目指します。`,
                 "about-eco-title": "Ecosystem & Vision",
                 "about-eco-desc": `<strong>"有機的なエコシステムを設計します。"</strong><br><span class="about-tag">#Startup DNA</span> <span class="about-tag">#Practical Insight</span> <span class="about-tag">#Value Builder</span><br><br><strong>スタートアップコンテストとインターンシップ</strong>を経て、現場で直接ぶつかり得た多様な経験を繋げることに没頭します。<br>それぞれ異なるドメインでの実戦経験を<strong>一つの有機的なエコシステム</strong>として構造化し、顧客に断片的な機能ではなく<strong>統合された価値と経験</strong>を提供することを目指します。`,
                 "nav-p1-desc": `<strong>J-Munikjeom</strong><br>Hybrid Commerce & B2B Pivot<br><span class="nav-link">View Strategy Detail ↗</span>`,
@@ -1483,10 +1592,16 @@
             en: {
                 "hero-title": `Engineering the Circulation of Value,<br><span>Go Bold</span> with Mercari`,
                 "hero-subtitle": "Ecosystem Architect & Product Manager",
-                "hero-desc": `I am a PM who structures complex problems and resolves business **bottlenecks** to drive growth.<br>Just as I optimized urban flows, <strong>I now design ecosystems where value circulates.</strong><br>I create market-impacting results through <strong>data-driven hypothesis verification</strong> rather than intuition, and relentless <strong>execution</strong> rather than convention.`,
-                "edu-uni": "University of Seoul",
-                "edu-major": "Transportation Engineering",
-                "edu-gpa": "🏆 National Science & Engineering Scholar (Full Scholarship)",
+                "hero-desc": `I am a PM who structures complex problems and resolves business <strong>bottlenecks</strong> to drive growth.<br>Just as I optimized urban flows, <strong>I now design ecosystems where value circulates.</strong><br>I create market-impacting results through <strong>data-driven hypothesis verification</strong> rather than intuition, and relentless <strong>execution</strong> rather than convention.`,
+                "edu-info": `
+                    <span class="info-school">University of Seoul</span>
+                    <span class="info-divider">|</span> Transportation Engineering <span class="info-divider">|</span> <span class="highlight-text">GPA: 4.41 / 4.5</span><br>
+                    <span class="info-award-badge">🏆 National Science & Engineering Scholar (Full Scholarship)</span>
+                `,
+                "exchange-info": `
+                    <span class="info-school">Rikkyo University</span>
+                    <span class="info-divider">|</span> Data Science & Sociology
+                `,
                 "about-phil-title": "PM Philosophy",
                 "about-phil-desc": `<strong>"Data provides the ground, Empathy sets the direction."</strong><br>I value reading the user context hidden behind numbers. Applying the method of <strong>identifying and debugging system bottlenecks</strong> from transportation engineering to products, I reduce unnecessary steps and streamline the flow of value.`,
                 "about-lead-title": "Leadership & Soft Skills",
@@ -1523,8 +1638,42 @@
             }
         }
 
+        let splineObserver; // Observer variable
+
+        function observeSplineElements() {
+            if (splineObserver) splineObserver.disconnect();
+
+            splineObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        loadSpline(entry.target);
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { root: document.querySelector('.modal-container'), threshold: 0.1 });
+
+            const placeholders = document.querySelectorAll('.spline-placeholder');
+            placeholders.forEach(el => splineObserver.observe(el));
+        }
+
+        function loadSpline(placeholder) {
+            const url = placeholder.dataset.url;
+            // Create Spline Element
+            const viewer = document.createElement('spline-viewer');
+            viewer.setAttribute('url', url);
+            viewer.setAttribute('loading-anim-type', 'spinner-small-dark');
+            
+            // Replace placeholder content
+            placeholder.innerHTML = '';
+            placeholder.appendChild(viewer);
+            // Remove placeholder class to reset styles if needed (optional)
+            // placeholder.classList.remove('spline-placeholder'); 
+            // Better to keep wrapper but change style if needed.
+            placeholder.style.background = 'transparent';
+        }
+
         function openModal(projectId) {
-            window.currentProjectId = projectId; // Store for lang switch
+            window.currentProjectId = projectId; 
             const modal = document.getElementById('projectModal');
             const contentContainer = document.getElementById('modalContent');
             contentContainer.innerHTML = '';
@@ -1542,13 +1691,7 @@
                 if(fallbackTemplate) {
                      contentContainer.innerHTML = fallbackTemplate.innerHTML;
                 } else {
-                    contentContainer.innerHTML = `
-                        <div style="text-align:center; padding:100px 20px;">
-                            <div style="font-size:3rem; margin-bottom:20px;">🔨</div>
-                            <h2 style="font-size:2rem; font-weight:800; margin-bottom:10px;">Coming Soon</h2>
-                            <p style="color:#666;">Content not available yet.</p>
-                        </div>
-                    `;
+                    contentContainer.innerHTML = `<div style="text-align:center; padding:100px 20px;">Coming Soon</div>`;
                 }
             }
 
@@ -1556,19 +1699,26 @@
             document.body.style.overflow = 'hidden';
             
             setTimeout(() => {
-                const splineBoxes = document.querySelectorAll('.spline-box');
-                splineBoxes.forEach(box => {
-                    box.addEventListener('wheel', (e) => { e.preventDefault(); }, { passive: false });
-                    box.addEventListener('touchmove', (e) => { e.preventDefault(); }, { passive: false });
-                });
-                lucide.createIcons(); // Re-init icons for modal content
+                // Initialize Spline Lazy Loading
+                observeSplineElements(); 
+
+                // Re-init icons
+                lucide.createIcons(); 
             }, 300);
         }
 
         function closeModal() {
-            document.getElementById('projectModal').classList.remove('active');
+            const modal = document.getElementById('projectModal');
+            const contentContainer = document.getElementById('modalContent');
+            
+            modal.classList.remove('active');
             document.body.style.overflow = 'auto';
             window.currentProjectId = null;
+
+            // Cleanup: Remove content to kill WebGL context
+            setTimeout(() => {
+                contentContainer.innerHTML = '';
+            }, 400); // Wait for transition
         }
 
         function triggerListAnim(element) {
@@ -1589,12 +1739,9 @@
         });
 
         document.addEventListener('DOMContentLoaded', () => {
-             const splineBoxes = document.querySelectorAll('.spline-box');
-             splineBoxes.forEach(box => {
-                box.addEventListener('wheel', (e) => { e.preventDefault(); }, { passive: false });
-                box.addEventListener('touchmove', (e) => { e.preventDefault(); }, { passive: false });
-             });
              lucide.createIcons();
+             // Initial load is JP, ensure content matches
+             setLanguage('jp');
         });
     </script>
 </body>
