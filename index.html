@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,7 +21,7 @@
             --transition: all 0.5s cubic-bezier(0.25, 1, 0.5, 1);
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: "Pretendard", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: "Pretendard", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; }
         
         /* Hide Scrollbar but keep functionality */
         body, .modal-container {
@@ -35,7 +35,7 @@
         body { background-color: #111; color: #333; overflow-x: hidden; font-size: 16px; }
         button { cursor: pointer; }
 
-        /* --- NEW: Fixed Header (Logo Bar) --- */
+        /* --- Fixed Header (Logo Bar) --- */
         .header {
             position: fixed; top: 0; left: 0; width: 100%;
             height: 60px;
@@ -76,10 +76,11 @@
 
         /* --- Hero Section (Profile Style) --- */
         .hero {
-            min-height: auto; /* Height adjusted by content */
+            min-height: auto; 
             margin-top: 60px; background-color: var(--white);
             display: flex; flex-direction: column; align-items: center;
-            padding: 60px 20px; position: relative; z-index: 10;
+            padding: 40px 20px 20px 20px; 
+            position: relative; z-index: 10;
         }
 
         .profile-container {
@@ -127,7 +128,7 @@
 
         /* --- About Me (Philosophy & Essays) --- */
         .about-section {
-            max-width: 1100px; width: 100%; margin-top: 50px;
+            max-width: 1100px; width: 100%; margin-top: 40px;
             display: grid; grid-template-columns: 1fr 1fr; gap: 30px;
         }
         .about-card {
@@ -155,9 +156,10 @@
 
         /* --- Section Divider --- */
         .section-divider {
-            background: var(--dark); color: white; padding: 20px 0; text-align: center;
+            background: var(--dark); color: white; padding: 15px 0;
+            text-align: center;
             font-size: 1rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase;
-            margin-top: 60px;
+            margin-top: 30px;
         }
 
         /* --- Navigation (Projects) --- */
@@ -205,7 +207,26 @@
         .award-gold { background: #fffde7; color: #f57f17; border: 1px solid #fbc02d; }
         .award-gray { background: #f5f5f5; color: #555; border: 1px solid #ddd; }
         .p-title { font-size: 2.8rem; font-weight: 800; margin: 0 0 10px; letter-spacing: -1px; color: #111; }
-        .p-subtitle { font-size: 1.25rem; color: #666; font-weight: 400; }
+        .p-subtitle { font-size: 1.25rem; color: #666; font-weight: 400; margin-bottom: 15px; }
+        
+        .p-meta { 
+            display: inline-flex; 
+            align-items: center; 
+            gap: 12px; 
+            background: #fff; 
+            color: #495057; 
+            padding: 8px 24px; 
+            border-radius: 30px; 
+            font-size: 0.9rem; 
+            font-weight: 600; 
+            margin-top: 15px; 
+            border: 1px solid #e9ecef; 
+            box-shadow: 0 4px 12px rgba(0,0,0,0.04);
+            white-space: nowrap;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
         .p-section { background: white; border: 1px solid #e5e8eb; border-radius: 16px; padding: 40px; margin-bottom: 30px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05); }
         .p-sec-title { font-size: 1.4rem; font-weight: 700; margin-bottom: 25px; display: flex; align-items: center; gap: 10px; color: #111; }
         .p-grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
@@ -326,7 +347,7 @@
         <div class="header-right">
             <div class="header-menu">Portfolio 2025</div>
             <div class="lang-switch">
-                <button class="lang-btn active" onclick="setLanguage('ko')">KR</button>
+                <button class="lang-btn active" onclick="setLanguage('jp')">JP</button>
                 <button class="lang-btn" onclick="setLanguage('en')">EN</button>
             </div>
         </div>
@@ -350,21 +371,21 @@
             <!-- Profile Info -->
             <div class="profile-info">
                 <div>
-                    <h1 class="hero-title">Engineering the Circulation of Value,<br><span>Go Bold</span> with Mercari</h1>
-                    <h2 class="hero-subtitle">Ecosystem Architect & Product Manager</h2>
-                    <p class="hero-desc">
-                        교통공학적 사고로 비즈니스의 병목(Bottleneck)을 해결하는 PM, 박세원입니다.<br>
-                        도시의 흐름을 최적화하던 시각으로, <strong>이제는 모든 가치가 순환하는 생태계를 설계합니다.</strong><br>
-                        직감보다는 <strong>데이터 기반의 가설 검증</strong>을, 관습보다는 집요한 <strong>실행</strong>을 통해 시장이 반응하는 임팩트를 만듭니다.
+                    <h1 class="hero-title" id="hero-title">Engineering the Circulation of Value,<br><span>Go Bold</span> with Mercari</h1>
+                    <h2 class="hero-subtitle" id="hero-subtitle">Ecosystem Architect & Product Manager</h2>
+                    <p class="hero-desc" id="hero-desc">
+                        複雑な問題を構造化し、<strong>価値と信用の流れ</strong>を設計するPM、パク・セウォンです。<br>
+                        都市の交通網を最適化した視点で、これからは<strong>体験の摩擦</strong>をなくし、滑らかな<strong>エコシステム</strong>を構築します。<br>
+                        直感ではなく<strong>データに基づいた仮説検証</strong>を、慣習ではなく執拗な<strong>実行</strong>を通じて、市場が反応するインパクトを生み出します。
                     </p>
                 </div>
 
                 <div class="info-grid">
                     <div class="info-label"><i data-lucide="graduation-cap" size="16"></i> Education</div>
                     <div class="info-value">
-                        <strong>University of Seoul</strong> (서울시립대학교)<br>
-                        <span class="highlight-text">GPA: 4.41 / 4.5</span> (Transportation Engineering)<br>
-                        <span style="font-size:0.85rem; color:#666;">🏆 이공계 국가우수장학생 (전액 장학)</span>
+                        <strong id="edu-uni">University of Seoul</strong><br>
+                        <span class="highlight-text">GPA: 4.41 / 4.5</span> (<span id="edu-major">Transportation Engineering</span>)<br>
+                        <span style="font-size:0.85rem; color:#666;" id="edu-gpa">🏆 理工系国家優秀奨学生 (全額奨学)</span>
                     </div>
                     
                     <div class="info-label"><i data-lucide="globe" size="16"></i> Exchange</div>
@@ -375,12 +396,12 @@
 
                     <div class="info-label"><i data-lucide="wrench" size="16"></i> Skills</div>
                     <div class="skill-badges">
-                        <span class="s-badge">Python (Pandas)</span>
+                        <span class="s-badge">Python</span>
                         <span class="s-badge">SQL</span>
-                        <span class="s-badge">Google OR-Tools</span>
-                        <span class="s-badge">Spline (3D Web Design)</span>
-                        <span class="s-badge">Google Stitch</span>
+                        <span class="s-badge">Spline</span>
+                        <span class="s-badge">Figma</span>
                         <span class="s-badge">Jira</span>
+                        <span class="s-badge">Notion</span>
                     </div>
                 </div>
             </div>
@@ -389,27 +410,27 @@
         <!-- About Me Section -->
         <div class="about-section">
             <div class="about-card">
-                <div class="about-title"><i data-lucide="compass" size="24" color="var(--primary)"></i> PM Philosophy</div>
-                <p class="about-text">
-                    <strong>"데이터는 근거가 되고, 공감은 방향이 된다."</strong><br>
-                    숫자 뒤에 숨은 사용자의 맥락을 읽어내는 것을 중요하게 생각합니다. 교통공학적 사고로 <strong>시스템의 병목과 문제점을 찾아내 수정(Debug)</strong>하는 방식을 프로덕트에 적용하여, 불필요한 단계를 줄이고 가치의 흐름을 원활하게 만듭니다.
+                <div class="about-title"><i data-lucide="compass" size="24" color="var(--primary)"></i> <span id="about-phil-title">PM Philosophy</span></div>
+                <p class="about-text" id="about-phil-desc">
+                    <strong>"データは根拠となり、共感は方向となる。"</strong><br>
+                    数字の裏に隠れたユーザーの文脈を読み取ることを重要視します。交通工学的思考で<strong>システムのボトルネックと問題点を発見し改善</strong>する方式をプロダクトに適用し、不要な段階を減らして価値の流れを円滑にします。
                 </p>
             </div>
             <div class="about-card">
-                <div class="about-title"><i data-lucide="users" size="24" color="var(--primary)"></i> Leadership & Soft Skills</div>
-                <p class="about-text">
-                    <strong>"조율하는 리더십 (Coordinating Leadership)"</strong><br>
-                    10개국 글로벌 대학 및 18개 기업 파트너와 소통하며 프로젝트를 조율한 경험이 있습니다. 다양한 이해관계자의 언어를 통역하고, 공통의 목표를 향해 팀을 정렬시키는 커뮤니케이션을 지향합니다.
+                <div class="about-title"><i data-lucide="users" size="24" color="var(--primary)"></i> <span id="about-lead-title">Leadership & Soft Skills</span></div>
+                <p class="about-text" id="about-lead-desc">
+                    <strong>"調整するリーダーシップ (Coordinating Leadership)"</strong><br>
+                    10カ国のグローバル大学および18の企業パートナーとコミュニケーションを取り、プロジェクトを調整した経験があります。多様なステークホルダーの言語を通訳し、共通の目標に向かってチームを整列させるコミュニケーションを目指します。
                 </p>
             </div>
             
             <!-- Ecosystem & Vision -->
             <div class="about-card interest-card">
-                <div class="about-title"><i data-lucide="heart" size="24" color="#666"></i> Ecosystem & Vision</div>
-                <p class="about-text">
-                    <strong>"유기적인 생태계를 설계합니다."</strong><br>
+                <div class="about-title"><i data-lucide="heart" size="24" color="#666"></i> <span id="about-eco-title">Ecosystem & Vision</span></div>
+                <p class="about-text" id="about-eco-desc">
+                    <strong>"有機的なエコシステムを設計します。"</strong><br>
                     <span class="about-tag">#Startup DNA</span> <span class="about-tag">#Practical Insight</span> <span class="about-tag">#Value Builder</span><br><br>
-                    <strong>스타트업 경진대회와 인턴십</strong>을 거치며 현장에서 직접 부딪히고 깨달은 다양한 경험들을 연결하는 것에 몰입합니다.<br>각기 다른 도메인에서의 실전 경험들을 <strong>하나의 유기적인 생태계(Ecosystem)</strong>로 구조화하여, 고객에게 단편적인 기능이 아닌 <strong>통합된 가치와 경험</strong>을 제공하는 것을 지향합니다.
+                    <strong>スタートアップコンテストとインターンシップ</strong>を経て、現場で直接ぶつかり得た多様な経験を繋げることに没頭します。<br>それぞれ異なるドメインでの実戦経験を<strong>一つの有機的なエコシステム</strong>として構造化し、顧客に断片的な機能ではなく<strong>統合された価値と経験</strong>を提供することを目指します。
                 </p>
             </div>
         </div>
@@ -427,7 +448,7 @@
                 <span class="nav-num">01</span>
                 <div class="nav-award-badge">🏆 3rd Place</div>
                 <h2 class="nav-title">Cross-border Commerce & Fintech Ecosystem</h2>
-                <div class="nav-desc">
+                <div class="nav-desc" id="nav-p1-desc">
                     <strong>J-Munikjeom</strong><br>
                     Hybrid Commerce & B2B Pivot<br>
                     <span class="nav-link">View Strategy Detail ↗</span>
@@ -440,7 +461,7 @@
             <div class="bar-content">
                 <span class="nav-num">02</span>
                 <h2 class="nav-title">Hyper-local P2P Delivery</h2>
-                <div class="nav-desc">
+                <div class="nav-desc" id="nav-p2-desc">
                     <strong>Campus Last-mile</strong><br>
                     Route-based P2P Delivery<br>
                     <span class="nav-link">View Strategy Detail ↗</span>
@@ -453,8 +474,8 @@
             <div class="bar-content">
                 <span class="nav-num">03</span>
                 <div class="nav-award-badge" style="background:#fffbeb; color:#b45309;">💴 Pre-A 300M JPY</div>
-                <h2 class="nav-title">B2B Digital Asset Trading & UX Strategy</h2>
-                <div class="nav-desc">
+                <h2 class="nav-title">Digital Asset Trading & UX Strategy</h2>
+                <div class="nav-desc" id="nav-p3-desc">
                     <strong>Renewable Energy PF</strong><br>
                     UX Renewal for Data Clarity<br>
                     <span class="nav-link">View UX Case Study ↗</span>
@@ -468,7 +489,7 @@
                 <span class="nav-num">04</span>
                 <div class="nav-award-badge">🏆 Best Award</div>
                 <h2 class="nav-title">Drive-to-Earn Reward Platform</h2>
-                <div class="nav-desc">
+                <div class="nav-desc" id="nav-p4-desc">
                     <strong>Mobility Fintech</strong><br>
                     Incentive to Payment Lock-in<br>
                     <span class="nav-link">View Business Model ↗</span>
@@ -485,270 +506,114 @@
         </div>
     </div>
 
-    <!-- Hidden Templates: Project 1 (J-Munikjeom) -->
+    <!-- ======================= TEMPLATES (JAPANESE - DEFAULT) ======================= -->
+    
     <div id="project1-content" style="display:none;">
         <div class="p-header">
-            <span class="p-badge">📂 PROJECT 01</span>
+            <span class="p-badge" style="background:var(--primary); color:white;">✈️ PROJECT 01</span>
             <h1 class="p-title">Cross-border Commerce & Fintech Ecosystem</h1>
-            <div class="award-tag-container">
-                <span class="award-tag award-gold">🏆 교내 스타트업 대회 3위</span>
+            <div class="p-meta">🗓️ Dec 2024 – Jan 2025 &nbsp;·&nbsp; 🧑‍✈️ Project Lead &nbsp;·&nbsp; 👥 Team: 4 Members</div>
+            <div class="award-tag-container" style="margin-top:15px;">
+                <span class="award-tag award-gold">🏆 校内スタートアップ大会 3位</span>
                 <span class="award-tag award-gray">feat. Korea Startup Center</span>
             </div>
-            <p class="p-subtitle">중고 물품으로 시장의 틈을 열고, D2C 거점으로 생태계를 완성하다</p>
+            <p class="p-subtitle">中古品で市場の隙間を開き、D2C拠点でエコシステムを完成させる</p>
         </div>
         <div class="p-grid-2">
-            <!-- 1. Problem -->
             <div class="p-section">
                 <div class="p-sec-title">🔎 01. Problem Discovery</div>
                 <div class="prob-box">
-                    <h3 style="font-size:1.3rem; color:#111; margin-bottom:25px; text-align:left; font-weight:800; line-height:1.4;">"온라인은 '열광'하지만,<br>오프라인은 '단절'되다"</h3>
+                    <h3 style="font-size:1.3rem; color:#111; margin-bottom:25px; text-align:left; font-weight:800; line-height:1.4;">"オンラインは『熱狂』、<br>オフラインは『断絶』"</h3>
                     <h3>🎤 Context</h3>
-                    <p>K-뷰티 선두 기업 '아모레퍼시픽' 관계자와의 심층 인터뷰(In-depth Interview)를 통해 현장의 구조적 페인 포인트(Pain Point)를 포착했습니다.</p>
+                    <p>K-Beautyのリーディングカンパニー『アモーレパシフィック』関係者へのIn-depth Interviewを通じて、現場の構造的な課題を捉えました。</p>
                     <h3>🏗️ Structural Issue</h3>
                     <div class="gray-box">
                         <ul>
-                            <li>
-                                <strong>Vendor Dependency (중간 유통의 폐해)</strong>
-                                <span>온라인(Qoo10 등)과 달리, 오프라인 진출 시 현지 벤더를 반드시 거쳐야 하여 이중 마진 발생 → 가격 경쟁력 상실.</span>
-                            </li>
-                            <li>
-                                <strong>Loss of Branding</strong>
-                                <span>단순 납품 방식으로는 브랜드가 의도한 물건 배치(VMD)나 고객 경험을 통제할 수 없음.</span>
-                            </li>
+                            <li><strong>Vendor Dependency (中間流通の弊害)</strong><span>オンライン(Qoo10など)とは異なり、オフライン進出時は現地ベンダーを必ず経由しなければならず、二重マージンが発生 → 価格競争力の喪失。</span></li>
+                            <li><strong>Loss of Branding</strong><span>単純納品方式では、ブランドが意図したVMDや顧客経験(CX)をコントロールできない。</span></li>
                         </ul>
                     </div>
                     <div class="insight-box">
                         <h3>💡 Insight</h3>
-                        <p class="insight-text">
-                            "단순 판매 채널이 아닌, <span style="color:var(--primary);">한류 브랜드(Hallyu Brands)의 글로벌 팬덤을 타겟팅하여</span> 브랜드가 가격과 경험을 100% 통제할 수 있는 D2C 오프라인 거점이 필요하다."
-                        </p>
+                        <p class="insight-text">"単純な販売チャネルではなく、<span style="color:var(--primary);">韓流ブランドのグローバルファンダムをターゲットにし</span>、ブランドが価格と経験を100%統制できるD2Cオフライン拠点が必要だ。"</p>
                     </div>
                 </div>
             </div>
-
-            <!-- 2. Market Validation -->
             <div class="p-section">
                 <div class="p-sec-title">📊 02. Market Validation</div>
-                <p style="margin-bottom:25px; font-size:1.05rem; color:#333; font-weight:bold; text-align:center; border-bottom:1px solid #eee; padding-bottom:15px;">
-                    "Data Verification: 번개장터 vs 메루카리 데이터로<br><span style="color:var(--primary);">'돈이 되는 시장'</span>을 찾다"
-                </p>
+                <p style="margin-bottom:25px; font-size:1.05rem; color:#333; font-weight:bold; text-align:center; border-bottom:1px solid #eee; padding-bottom:15px;">"Data Verification: 雷市場(KR) vs Mercari(JP)データで<br><span style="color:var(--primary);">『儲かる市場』</span>を見つける"</p>
                 <div style="margin-bottom:25px; font-size:0.95rem; color:#555;">
-                    <div style="margin-bottom:15px;">
-                        <strong style="color:var(--primary);">🎯 Target Selection Criteria</strong>
-                        <ul style="padding-left:25px; margin-top:5px; line-height:1.6;">
-                            <li><strong>High Liquidity:</strong> 일본 MZ세대 사이에서 리셀이 활발한 'K-패션 3대장' 및 <strong>'K-POP 희귀 굿즈'</strong> 선정</li>
-                            <li><strong>Logistics Efficiency:</strong> 부피가 작아 국경 간 배송 시 <strong>Unit Economics(단위 경제성)</strong>가 높은 품목 필터링</li>
-                        </ul>
-                    </div>
-                    <div>
-                        <strong style="color:var(--primary);">🧾 Methodology & Verification</strong>
-                        <p style="margin-top:5px; line-height:1.6; padding-left:25px;">
-                            한국 <strong>'번개장터'</strong>와 일본 <strong>'메루카리'</strong>의 실거래 데이터를 크롤링하여, 동일 컨디션(Used-Good) 상품의 <strong>구조적인 가격 차이(Arbitrage Price Gap)</strong>를 입증함.
-                        </p>
-                    </div>
+                    <div style="margin-bottom:15px;"><strong style="color:var(--primary);">🎯 Target Selection Criteria</strong><ul style="padding-left:25px; margin-top:5px; line-height:1.6;"><li><strong>High Liquidity:</strong> 日本のMZ世代の間でリセルが活発な『K-Fashion 3大将』および<strong>『K-POP レアグッズ』</strong>を選定</li><li><strong>Logistics Efficiency:</strong> 体積が小さく、越境配送時の<strong>ユニットエコノミクス</strong>が高い品目をフィルタリング</li></ul></div>
+                    <div><strong style="color:var(--primary);">🧾 Methodology & Verification</strong><p style="margin-top:5px; line-height:1.6; padding-left:25px;">韓国<strong>『雷市場(Bunjang)』</strong>と日本<strong>『Mercari』</strong>の実取引データをクローリングし、同一コンディション(Used-Good)商品の<strong>構造的な価格差(Arbitrage Price Gap)</strong>を立証。</p></div>
                 </div>
-                <!-- Chart -->
                 <div class="v-chart-container">
-                    <div class="v-chart-group">
-                        <div class="v-chart-title">Brand A<br>(Wallet)</div>
-                        <div class="v-chart-gap">Gap 57%</div>
-                        <div class="v-bars">
-                            <div class="v-bar-col"><div class="v-bar v-bar-kr" style="height: 43%;"></div><div class="v-bar-label">KR</div></div>
-                            <div class="v-bar-col"><div class="v-bar v-bar-jp" style="height: 100%;"></div><div class="v-bar-label">JP</div></div>
-                        </div>
-                    </div>
-                    <div class="v-chart-group">
-                        <div class="v-chart-title">Brand B<br>(Apparel)</div>
-                        <div class="v-chart-gap">Gap 54%</div>
-                        <div class="v-bars">
-                            <div class="v-bar-col"><div class="v-bar v-bar-kr" style="height: 46%;"></div><div class="v-bar-label">KR</div></div>
-                            <div class="v-bar-col"><div class="v-bar v-bar-jp" style="height: 100%;"></div><div class="v-bar-label">JP</div></div>
-                        </div>
-                    </div>
-                    <div class="v-chart-group">
-                        <div class="v-chart-title">K-Pop<br>Goods</div>
-                        <div class="v-chart-gap">Gap 52%</div>
-                        <div class="v-bars">
-                            <div class="v-bar-col"><div class="v-bar v-bar-kr" style="height: 48%;"></div><div class="v-bar-label">KR</div></div>
-                            <div class="v-bar-col"><div class="v-bar v-bar-jp" style="height: 100%;"></div><div class="v-bar-label">JP</div></div>
-                        </div>
-                    </div>
+                    <div class="v-chart-group"><div class="v-chart-title">Brand A<br>(Wallet)</div><div class="v-chart-gap">Gap 57%</div><div class="v-bars"><div class="v-bar-col"><div class="v-bar v-bar-kr" style="height: 43%;"></div><div class="v-bar-label">KR</div></div><div class="v-bar-col"><div class="v-bar v-bar-jp" style="height: 100%;"></div><div class="v-bar-label">JP</div></div></div></div>
+                    <div class="v-chart-group"><div class="v-chart-title">Brand B<br>(Apparel)</div><div class="v-chart-gap">Gap 54%</div><div class="v-bars"><div class="v-bar-col"><div class="v-bar v-bar-kr" style="height: 46%;"></div><div class="v-bar-label">KR</div></div><div class="v-bar-col"><div class="v-bar v-bar-jp" style="height: 100%;"></div><div class="v-bar-label">JP</div></div></div></div>
+                    <div class="v-chart-group"><div class="v-chart-title">K-Pop<br>Goods</div><div class="v-chart-gap">Gap 52%</div><div class="v-bars"><div class="v-bar-col"><div class="v-bar v-bar-kr" style="height: 48%;"></div><div class="v-bar-label">KR</div></div><div class="v-bar-col"><div class="v-bar v-bar-jp" style="height: 100%;"></div><div class="v-bar-label">JP</div></div></div></div>
                 </div>
             </div>
         </div>
-        
         <div class="p-section">
             <div class="p-sec-title">🏗️ 03. Solution: Hybrid Model</div>
-            <p style="margin-bottom:25px; font-size:1.05rem; font-weight:bold; color:#333; text-align:center; border-bottom:1px solid #eee; padding-bottom:15px;">
-                "Hybrid Model: <span style="color:var(--primary);">C2C로 유입(Hook)</span>시키고, <span style="color:#333;">B2B로 수익(Monetization)</span>을 낸다"
-            </p>
+            <p style="margin-bottom:25px; font-size:1.05rem; font-weight:bold; color:#333; text-align:center; border-bottom:1px solid #eee; padding-bottom:15px;">"Hybrid Model: <span style="color:var(--primary);">C2Cで集客</span>し、<span style="color:#333;">B2Bで収益化</span>する"</p>
             <div class="sol-grid">
-                <div class="sol-card">
-                    <div class="emoji-icon">🎣</div>
-                    <h4>Traffic Hook (C2C)</h4>
-                    <p>트렌디한 한국 중고 의류를 미끼 상품으로 배치해 초기 모객하여 <strong>진입 장벽을 우회</strong></p>
-                </div>
-                <div class="sol-card">
-                    <div class="emoji-icon">🏟️</div>
-                    <h4>Offline Experience</h4>
-                    <p>하라주쿠 '아이돌 대기실' 컨셉 스토어로 자발적 바이럴 및 D2C 브랜드 경험 제공</p>
-                </div>
-                <div class="sol-card">
-                    <div class="emoji-icon">⚙️</div>
-                    <h4>Tech & Logistics</h4>
-                    <p>물류 시스템을 구축해서 전국 물류망 확보와 인건비 감소</p>
-                </div>
+                <div class="sol-card"><div class="emoji-icon">🎣</div><h4>Traffic Hook (C2C)</h4><p>トレンディな韓国古着を餌商品として配置し、初期集客を行い<strong>参入障壁を迂回</strong>。</p></div>
+                <div class="sol-card"><div class="emoji-icon">🏟️</div><h4>Offline Experience</h4><p>原宿『アイドルの控室』コンセプトストアで自発的なバイラル及びD2Cブランド体験を提供。</p></div>
+                <div class="sol-card"><div class="emoji-icon">⚙️</div><h4>Tech & Logistics</h4><p>物流システムを構築し、全国物流網の確保と人件費削減を実現。</p></div>
             </div>
         </div>
-
-        <!-- 4. Growth Strategy & Roadmap -->
         <div class="p-section" style="border: 2px solid var(--primary);">
             <div class="p-sec-title" style="color: var(--primary);">📈 04. Growth Strategy & Roadmap</div>
-            <p style="text-align:center; font-weight:bold; font-size:1.1rem; color:#444;">
-                "From Store to Platform: 소매점에서 '비즈니스 솔루션'으로의 피벗(Pivot)"
-            </p>
+            <p style="text-align:center; font-weight:bold; font-size:1.1rem; color:#444;">"From Store to Platform: 小売店から『ビジネスソリューション』へのピボット"</p>
             <div class="roadmap-stack">
-                <div class="roadmap-card">
-                    <div class="rm-header">
-                        <span class="rm-step">PHASE 1</span>
-                        <span class="rm-icon">🚩</span>
-                        <h3 class="rm-title">Expansion</h3>
-                        <p class="rm-desc">거점 확장</p>
-                    </div>
-                    <div class="rm-details">
-                        <div style="margin-bottom:15px; color:#555; font-size:0.95rem; line-height:1.6; border-bottom:1px solid #eee; padding-bottom:15px;">
-                            거점 확장을 통한 트래픽(Traffic) 및 물류망 확보. 단순 점포 확장이 아닌, <strong>옴니채널(Omni-channel) 네트워크 구축</strong>을 목표로 합니다.
-                        </div>
-                        <div class="rm-item"><span class="rm-label">Action</span><span class="rm-text">성공 모델인 하라주쿠 플래그십 스토어의 운영 방식(VMD, 매입 프로세스)을 표준화하여 오사카, 규슈 등 주요 거점으로 확장</span></div>
-                        <div class="rm-item"><span class="rm-label">Logic</span><span class="rm-text">각 거점은 단순 판매처가 아닌 <strong>지역 C2C 물류 허브(Hub)</strong> 역할을 수행. 매입 물량 확보 및 자동화 창고 연계로 배송 효율 증대</span></div>
-                        <div class="rm-item"><span class="rm-label">Goal</span><span class="rm-text">일본 전역의 MZ세대 트래픽 확보 및 플랫폼 내 순환될 '중고 의류(Seed Inventory)' 물동량 극대화</span></div>
-                    </div>
-                </div>
-                <div class="roadmap-card">
-                    <div class="rm-header">
-                        <span class="rm-step">PHASE 2</span>
-                        <span class="rm-icon">💸</span>
-                        <h3 class="rm-title">Retention</h3>
-                        <p class="rm-desc">결제/락인</p>
-                    </div>
-                    <div class="rm-details">
-                        <div style="margin-bottom:15px; color:#555; font-size:0.95rem; line-height:1.6; border-bottom:1px solid #eee; padding-bottom:15px;">
-                            한번 유입된 유저가 생태계 내에서 끊임없이 거래하게 만드는 <strong>Flywheel(선순환) 구조</strong>를 만듭니다.
-                        </div>
-                        <div class="rm-item"><span class="rm-label">Key Feature</span><span class="rm-text"><strong>순환 포인트 시스템:</strong> 고객이 중고 의류 판매(매도) 시, 현금 대신 '전용 포인트'로 정산받도록 유도</span></div>
-                        <div class="rm-item"><span class="rm-label">Incentive</span><span class="rm-text">포인트로 매장 내 신상(화장품/의류) 구매 시 <strong>수수료 면제 및 추가 할인</strong> 혜택 제공</span></div>
-                        <div class="rm-item"><span class="rm-label">Effect</span><span class="rm-text"><strong>Cash-out 방지:</strong> 자금 유출을 막고, '중고 판매 → 포인트 → 신상 구매 → 재판매'로 이어지는 LTV 극대화</span></div>
-                    </div>
-                </div>
-                <div class="roadmap-card highlight">
-                    <div class="rm-header">
-                        <span class="rm-step" style="color:var(--primary);">PHASE 3</span>
-                        <span class="rm-icon">🤝</span>
-                        <h3 class="rm-title">Monetization</h3>
-                        <p class="rm-desc">B2B Pivot</p>
-                    </div>
-                    <div class="rm-details">
-                        <div style="margin-bottom:15px; color:#555; font-size:0.95rem; line-height:1.6; border-bottom:1px solid #ffd1d1; padding-bottom:15px;">
-                            구축된 트래픽과 인프라를 한국 기업에 판매하여 비즈니스 모델을 <strong>B2B 솔루션으로 고도화</strong>합니다.
-                        </div>
-                        <div class="rm-item"><span class="rm-label" style="color:var(--primary);">Shift</span><span class="rm-text">B2C(단순 소매업) → <strong>B2B(플랫폼 비즈니스)</strong>로 수익 모델의 중심축 이동</span></div>
-                        <div class="rm-item"><span class="rm-label" style="color:var(--primary);">Product A</span><span class="rm-text"><strong>Data Consulting:</strong> 실시간 판매/행동 데이터를 기반으로 한국 기업에 '일본 진출 타겟팅 및 VMD 컨설팅' 제공</span></div>
-                        <div class="rm-item"><span class="rm-label" style="color:var(--primary);">Product B</span><span class="rm-text"><strong>LaaS (Logistics-as-a-Service):</strong> 구축된 물류망과 거점을 <strong>'위탁 판매 채널'</strong>로 임대하고 수수료 수취</span></div>
-                    </div>
-                </div>
+                <div class="roadmap-card"><div class="rm-header"><span class="rm-step">PHASE 1</span><span class="rm-icon">🚩</span><h3 class="rm-title">Expansion</h3><p class="rm-desc">拠点拡張</p></div><div class="rm-details"><div style="margin-bottom:15px; color:#555; font-size:0.95rem; line-height:1.6; border-bottom:1px solid #eee; padding-bottom:15px;">拠点拡張を通じたトラフィック及び物流網の確保。単純な店舗拡張ではなく、<strong>オムニチャネルネットワーク構築</strong>を目標とします。</div><div class="rm-item"><span class="rm-label">Action</span><span class="rm-text">成功モデルである原宿フラッグシップストアの運営方式(VMD、買取プロセス)を標準化し、大阪、九州など主要拠点へ拡張</span></div><div class="rm-item"><span class="rm-label">Logic</span><span class="rm-text">各拠点は単純な販売店ではなく<strong>地域C2C物流ハブ</strong>の役割を遂行。買取物量の確保及び自動化倉庫との連携で配送効率増大</span></div><div class="rm-item"><span class="rm-label">Goal</span><span class="rm-text">日本全域のMZ世代トラフィック確保及びプラットフォーム内で循環する『古着(Seed Inventory)』物流量の極大化</span></div></div></div>
+                <div class="roadmap-card"><div class="rm-header"><span class="rm-step">PHASE 2</span><span class="rm-icon">💸</span><h3 class="rm-title">Retention</h3><p class="rm-desc">決済/ロックイン</p></div><div class="rm-details"><div style="margin-bottom:15px; color:#555; font-size:0.95rem; line-height:1.6; border-bottom:1px solid #eee; padding-bottom:15px;">一度流入したユーザーが生態系内で絶えず取引するようにさせる<strong>好循環構造(フライホイール)</strong>を作ります。</div><div class="rm-item"><span class="rm-label">Key Feature</span><span class="rm-text"><strong>循環ポイントシステム:</strong> 顧客が古着販売(売却)時、現金の代わりに『専用ポイント』で精算を受けるよう誘導</span></div><div class="rm-item"><span class="rm-label">Incentive</span><span class="rm-text">ポイントで店舗内の新品(化粧品/衣類)購入時、<strong>手数料免除及び追加割引</strong>特典を提供</span></div><div class="rm-item"><span class="rm-label">Effect</span><span class="rm-text"><strong>Cash-out防止:</strong> 資金流出を防ぎ、『中古販売 → ポイント → 新品購入 → 再販売』と続くLTV極大化</span></div></div></div>
+                <div class="roadmap-card highlight"><div class="rm-header"><span class="rm-step" style="color:var(--primary);">PHASE 3</span><span class="rm-icon">🤝</span><h3 class="rm-title">Monetization</h3><p class="rm-desc">B2B Pivot</p></div><div class="rm-details"><div style="margin-bottom:15px; color:#555; font-size:0.95rem; line-height:1.6; border-bottom:1px solid #ffd1d1; padding-bottom:15px;">構築されたトラフィックとインフラを韓国企業に販売し、ビジネスモデルを<strong>B2Bソリューションへ高度化</strong>します。</div><div class="rm-item"><span class="rm-label" style="color:var(--primary);">Shift</span><span class="rm-text">B2C(単純小売業) → <strong>B2B(プラットフォームビジネス)</strong>へ収益モデルの軸を移動</span></div><div class="rm-item"><span class="rm-label" style="color:var(--primary);">Product A</span><span class="rm-text"><strong>Data Consulting:</strong> リアルタイム販売/行動データに基づき、韓国企業へ『日本進出ターゲティング及びVMDコンサルティング』提供</span></div><div class="rm-item"><span class="rm-label" style="color:var(--primary);">Product B</span><span class="rm-text"><strong>LaaS (Logistics-as-a-Service):</strong> 構築された物流網と拠点を<strong>『委託販売チャネル』</strong>として賃貸し手数料を受け取る</span></div></div></div>
             </div>
         </div>
-
-        <!-- 5. Outcome & Impact -->
         <div class="p-section" style="background: #f8fafc; border-color: #e2e8f0;">
-            <div class="p-sec-title">🏆 05. Outcome & Impact (성과)</div>
-            <div style="text-align:center; margin-bottom:30px;">
-                <p style="font-size:1.1rem; font-weight:700; color:#333; line-height:1.6; word-break: keep-all;">
-                    "심사위원들을 설득한 핵심은 거창한 비전이 아닌,<br><span style="color:var(--primary);">데이터로 검증된 현실적인 전략</span>이었습니다."
-                </p>
-                <div class="award-tag-container" style="margin-top:15px; justify-content:center;">
-                    <span class="award-tag award-gold" style="font-size:1rem; padding:8px 20px;">🏆 교내 스타트업 캠프 3위 (3rd Place)</span>
-                </div>
-            </div>
-            <div class="gray-box" style="background: white; border: 1px solid #e2e8f0; padding: 30px;">
-                <h4 style="margin-bottom:25px; font-size:1.1rem; color:#333; border-bottom:1px solid #eee; padding-bottom:15px;">📝 Key Evaluation Factor</h4>
-                <div style="display:flex; flex-direction:column; gap:20px;">
-                    <div style="background:#f9f9f9; padding:20px; border-radius:10px; border:1px solid #eee;">
-                        <strong style="display:block; color:var(--dark); margin-bottom:8px; font-size:1.05rem;">🎯 Realistic Roadmap</strong>
-                        <p style="color:#555; line-height:1.6; margin:0; font-size:0.95rem; word-break: keep-all;">
-                            "단번에 플랫폼을 구축하겠다는 허황된 목표 대신, <strong>C2C에서 시작해 B2B로 점진적으로 생태계를 확장(Gradual Expansion)</strong>하는 로드맵의 현실성이 돋보임."
-                        </p>
-                    </div>
-                    <div style="background:#f9f9f9; padding:20px; border-radius:10px; border:1px solid #eee;">
-                        <strong style="display:block; color:var(--dark); margin-bottom:8px; font-size:1.05rem;">🔑 Sharp Problem Definition</strong>
-                        <p style="color:#555; line-height:1.6; margin:0; font-size:0.95rem; word-break: keep-all;">
-                            "한류 브랜드가 겪는 '벤더 의존성'과 '마진 구조'의 문제를 정확하게 타격하고, 이를 해결할 실질적인 솔루션을 제시함."
-                        </p>
-                    </div>
-                </div>
-            </div>
+            <div class="p-sec-title">🏆 05. Outcome & Impact</div>
+            <div style="text-align:center; margin-bottom:30px;"><p style="font-size:1.1rem; font-weight:700; color:#333; line-height:1.6; word-break: keep-all;">"審査員を説得した核心は、大げさなビジョンではなく、<br><span style="color:var(--primary);">データで検証された現実的な戦略</span>でした。"</p><div class="award-tag-container" style="margin-top:15px; justify-content:center;"><span class="award-tag award-gold" style="font-size:1rem; padding:8px 20px;">🏆 校内スタートアップキャンプ 3位 (3rd Place)</span></div></div>
+            <div class="gray-box" style="background: white; border: 1px solid #e2e8f0; padding: 30px;"><h4 style="margin-bottom:25px; font-size:1.1rem; color:#333; border-bottom:1px solid #eee; padding-bottom:15px;">📝 Key Evaluation Factor</h4><div style="display:flex; flex-direction:column; gap:20px;"><div style="background:#f9f9f9; padding:20px; border-radius:10px; border:1px solid #eee;"><strong style="display:block; color:var(--dark); margin-bottom:8px; font-size:1.05rem;">🎯 Realistic Roadmap</strong><p style="color:#555; line-height:1.6; margin:0; font-size:0.95rem; word-break: keep-all;">"一気にプラットフォームを構築するという虚像の目標の代わりに、<strong>C2Cから始まりB2Bへ漸進的に生態系を拡張</strong>するロードマップの現実性が際立つ。"</p></div><div style="background:#f9f9f9; padding:20px; border-radius:10px; border:1px solid #eee;"><strong style="display:block; color:var(--dark); margin-bottom:8px; font-size:1.05rem;">🔑 Sharp Problem Definition</strong><p style="color:#555; line-height:1.6; margin:0; font-size:0.95rem; word-break: keep-all;">"韓流ブランドが抱える『ベンダー依存性』と『マージン構造』の問題を正確に突き、これを解決する実質的なソリューションを提示した。"</p></div></div></div>
         </div>
-
-        <!-- 6. Retrospective (KPT) -->
         <div class="p-section">
             <div class="p-sec-title">🔄 06. Retrospective (KPT)</div>
-            <p style="text-align:center; font-weight:bold; color:#555; margin-bottom:25px;">
-                "전략은 성공적이었으나, 운영 비용(Hidden Cost)의 변수를 간과했던 점을 회고합니다."
-            </p>
-            <div class="kpt-item kpt-keep">
-                <span class="kpt-label"><i data-lucide="check-circle-2" size="20"></i> Keep</span>
-                <p class="kpt-desc">
-                    <strong>Data-Driven Approach:</strong> '직감'이 아닌 크롤링 <strong>데이터(Data)</strong>를 근거로 시장 진입 가능성을 검증한 점.<br>
-                    <strong>Strategic Detour:</strong> 벤더사의 반발이라는 구조적 문제를 예상하고, 정면돌파 대신 C2C 리셀 시장을 활용한 우회 전략을 수립하여 현실적인 진입로를 확보한 점.
-                </p>
-            </div>
-            <div class="kpt-item kpt-problem">
-                <span class="kpt-label"><i data-lucide="alert-triangle" size="20"></i> Problem</span>
-                <p class="kpt-desc">
-                    <strong>Margin Erosion (마진 예측 오류):</strong> 통관/검수 지연으로 인해 발생하는 <strong>추가 비용(창고 보관료, 운영비)</strong>을 고려하지 못함. 리드타임 지연이 단순 시간 문제가 아니라 단위 경제성(Unit Economics)을 악화시켜 최종 마진율이 예상보다 낮아지는 결과를 초래함.<br>
-                    <strong>Optimistic CAC (비용 낙관):</strong> K-Pop 팬덤의 자발적 바이럴에만 의존하여, <strong>초기 유저 획득 비용(CAC)</strong>을 지나치게 낮게 책정함.
-                </p>
-            </div>
-            <div class="kpt-item kpt-try">
-                <span class="kpt-label"><i data-lucide="rocket" size="20"></i> Try</span>
-                <p class="kpt-desc">
-                    <strong>Cost Buffer (비용 현실화):</strong> 해외 물류의 불확실성을 감안하여, 수익성 분석 시 물류비 항목에 <strong>10~15%의 예비비(Buffer)</strong>를 책정해 <strong>보수적인 마진율(Conservative Margin)</strong>을 산출하겠음.<br>
-                    <strong>Smoke Test (마케팅 검증):</strong> 재무 계획 수립 전, 소액 퍼포먼스 마케팅으로 <strong>실제 전환 단가(CPA)</strong>를 측정하는 '스모크 테스트'를 선행하여 현실적인 CAC를 도출하겠음.
-                </p>
-            </div>
+            <p style="text-align:center; font-weight:bold; color:#555; margin-bottom:25px;">"戦略は成功的でしたが、運営コスト(Hidden Cost)の変数を看過した点を回顧します。"</p>
+            <div class="kpt-item kpt-keep"><span class="kpt-label"><i data-lucide="check-circle-2" size="20"></i> Keep</span><p class="kpt-desc"><strong>Data-Driven Approach:</strong> 『直感』ではなくクローリング<strong>データ</strong>を根拠に市場参入の可能性を検証した点。<br><strong>Strategic Detour:</strong> ベンダー社の反発という構造的な問題を予想し、正面突破の代わりにC2Cリセル市場を活用した迂回戦略を樹立し、現実的な参入路を確保した点。</p></div>
+            <div class="kpt-item kpt-problem"><span class="kpt-label"><i data-lucide="alert-triangle" size="20"></i> Problem</span><p class="kpt-desc"><strong>Margin Erosion (マージン予測エラー):</strong> 通関/検品遅延により発生する<strong>追加コスト(倉庫保管料、運営費)</strong>を考慮できなかった。リードタイム遅延が単純な時間問題ではなくユニットエコノミクスを悪化させ、最終マージン率が予想より低くなる結果を招いた。<br><strong>Optimistic CAC (コスト楽観):</strong> K-Popファンダムの自発的バイラルにのみ依存し、<strong>初期ユーザー獲得コスト(CAC)</strong>を過度に低く策定した。</p></div>
+            <div class="kpt-item kpt-try"><span class="kpt-label"><i data-lucide="rocket" size="20"></i> Try</span><p class="kpt-desc"><strong>Cost Buffer (コスト現実化):</strong> 海外物流の不確実性を勘案し、収益性分析時に物流費項目に<strong>10~15%の予備費(Buffer)</strong>を策定し<strong>保守的なマージン率</strong>を算出する。<br><strong>Smoke Test (マーケティング検証):</strong> 財務計画樹立前、少額パフォーマンスマーケティングで<strong>実際の転換単価(CPA)</strong>を測定する『スモークテスト』を先行し、現実的なCACを導出する。</p></div>
         </div>
     </div>
 
-    <!-- Hidden Templates for Project 2 (Campus Delivery) -->
+    <!-- Hidden Templates: Project 2 (Campus Delivery) -->
     <div id="project2-content" style="display:none;">
         <div class="p-header">
-            <span class="p-badge" style="background:#333; color:white;">🚚 PROJECT 02</span>
+            <span class="p-badge" style="background:var(--primary); color:white;">☕ PROJECT 02</span>
             <h1 class="p-title">Hyper-local P2P Delivery</h1>
-            <p class="p-subtitle">이동 데이터를 물류망으로 전환하는 캠퍼스 긱(Gig) 이코노미</p>
+            <div class="p-meta">🗓️ Aug 2024 – Nov 2024 &nbsp;·&nbsp; 🛠️ PM & Python Dev &nbsp;·&nbsp; 👥 Team: 2 Members</div>
+            <p class="p-subtitle" style="margin-top:15px;">移動データを物流網に転換するキャンパスGigエコノミー</p>
         </div>
         <div class="p-grid-2">
-            <!-- 1. Problem -->
             <div class="p-section">
                 <div class="p-sec-title">⚠️ 01. Problem Discovery</div>
                 <div class="prob-box">
-                    <h3 style="font-size:1.3rem; color:#111; margin-bottom:25px; text-align:left; font-weight:800; line-height:1.4;">"잠재 수요는 '폭발'하지만,<br>라스트마일은 '비효율'에 갇히다"</h3>
+                    <h3 style="font-size:1.3rem; color:#111; margin-bottom:25px; text-align:left; font-weight:800; line-height:1.4;">"潜在需要は『爆発』するが、<br>ラストワンマイルは『非効率』に閉じ込められる"</h3>
                     <h3>📉 Inefficiency</h3>
-                    <p>기존 배달 앱의 라이더들은 '주문 콜'을 잡기 위해 이동합니다. 하지만 캠퍼스는 지형이 복잡하고(언덕, 보안), 외부인의 건물 진입이 제한되어 라스트마일 비용이 기형적으로 높습니다.</p>
+                    <p>既存配達アプリのライダーたちは『注文コール』を取るために移動します。しかし、キャンパスは地形が複雑で(坂、セキュリティ)、外部者の建物進入が制限され、ラストワンマイルコストが奇形的に高いです。</p>
                     <h3>😩 Unmet Demand</h3>
-                    <p>학생들은 커피를 마시고 싶지만, 짧은 쉬는 시간(10~15분) 내에 먼 카페를 왕복할 수 없어 구매를 포기합니다.</p>
+                    <p>学生たちはコーヒーを飲みたいが、短い休み時間(10~15分)内に遠いカフェを往復できず、購入を諦めます。</p>
                     <div class="insight-box">
                         <h3>💡 Insight</h3>
                         <p class="insight-text">
-                            "전문 배달원이 필요 없다. <span style="color:var(--primary);">어차피 그 건물로 이동하는 학생(Student)</span>이 배달하면 된다."
+                            "専門の配達員は必要ない。<span style="color:var(--primary);">どうせその建物へ移動する学生</span>が配達すればいい。"
                         </p>
                     </div>
                 </div>
             </div>
-            <!-- 2. Solution Strategy -->
             <div class="p-section">
                 <div class="p-sec-title">🗺️ 02. Solution Strategy</div>
                 <p style="margin-bottom:20px; font-size:1.05rem; font-weight:bold; color:var(--dark); text-align:center; line-height:1.4;">
-                    "Location-based(위치 기반)가 아닌<br><span style="color:var(--primary);">Route-based(경로 기반)</span> 배차"
+                    "位置基盤ではない<br><span style="color:var(--primary);">経路基盤</span> 配車"
                 </p>
                 <div class="gray-box">
                     <h4 style="margin-bottom:15px; font-size:1.1rem; color:#333; border-bottom:1px solid #ddd; padding-bottom:10px; display:flex; align-items:center; gap:6px;">
@@ -756,53 +621,51 @@
                     </h4>
                     <ul>
                         <li>
-                            <strong>(As-Is) 기성 배달</strong>
-                            <span>라이더가 주문 발생 지점으로 이동 → 픽업 → 배달 <span style="color:#e53e3e; font-weight:bold;">(배달을 위한 이동)</span></span>
+                            <strong>(As-Is) 既存配達</strong>
+                            <span>ライダーが注文発生地点へ移動 → ピックアップ → 配達 <span style="color:#e53e3e; font-weight:bold;">(配達のための移動)</span></span>
                         </li>
                         <li>
-                            <strong>(To-Be) 제안 모델</strong>
-                            <span>주문자가 라스트마일(수령지)을 찍으면, 해당 건물로 이동 중인 학생을 매칭 <span style="color:var(--primary); font-weight:bold;">(이동을 위한 배달)</span></span>
+                            <strong>(To-Be) 提案モデル</strong>
+                            <span>注文者がラストワンマイル(受領地)を指定すれば、該当建物へ移動中の学生をマッチング <span style="color:var(--primary); font-weight:bold;">(移動のための配達)</span></span>
                         </li>
                     </ul>
                 </div>
                 <div class="gray-box" style="background:white; border-color:#eee;">
                     <h3 style="font-size:1.1rem; color:var(--primary); margin-bottom:8px; display:flex; align-items:center; gap:6px;">⚙️ Mechanism</h3>
                     <p style="font-size:0.95rem; color:#444; line-height:1.6; margin:0;">
-                        학생 배달원은 별도의 노동을 하는 것이 아니라, <strong style="background:rgba(234, 53, 45, 0.1); padding:0 4px; color:#333;">"어차피 강의실로 가는 길"</strong>에 커피를 픽업하여 전달합니다.<br><br>
-                        이로 인해 <strong>배달 비용(Cost)을 획기적으로 낮추고</strong>, 배달원의 이동 효율을 극대화합니다.
+                        学生配達員は別途労働をするのではなく、<strong style="background:rgba(234, 53, 45, 0.1); padding:0 4px; color:#333;">"どうせ講義室へ行く道"</strong>でコーヒーをピックアップして伝達します。<br><br>
+                        これにより<strong>配達コストを画期的に下げ</strong>、配達員の移動効率を極大化します。
                     </p>
                 </div>
             </div>
         </div>
-        <!-- 3. Market Validation -->
         <div class="p-section" style="background:#f8fafc; border-color:#e2e8f0;">
             <div class="p-sec-title">📊 03. Market Validation</div>
-            <p style="margin-bottom:20px; text-align:center; color:#555; font-weight:600;">"기술적 가능성을 넘어, <span style="color:var(--primary);">실제 참여 의향(Willingness)</span>을 검증하다"</p>
+            <p style="margin-bottom:20px; text-align:center; color:#555; font-weight:600;">"技術的可能性を超え、<span style="color:var(--primary);">実際の参加意向</span>を検証する"</p>
             <div style="display:grid; grid-template-columns: 1fr 1fr; gap:20px;">
                 <div style="background:white; padding:20px; border-radius:12px; border:1px solid #eee; box-shadow:0 4px 10px rgba(0,0,0,0.03);">
                     <div style="font-size:2rem; margin-bottom:10px;">🙋🏻‍♂️</div>
                     <h4 style="margin-bottom:8px; font-weight:800; color:#333;">User Survey</h4>
                     <p style="font-size:0.9rem; color:#666; line-height:1.6;">
-                        교내 재학생 100명 설문 결과, <strong>"내 이동 경로와 90% 일치한다면 배달하겠다"</strong>는 긍정 응답 <span style="color:var(--primary); font-weight:800;">68%</span> 확보.<br>
-                        단순 노동이 아닌 <strong>'이동 시간의 수익화(Monetizing Idle Time)'</strong>로 접근하여 심리적 장벽을 낮춤.
+                        校内在学生100名アンケートの結果、<strong>"自分の移動経路と90%一致するなら配達する"</strong>という肯定回答 <span style="color:var(--primary); font-weight:800;">68%</span> 確保。<br>
+                        単純労働ではなく<strong>『移動時間の収益化』</strong>としてアプローチし、心理的障壁を下げる。
                     </p>
                 </div>
                 <div style="background:white; padding:20px; border-radius:12px; border:1px solid #eee; box-shadow:0 4px 10px rgba(0,0,0,0.03);">
                     <div style="font-size:2rem; margin-bottom:10px;">💰</div>
                     <h4 style="margin-bottom:8px; font-weight:800; color:#333;">Unit Economics</h4>
                     <p style="font-size:0.9rem; color:#666; line-height:1.6;">
-                        기존 배달비(3,000원) 대비 <strong>70% 저렴한 1,000원 미만</strong>의 수수료로도 매칭 성사 가능성 확인.<br>
-                        "커피 한 잔도 부담 없이 시킬 수 있는" <strong>마이크로 배달 시장</strong>의 가능성을 입증.
+                        既存配達費(3,000ウォン)対比<strong>70%安い1,000ウォン未満</strong>の手数料でもマッチング成立の可能性を確認。<br>
+                        "コーヒー一杯も負担なく頼める" <strong>マイクロデリバリー市場</strong>の可能性を立証。
                     </p>
                 </div>
             </div>
         </div>
-        <!-- 4. Algorithm Comparison -->
         <div class="p-section">
             <div class="p-sec-title">💓 04. Algorithm Comparison</div>
             <div class="big-algo-container">
                 <div class="big-algo-box">
-                    <div class="big-algo-title">🕰️ Legacy (기성 배달)</div>
+                    <div class="big-algo-title">🕰️ Legacy (既存配達)</div>
                     <div class="big-visual">
                         <svg viewBox="0 0 300 250" width="100%" height="100%">
                             <path id="legacy-path" d="M 40,200 L 100,154 L 30,50 L 220,80 L 260,170" class="svg-path" />
@@ -816,10 +679,10 @@
                             </circle>
                         </svg>
                     </div>
-                    <div class="big-caption">라이더가 콜을 잡고 <strong>픽업지로 별도 이동</strong><br><span style="color:#ea352d; font-weight:bold; font-size:0.85rem;">(High Cost / Inefficient)</span></div>
+                    <div class="big-caption">ライダーがコールを取り<strong>ピックアップ地へ別途移動</strong><br><span style="color:#ea352d; font-weight:bold; font-size:0.85rem;">(High Cost / Inefficient)</span></div>
                 </div>
                 <div class="big-algo-box">
-                    <div class="big-algo-title">⚡ Campus (제안 모델)</div>
+                    <div class="big-algo-title">⚡ Campus (提案モデル)</div>
                     <div class="big-visual">
                         <svg viewBox="0 0 300 250" width="100%" height="100%">
                             <path id="campus-path" d="M 40,200 L 100,154 L 170,120 L 220,60 L 260,30" class="svg-path-main-dashed" />
@@ -833,115 +696,93 @@
                             </circle>
                         </svg>
                     </div>
-                    <div class="big-caption">학생이 <strong>목적지로 가는 길에</strong> 픽업<br><span style="color:#ea352d; font-weight:bold; font-size:0.85rem;">(Low Cost / Optimized)</span></div>
+                    <div class="big-caption">学生が<strong>目的地に行く途中で</strong>ピックアップ<br><span style="color:#ea352d; font-weight:bold; font-size:0.85rem;">(Low Cost / Optimized)</span></div>
                 </div>
             </div>
         </div>
-        <!-- 5. Tech & Verification -->
         <div class="p-section">
-            <div class="p-sec-title">💻 05. Tech & Verification (기술 구현)</div>
+            <div class="p-sec-title">💻 05. Tech & Verification (技術具現)</div>
             <p style="margin-bottom:20px; font-size:1.1rem; font-weight:bold; color:var(--dark); text-align:center;">
-                "Google OR-Tools를 활용한<br><span style="color:var(--primary);">VRP(Vehicle Routing Problem)</span> 시뮬레이션"
+                "Google OR-Toolsを活用した<br><span style="color:var(--primary);">VRP(Vehicle Routing Problem)</span> シミュレーション"
             </p>
             <div style="display:flex; flex-direction:column; gap:15px;">
                 <div style="background:#f8f9fa; border:1px solid #eee; padding:20px; border-radius:8px;">
                     <h4 style="margin-bottom:8px; color:#333; font-size:1.05rem; display:flex; align-items:center; gap:6px;">🧬 Algorithm</h4>
                     <p style="font-size:0.95rem; color:#555; line-height:1.6;">
-                        다수의 학생(Vehicle)과 다수의 주문(Node)을 매칭하기 위해 <strong>Google OR-Tools 라이브러리</strong>를 활용하여 최적 경로를 도출했습니다.
+                        多数の学生(Vehicle)と多数の注文(Node)をマッチングするために<strong>Google OR-Toolsライブラリ</strong>を活用し、最適経路を導出しました。
                     </p>
                 </div>
                 <div class="p-grid-2" style="margin-top:0;">
                     <div style="background:#fff; border:1px solid #eee; padding:20px; border-radius:8px;">
                         <h4 style="margin-bottom:10px; color:#333; font-size:1.05rem; display:flex; align-items:center; gap:6px;">⚠️ Constraints</h4>
                         <p style="font-size:0.95rem; color:#555; line-height:1.6; margin-bottom:10px;">
-                            단순 거리 최소화가 아닌, 현실적인 변수들을 제약 조건으로 설정했습니다.
+                            単純な距離最小化ではなく、現実的な変数を制約条件として設定しました。
                         </p>
                         <ul style="padding-left:20px; font-size:0.9rem; color:#444; line-height:1.8;">
-                            <li>수업 시간 (Time Window)</li>
-                            <li>건물 진입 시간 (Vertical Time)</li>
-                            <li><strong>도보 이동 속도</strong> (Walking Speed)</li>
+                            <li>授業時間 (Time Window)</li>
+                            <li>建物進入時間 (Vertical Time)</li>
+                            <li><strong>徒歩移動速度</strong> (Walking Speed)</li>
                         </ul>
                     </div>
                     <div style="background:#fff5f5; border:1px solid #ffe0e0; padding:20px; border-radius:8px;">
                         <h4 style="margin-bottom:10px; color:var(--primary); font-size:1.05rem; display:flex; align-items:center; gap:6px;">✅ Simulation Result</h4>
                         <p style="font-size:0.95rem; color:#333; line-height:1.6;">
-                            교내 지도 데이터(Node/Link)를 모델링하고 파이썬으로 시뮬레이션한 결과,
+                            校内地図データ(Node/Link)をモデリングしPythonでシミュレーションした結果、
                         </p>
                         <div style="margin-top:15px; font-weight:bold; font-size:1.2rem; color:var(--primary); text-align:center;">
-                            기존 대비 총 이동 거리<br>
-                            <span style="font-size:2rem;">40% 단축</span>
+                            既存対比 総移動距離<br>
+                            <span style="font-size:2rem;">40% 短縮</span>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- 6. Outcome -->
-        <div class="p-section" style="border: 2px solid var(--primary);">
-            <div class="p-sec-title" style="color:var(--primary);">🏆 06. Outcome & Impact</div>
+        <div class="p-section">
+            <div class="p-sec-title">🏆 06. Outcome & Impact</div>
             <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px;">
                 <div style="background:#fff; padding:25px; border-radius:12px; border:1px solid #ffe0e0; text-align:center;">
                     <div style="font-size:2.5rem; margin-bottom:10px;">📉</div>
                     <h4 style="font-weight:800; color:#333; margin-bottom:10px;">Cost Efficiency</h4>
                     <p style="color:#555; font-size:0.95rem; line-height:1.6;">
-                        40% 거리 단축을 비용으로 환산 시,<br>
-                        건당 배달 원가를 <strong>3,000원 → 900원</strong>으로<br>
-                        <span style="color:var(--primary); font-weight:800;">70% 절감 효과</span> 입증.
+                        40%距離短縮をコスト換算時、<br>
+                        件当り配達原価を<strong>3,000ウォン → 900ウォン</strong>へ<br>
+                        <span style="color:var(--primary); font-weight:800;">70% 削減効果</span> 立証。
                     </p>
                 </div>
                 <div style="background:#fff; padding:25px; border-radius:12px; border:1px solid #eee; text-align:center;">
                     <div style="font-size:2.5rem; margin-bottom:10px;">📦</div>
                     <h4 style="font-weight:800; color:#333; margin-bottom:10px;">Deliverable</h4>
                     <p style="color:#555; font-size:0.95rem; line-height:1.6;">
-                        실제 캠퍼스 맵 기반의<br>
-                        <strong>Google OR-Tools 최적 경로 매칭</strong><br>
-                        알고리즘 프로토타입 개발 완료.
+                        実際のキャンパスマップ基盤の<br>
+                        <strong>Google OR-Tools 最適経路マッチング</strong><br>
+                        アルゴリズムプロトタイプ開発完了。
                     </p>
                 </div>
             </div>
         </div>
-        <!-- 7. Retrospective -->
         <div class="p-section">
             <div class="p-sec-title">💡 07. Retrospective (KPT)</div>
             <p style="text-align:center; font-weight:bold; color:#555; margin-bottom:25px;">
-                "현실적인 운영 이슈(수급 불균형)를 발견하고 개선책을 고민했습니다."
+                "現実的な運営イシュー(需給不均衡)を発見し、改善策を悩み抜きました。"
             </p>
             <div class="kpt-item kpt-keep">
                 <span class="kpt-label"><i data-lucide="check-circle-2" size="20"></i> Keep</span>
                 <p class="kpt-desc">
-                    위치 기반(Location-based)이 아닌 <strong>경로 기반(Route-based)</strong>으로 접근하여, 별도의 노동력 투입 없이 유휴 자원을 활용한 모델을 설계한 점.
+                    位置基盤ではなく<strong>経路基盤</strong>でアプローチし、別途の労働力投入なしに遊休資源を活用したモデルを設計した点。
                 </p>
             </div>
             <div class="kpt-item kpt-problem">
                 <span class="kpt-label"><i data-lucide="alert-triangle" size="20"></i> Problem</span>
                 <p class="kpt-desc">
-                    <strong>Peak Time Issue:</strong> 쉬는 시간(10분)에 주문과 배달원이 동시에 몰리고, 수업 시간에는 둘 다 사라지는 <strong>'수급 동조화(Supply-Demand Sync)'</strong> 현상을 발견함. 배달원도 수업을 가야 하므로 공급 부족(Supply Crunch) 발생.
+                    <strong>Peak Time Issue:</strong> 休み時間(10分)に注文と配達員が同時に殺到し、授業時間には両方消える<strong>『需給同調化』</strong>現象を発見。配達員も授業に行かなければならないため供給不足(Supply Crunch)発生。
                 </p>
             </div>
             <div class="kpt-item kpt-try">
                 <span class="kpt-label"><i data-lucide="rocket" size="20"></i> Try</span>
                 <p class="kpt-desc">
-                    <strong>Dynamic Pricing:</strong> 특정 시간대(수업 중, 공강 시간) 배달 수행 시 인센티브를 1.5배 지급하여 공급 유도.<br>
-                    <strong>Pickup Zone:</strong> 카페와 제휴하여 강의실 근처에 '픽업 존'을 설치, 배달원의 대기 시간을 0으로 만드는 운영 최적화 도입 필요.
+                    <strong>Dynamic Pricing:</strong> 特定時間帯(授業中、空き時間)配達遂行時インセンティブを1.5倍支給し供給誘導。<br>
+                    <strong>Pickup Zone:</strong> カフェと提携し講義室近くに『ピックアップゾーン』を設置、配達員の待機時間を0にする運営最適化導入必要。
                 </p>
-            </div>
-        </div>
-        <!-- 8. Vision & Scale-up -->
-        <div class="p-section" style="border: 2px solid #333;">
-            <div class="p-sec-title" style="color: #333;">🚀 08. Vision & Scale-up</div>
-            <div class="roadmap-stack">
-                 <div class="roadmap-card" style="border-color:#333;">
-                    <div class="rm-header" style="border-color:#eee;">
-                        <span class="rm-step">VISION</span>
-                        <span class="rm-icon">🚀</span>
-                        <h3 class="rm-title">Campus Gig</h3>
-                        <p class="rm-desc">하이퍼로컬 슈퍼앱</p>
-                    </div>
-                    <div class="rm-details">
-                        <div class="rm-item"><span class="rm-label">Supply</span><span class="rm-text">단순 등하교뿐만 아니라, 캠퍼스 내 <strong>모든 유휴 이동(공강 시간, 식사 이동 등)</strong>을 수익화하여 촘촘한 공급망 확보</span></div>
-                        <div class="rm-item"><span class="rm-label">Demand</span><span class="rm-text"><strong>획기적으로 낮은 배달비</strong>와 <strong>학생 상생 구조</strong>로 주문 장벽을 낮춰 '커피 한 잔'도 부담 없이 주문 (Micro-order)</span></div>
-                        <div class="rm-item"><span class="rm-label">Expand</span><span class="rm-text">카페 → 편의점/제본소 → 교내 종합 심부름 서비스로 확장</span></div>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
@@ -950,75 +791,76 @@
     <div id="project3-content" style="display:none;">
         <div class="p-header">
             <span class="p-badge" style="background:var(--primary); color:white;">⚡ PROJECT 03</span>
-            <h1 class="p-title">B2B Digital Asset Trading & UX Strategy</h1>
-            <p style="font-size:1.1rem; color:#666; margin-bottom:15px; font-weight:600;">(REC & Carbon Emission Rights)</p>
-            <div class="award-tag-container">
-                <span class="award-tag award-gold">💴 Pre-A 300M JPY</span>
+            <h1 class="p-title">Digital Asset Trading & UX Strategy</h1>
+            <div class="p-meta">🗓️ Jan 2021 – May 2021 &nbsp;·&nbsp; 🧪 Product Intern (QA) &nbsp;·&nbsp; 🏢 Team: 8 (Cross-functional)</div>
+            <div class="award-tag-container" style="margin-top:20px; margin-bottom:20px;">
+                <span class="award-tag award-gold">💴 Pre-A 300M JPY Investment</span>
+                <span class="award-tag award-gray">💼 Internship</span>
             </div>
-            <p class="p-subtitle">소수 팀의 <strong>QA 인턴</strong>으로 참여하여,<br>관습적인 HTS UI를 탈피하고 투자자를 설득하는 '직관성'을 설계하다</p>
+            <p class="p-subtitle" style="line-height:1.6; color:#555;">
+                REC & 炭素排出権取引ブロックチェーンプラットフォーム:<br>
+                慣習的なHTS UIを脱皮し、投資家を説得する<strong>『直感性』</strong>を設計する
+            </p>
         </div>
         <div class="p-grid-2">
-            <!-- 1. Problem -->
             <div class="p-section">
                 <div class="p-sec-title">📝 01. Context & Problem</div>
                 <div class="prob-box">
-                    <h3 style="font-size:1.2rem; color:#111; margin-bottom:20px; text-align:left; font-weight:800; line-height:1.4;">"관습적인 HTS UI 차용,<br>에너지 거래의 본질을 놓치다"</h3>
+                    <h3 style="font-size:1.2rem; color:#111; margin-bottom:20px; text-align:left; font-weight:800; line-height:1.4;">"慣習的なHTS UI借用、<br>エネルギー取引の本質を見逃す"</h3>
                     <h3>🎤 Background</h3>
                     <p style="font-size:0.95rem; margin-bottom:20px;">
-                        <strong>REC(신재생에너지 공급인증서) 및 탄소배출권</strong> 거래를 위한 신규 플랫폼(MVP) 개발에 소규모 팀의 <strong>QA 인턴</strong>으로 참여했습니다.
+                        <strong>REC(再生可能エネルギー供給証明書)及び炭素排出権</strong>取引のための新規ブロックチェーンプラットフォーム(MVP)開発に少数チームの<strong>QAインターン</strong>として参加しました。
                     </p>
                     <h3>⚠️ Issue Discovery</h3>
                     <div style="display:flex; flex-direction:column; gap:15px; margin-bottom:20px;">
                         <div style="background:#f9f9f9; border-left:4px solid #555; padding:15px; border-radius:0 4px 4px 0;">
-                            <strong style="display:block; color:#333; margin-bottom:5px;">🚨 Trigger (문제 발견)</strong>
+                            <strong style="display:block; color:#333; margin-bottom:5px;">🚨 Trigger (問題発見)</strong>
                             <span style="font-size:0.95rem; color:#555; line-height:1.6;">
-                                초기 개발된 주문 화면의 <strong>'매수/매도 버튼 색상'</strong>이 통념(미국 표준 vs 아시아 표준)과 반대로 적용되어 혼란을 야기하는 휴먼 에러를 발견했습니다. 글로벌 통합 마켓플레이스 환경에서 이는 치명적인 오작동 원인이 되었습니다.
+                                初期開発された注文画面の<strong>『買収/売却ボタンの色』</strong>が通念(米国標準 vs アジア標準)と反対に適用され混乱を引き起こすヒューマンエラーを発見しました。グローバル統合マーケットプレイス環境でこれは致命的な誤作動の原因となりました。
                             </span>
                         </div>
                         <div style="background:#f9f9f9; border-left:4px solid #999; padding:15px; border-radius:0 4px 4px 0;">
-                            <strong style="display:block; color:#333; margin-bottom:5px;">📉 Root Cause (근본 원인)</strong>
+                            <strong style="display:block; color:#333; margin-bottom:5px;">📉 Root Cause (根本原因)</strong>
                             <span style="font-size:0.95rem; color:#555; line-height:1.6;">
-                                우리의 고객은 초단타 매매를 하는 '데이트레이더'가 아니라, 신재생 에너지 포트폴리오를 관리하는 <strong>'기관 담당자'</strong>였습니다. 그들에게 필요한 건 '실시간성'이 아니라 <strong>'정확성'과 '조건 비교'</strong>였습니다. HTS의 복잡한 UI는 이들에게 불필요한 인지 부하를 주었습니다.
+                                我々の顧客は超短期売買をする『デイトレーダー』ではなく、再生可能エネルギーポートフォリオを管理する<strong>『機関担当者』</strong>でした。彼らに必要なのは『リアルタイム性』ではなく<strong>『正確性』と『条件比較』</strong>でした。HTSの複雑なUIは彼らに不要な認知的負荷を与えました。
                             </span>
                         </div>
                     </div>
                     <div class="insight-box">
                         <h3>💡 Insight</h3>
                         <p class="insight-text">
-                            "단순한 기능 구현이 아니다. 사용자가 <span style="color:var(--primary); font-weight:800;">망설임 없이 직관적으로</span> 거래할 수 있는 경험(UX)을 설계해야 한다."
+                            "単純な機能具現ではない。ユーザーが<span style="color:var(--primary); font-weight:800;">迷いなく直感的に</span>取引できる経験(UX)を設計しなければならない。"
                         </p>
                     </div>
                 </div>
             </div>
-            <!-- 2. Hypothesis & Solution -->
             <div class="p-section">
                 <div class="p-sec-title">🎯 02. Hypothesis & Solution</div>
                 <div style="margin-bottom:25px;">
                     <h4 style="margin-bottom:10px; color:#333; font-size:1.05rem;">🚩 Goal: Structure Reform</h4>
                     <p style="font-size:0.95rem; color:#555; line-height:1.6;">
-                        "익숙하지 않은 HTS 구조 대신, 정보의 우선순위가 명확한 <strong>'게시판(List)형' 구조</strong>를 도입하면 오주문 리스크를 줄이고 신뢰도를 높일 수 있을 것이다."라는 가설을 세우고, <strong>'오작동 제로 & 학습 비용 최소화'</strong>를 목표로 했습니다.
+                        "馴染みのないHTS構造の代わりに、情報の優先順位が明確な<strong>『掲示板(List)型』構造</strong>を導入すれば誤注文リスクを減らし信頼度を高められるだろう"という仮説を立て、<strong>『誤作動ゼロ & 学習コスト最小化』</strong>を目標にしました。
                     </p>
                 </div>
                 <div style="background:white; border:1px solid #eee; padding:20px; border-radius:12px;">
                     <h4 style="margin-bottom:20px; font-size:1.1rem; color:#333; display:flex; align-items:center; gap:6px;">⚔️ Action: Logic & Prioritization</h4>
                     <div style="display:grid; grid-template-columns: 1fr; gap:15px;">
                         <div style="background:#f9f9f9; padding:20px; border-radius:8px; border-left:4px solid #333;">
-                            <div style="display:flex; align-items:center; gap:8px; margin-bottom:8px;"><span style="font-size:1.2rem;">📊</span><strong style="color:#333; font-size:1rem;">데이터 기반 설득 (Logic)</strong></div>
-                            <p style="font-size:0.95rem; color:#555; line-height:1.6; margin:0;">기획팀에게 <strong>'국가별 색상 의미 차이(Color Culture)'</strong> 자료와 <strong>'F패턴 시선 추적'</strong> 자료를 근거로 제시하여 구조 변경의 당위성을 확보했습니다. 주식과 달리 <strong>'목록 시인성'</strong>이 중요함을 증명했습니다.</p>
+                            <div style="display:flex; align-items:center; gap:8px; margin-bottom:8px;"><span style="font-size:1.2rem;">📊</span><strong style="color:#333; font-size:1rem;">データ基盤説得</strong></div>
+                            <p style="font-size:0.95rem; color:#555; line-height:1.6; margin:0;">企画チームへ<strong>『国家別色彩意味の差異』</strong>資料と<strong>『Fパターン視線追跡』</strong>資料を根拠として提示し構造変更の当為性を確保しました。株式と異なり<strong>『リスト視認性』</strong>が重要であることを証明しました。</p>
                         </div>
                         <div style="background:#f9f9f9; padding:20px; border-radius:8px; border-left:4px solid var(--primary);">
-                            <div style="display:flex; align-items:center; gap:8px; margin-bottom:8px;"><span style="font-size:1.2rem;">🤝</span><strong style="color:#333; font-size:1rem;">엔지니어링 협업 및 우선순위 조정</strong></div>
-                            <p style="font-size:0.95rem; color:#555; line-height:1.6; margin:0;">전면 재개발 대신 <strong>CSS/레이아웃 조정</strong>으로 공수를 최소화하는 타협안을 도출했습니다. MVP 기한 준수를 위해 화려한 인터랙션보다 <strong>'구조적 직관성'과 '데이터 정합성'을 최우선순위(Priority)</strong>로 설정하여 리소스를 집중했습니다.</p>
+                            <div style="display:flex; align-items:center; gap:8px; margin-bottom:8px;"><span style="font-size:1.2rem;">🤝</span><strong style="color:#333; font-size:1rem;">エンジニアリング協業及び優先順位調整</strong></div>
+                            <p style="font-size:0.95rem; color:#555; line-height:1.6; margin:0;">全面再開発の代わりに<strong>CSS/レイアウト調整</strong>で工数を最小化する妥協案を導き出しました。MVP期限順守のため派手なインタラクションより<strong>『構造的直感性』と『データ整合性』を最優先順位</strong>に設定しリソースを集中しました。</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- 3. UX Transformation -->
         <div class="p-section">
             <div class="p-sec-title">🔄 03. UX Transformation (Before vs After)</div>
             <p style="margin-bottom:25px; font-size:0.95rem; color:#666; text-align:center;">
-                ※ 보안 규정(Confidential) 준수를 위해 <strong>추상화된 와이어프레임</strong>으로 구조 변화를 시각화했습니다.
+                ※ セキュリティ規定順守のため<strong>抽象化されたワイヤーフレーム</strong>で構造変化を可視化しました。
             </p>
             <div class="big-algo-container">
                 <div class="big-algo-box">
@@ -1045,7 +887,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="big-caption"><strong>색상 표준 충돌 (Button Color Split)</strong><br><span style="font-size:0.85rem; color:#e53e3e;">국가별 색상 인지 차이(Red=Up/Down?) 혼재</span></div>
+                    <div class="big-caption"><strong>色彩標準衝突</strong><br><span style="font-size:0.85rem; color:#e53e3e;">国別色彩認知差異(Red=Up/Down?)混在</span></div>
                 </div>
                 <div class="big-algo-box interactive-demo" onclick="triggerListAnim(this)" style="border:2px solid var(--primary);">
                     <div class="big-algo-title" style="color:var(--primary);">After: Bulletin Style (Single Column)</div>
@@ -1090,20 +932,19 @@
                             <span style="font-size:0.9rem;">👆</span> Click to Demo
                         </div>
                     </div>
-                    <div class="big-caption"><strong>명확한 정보 위계 & 리스트형</strong><br><span style="font-size:0.85rem; color:var(--primary);">직관적 인지 & 오작동 제로</span></div>
+                    <div class="big-caption"><strong>明確な情報階層 & リスト型</strong><br><span style="font-size:0.85rem; color:var(--primary);">直観的認知 & 誤作動ゼロ</span></div>
                 </div>
             </div>
         </div>
-        <!-- 04. Outcome & Impact -->
         <div class="p-section" style="border: 2px solid var(--primary);">
-            <div class="p-sec-title" style="color:var(--primary);">🏆 04. Outcome & Impact</div>
+            <div class="p-sec-title">🏆 04. Outcome & Impact</div>
             <div style="display:flex; flex-direction:column; gap:20px;">
                 <div style="background:#fff; border:1px solid #eee; border-radius:12px; padding:20px; display:flex; gap:20px; align-items:center;">
                     <div style="font-size:2.5rem; flex-shrink:0;">💴</div>
                     <div>
                         <h4 style="font-weight:800; color:#333; margin-bottom:5px;">Macro Impact</h4>
                         <p style="color:#555; font-size:0.95rem; line-height:1.5; margin:0;">
-                            UI/UX 개선이 반영된 MVP로 데모를 시연하여 <strong>Pre-A 3억 엔(300M JPY) 투자 유치</strong> 성공.
+                            UI/UX改善が反映されたMVPでデモを実演し<strong>Pre-A 3億円(300M JPY)投資誘致</strong>成功。
                         </p>
                     </div>
                 </div>
@@ -1111,243 +952,423 @@
                     <div style="background:#f9f9f9; border-radius:12px; padding:20px; border-left:4px solid #28a745;">
                         <h4 style="font-weight:800; color:#28a745; margin-bottom:8px;">Micro Impact (QA)</h4>
                         <p style="color:#555; font-size:0.9rem; line-height:1.5; margin:0;">
-                            변경된 '리스트형 UI' 적용 후 내부 사용성 테스트(Usability Test)에서 <strong>오주문 발생률 0%</strong> 기록.
+                            変更された『リスト型UI』適用後、内部ユーザビリティテストで<strong>誤注文発生率 0%</strong>記録。
                         </p>
                     </div>
                     <div style="background:#f9f9f9; border-radius:12px; padding:20px; border-left:4px solid #007bff;">
                         <h4 style="font-weight:800; color:#007bff; margin-bottom:8px;">Contribution</h4>
                         <p style="color:#555; font-size:0.9rem; line-height:1.5; margin:0;">
-                            인턴 신분으로 기획/디자인 팀을 설득하여 제품의 핵심 UX 방향성을 전환함 (HTS → Bulletin).
+                            インターンの身分で企画/デザインチームを説得しプロダクトの核心UX方向性を転換(HTS → Bulletin)。
                         </p>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- 05. Retrospective -->
         <div class="p-section">
             <div class="p-sec-title">💡 05. Retrospective (KPT)</div>
             <div class="kpt-item kpt-keep">
                 <span class="kpt-label"><i data-lucide="check-circle-2" size="20"></i> Keep</span>
                 <p class="kpt-desc">
-                    <strong>Data-Driven Persuasion:</strong> '관습'을 고집하는 이해관계자들에게 '시선 추적 데이터'와 '문화적 차이'라는 객관적 근거를 제시하여 설득에 성공함.
+                    <strong>Data-Driven Persuasion:</strong> 『慣習』にこだわるステークホルダーたちに『視線追跡データ』と『文化的差異』という客観的根拠を提示し説得に成功した。
                 </p>
             </div>
             <div class="kpt-item kpt-problem">
                 <span class="kpt-label"><i data-lucide="alert-triangle" size="20"></i> Problem</span>
                 <p class="kpt-desc">
-                    <strong>Cost of Late Discovery:</strong> 치명적인 설계 오류를 제품이 개발된 후인 'QA 단계'에서야 발견함. 이로 인해 전면 재설계 대신 CSS 수정이라는 제한적 해결책(Hotfix)을 택할 수밖에 없었음.
+                    <strong>Cost of Late Discovery:</strong> 致命的な設計ミスを製品が開発された後の『QA段階』になって発見した。これにより全面再設計の代わりにCSS修正という制限的解決策(Hotfix)を選択せざるを得なかった。
                 </p>
             </div>
             <div class="kpt-item kpt-try">
                 <span class="kpt-label"><i data-lucide="rocket" size="20"></i> Try</span>
                 <p class="kpt-desc">
-                    <strong>Shift Left:</strong> 품질 관리는 테스트가 아닌 기획 단계부터 시작되어야 함. 앞으론 초기 와이어프레임 단계에서 사용성 테스트(UT)를 선행하여 '수정 비용(Rework Cost)'을 최소화하는 PM이 되겠음.
+                    <strong>Shift Left:</strong> 品質管理はテストではなく企画段階から始まらなければならない。これからは初期ワイヤーフレーム段階でユーザビリティテスト(UT)を先行し『修正コスト』を最小化するPMになる。
                 </p>
             </div>
         </div>
     </div>
 
-    <!-- Hidden Templates for Project 4 (EV) -->
-    <div id="project4-content" style="display:none;">
+    <!-- Hidden Templates: EN Content (Already Provided Above) -->
+    <div id="project1-content-en" style="display:none;">
         <div class="p-header">
-            <span class="p-badge" style="background:var(--primary); color:white;">🔋 PROJECT 04</span>
-            <h1 class="p-title" style="margin-bottom:15px;">Drive-to-Earn Reward Platform</h1>
-            <div class="award-tag-container" style="margin-bottom:20px;">
-                <span class="award-tag award-gold">🏆 2021 교내 창업 수업 최우수</span>
-                <span class="award-tag award-gray">Business Model Validation</span>
+            <span class="p-badge">✈️ PROJECT 01</span>
+            <h1 class="p-title">Cross-border Commerce & Fintech Ecosystem</h1>
+            <div class="p-meta">🗓️ Dec 2024 – Jan 2025 &nbsp;·&nbsp; 🧑‍✈️ Project Lead &nbsp;·&nbsp; 👥 Team: 4 Members</div>
+            <div class="award-tag-container" style="margin-top:15px;">
+                <span class="award-tag award-gold">🏆 3rd Place in Campus Startup Camp</span>
+                <span class="award-tag award-gray">feat. Korea Startup Center</span>
+            </div>
+            <p class="p-subtitle">Opening market gaps with pre-owned goods, completing the ecosystem with D2C hubs</p>
+        </div>
+        <div class="p-grid-2">
+            <div class="p-section">
+                <div class="p-sec-title">🔎 01. Problem Discovery</div>
+                <div class="prob-box">
+                    <h3 style="font-size:1.3rem; color:#111; margin-bottom:25px; text-align:left; font-weight:800; line-height:1.4;">"Online is 'Hype',<br>Offline is 'Disconnect'"</h3>
+                    <h3>🎤 Context</h3>
+                    <p>Captured structural pain points through In-depth Interviews with K-Beauty leader 'Amorepacific'.</p>
+                    <h3>🏗️ Structural Issue</h3>
+                    <div class="gray-box">
+                        <ul>
+                            <li><strong>Vendor Dependency (Middleman):</strong><span>Unlike online, offline entry requires local vendors, causing double margins → Loss of price competitiveness.</span></li>
+                            <li><strong>Loss of Branding:</strong><span>Cannot control VMD or customer experience via simple supply methods.</span></li>
+                        </ul>
+                    </div>
+                    <div class="insight-box">
+                        <h3>💡 Insight</h3>
+                        <p class="insight-text">"Need a <span style="color:var(--primary);">D2C offline hub</span> targeting global fandoms of Hallyu Brands, where the brand controls 100% of price and experience."</p>
+                    </div>
+                </div>
+            </div>
+            <div class="p-section">
+                <div class="p-sec-title">📊 02. Market Validation</div>
+                <p style="margin-bottom:25px; font-size:1.05rem; color:#333; font-weight:bold; text-align:center; border-bottom:1px solid #eee; padding-bottom:15px;">"Data Verification: Finding 'Profitable Markets' via<br><span style="color:var(--primary);">Bunjang vs Mercari Data</span>"</p>
+                <div style="margin-bottom:25px; font-size:0.95rem; color:#555;">
+                    <div style="margin-bottom:15px;"><strong style="color:var(--primary);">🎯 Target Selection Criteria</strong><ul style="padding-left:25px; margin-top:5px; line-height:1.6;"><li><strong>High Liquidity:</strong> K-Fashion top 3 & <strong>Rare K-POP Goods</strong> actively resold by JP Gen-Z.</li><li><strong>Logistics Efficiency:</strong> Filtered items with high <strong>Unit Economics</strong> for cross-border shipping (small volume).</li></ul></div>
+                    <div><strong style="color:var(--primary);">🧾 Methodology & Verification</strong><p style="margin-top:5px; line-height:1.6; padding-left:25px;">Crawled transaction data from KR <strong>'Bunjang'</strong> and JP <strong>'Mercari'</strong> to prove structural <strong>Arbitrage Price Gap</strong> for identical Used-Good conditions.</p></div>
+                </div>
+                <div class="v-chart-container">
+                    <div class="v-chart-group"><div class="v-chart-title">Brand A<br>(Wallet)</div><div class="v-chart-gap">Gap 57%</div><div class="v-bars"><div class="v-bar-col"><div class="v-bar v-bar-kr" style="height: 43%;"></div><div class="v-bar-label">KR</div></div><div class="v-bar-col"><div class="v-bar v-bar-jp" style="height: 100%;"></div><div class="v-bar-label">JP</div></div></div></div>
+                    <div class="v-chart-group"><div class="v-chart-title">Brand B<br>(Apparel)</div><div class="v-chart-gap">Gap 54%</div><div class="v-bars"><div class="v-bar-col"><div class="v-bar v-bar-kr" style="height: 46%;"></div><div class="v-bar-label">KR</div></div><div class="v-bar-col"><div class="v-bar v-bar-jp" style="height: 100%;"></div><div class="v-bar-label">JP</div></div></div></div>
+                    <div class="v-chart-group"><div class="v-chart-title">K-Pop<br>Goods</div><div class="v-chart-gap">Gap 52%</div><div class="v-bars"><div class="v-bar-col"><div class="v-bar v-bar-kr" style="height: 48%;"></div><div class="v-bar-label">KR</div></div><div class="v-bar-col"><div class="v-bar v-bar-jp" style="height: 100%;"></div><div class="v-bar-label">JP</div></div></div></div>
+                </div>
+            </div>
+        </div>
+        <div class="p-section">
+            <div class="p-sec-title">🏗️ 03. Solution: Hybrid Model</div>
+            <p style="margin-bottom:25px; font-size:1.05rem; font-weight:bold; color:#333; text-align:center; border-bottom:1px solid #eee; padding-bottom:15px;">"Hybrid Model: <span style="color:var(--primary);">Hook with C2C</span>, <span style="color:#333;">Monetize with B2B</span>"</p>
+            <div class="sol-grid">
+                <div class="sol-card"><div class="emoji-icon">🎣</div><h4>Traffic Hook (C2C)</h4><p>Deploy trendy pre-owned K-fashion as bait products to <strong>bypass entry barriers</strong>.</p></div>
+                <div class="sol-card"><div class="emoji-icon">🏟️</div><h4>Offline Experience</h4><p>Provide D2C brand experience via Harajuku 'Idol Waiting Room' concept store.</p></div>
+                <div class="sol-card"><div class="emoji-icon">⚙️</div><h4>Tech & Logistics</h4><p>Establish nationwide logistics network and reduce labor costs via system.</p></div>
+            </div>
+        </div>
+        <div class="p-section" style="border: 2px solid var(--primary);">
+            <div class="p-sec-title" style="color: var(--primary);">📈 04. Growth Strategy & Roadmap</div>
+            <p style="text-align:center; font-weight:bold; font-size:1.1rem; color:#444;">"From Store to Platform: Pivot from Retail to 'Business Solution'"</p>
+            <div class="roadmap-stack">
+                <div class="roadmap-card"><div class="rm-header"><span class="rm-step">PHASE 1</span><span class="rm-icon">🚩</span><h3 class="rm-title">Expansion</h3><p class="rm-desc">Hub Expansion</p></div><div class="rm-details"><div style="margin-bottom:15px; color:#555; font-size:0.95rem; line-height:1.6; border-bottom:1px solid #eee; padding-bottom:15px;">Secure traffic and logistics network via hub expansion. Aiming for <strong>Omni-channel Network Construction</strong>, not just store opening.</div><div class="rm-item"><span class="rm-label">Action</span><span class="rm-text">Standardize successful Harajuku flagship operations (VMD, buying process) and expand to Osaka, Kyushu.</span></div><div class="rm-item"><span class="rm-label">Logic</span><span class="rm-text">Each hub acts as a <strong>Local C2C Logistics Hub</strong>. Increase efficiency by linking with automated warehouses.</span></div><div class="rm-item"><span class="rm-label">Goal</span><span class="rm-text">Secure JP Gen-Z traffic and maximize 'Seed Inventory' (used clothes) circulation.</span></div></div></div>
+                <div class="roadmap-card"><div class="rm-header"><span class="rm-step">PHASE 2</span><span class="rm-icon">💸</span><h3 class="rm-title">Retention</h3><p class="rm-desc">Payment/Lock-in</p></div><div class="rm-details"><div style="margin-bottom:15px; color:#555; font-size:0.95rem; line-height:1.6; border-bottom:1px solid #eee; padding-bottom:15px;">Create a <strong>Flywheel Structure</strong> where users continuously trade within the ecosystem.</div><div class="rm-item"><span class="rm-label">Key Feature</span><span class="rm-text"><strong>Circulation Point System:</strong> Induce sellers to receive settlement in 'Points' instead of cash.</span></div><div class="rm-item"><span class="rm-label">Incentive</span><span class="rm-text">Offer <strong>Fee Waiver & Discounts</strong> when purchasing new items (Cosmetics/Clothes) with points.</span></div><div class="rm-item"><span class="rm-label">Effect</span><span class="rm-text"><strong>Prevent Cash-out:</strong> Maximize LTV via 'Sell Used → Point → Buy New → Resell' cycle.</span></div></div></div>
+                <div class="roadmap-card highlight"><div class="rm-header"><span class="rm-step" style="color:var(--primary);">PHASE 3</span><span class="rm-icon">🤝</span><h3 class="rm-title">Monetization</h3><p class="rm-desc">B2B Pivot</p></div><div class="rm-details"><div style="margin-bottom:15px; color:#555; font-size:0.95rem; line-height:1.6; border-bottom:1px solid #ffd1d1; padding-bottom:15px;">Upgrade business model to <strong>B2B Solution</strong> by selling established traffic and infrastructure to KR companies.</div><div class="rm-item"><span class="rm-label" style="color:var(--primary);">Shift</span><span class="rm-text">Shift profit center from B2C (Retail) to <strong>B2B (Platform Business)</strong>.</span></div><div class="rm-item"><span class="rm-label" style="color:var(--primary);">Product A</span><span class="rm-text"><strong>Data Consulting:</strong> Provide 'Targeting & VMD Consulting' based on real-time sales/behavior data.</span></div><div class="rm-item"><span class="rm-label" style="color:var(--primary);">Product B</span><span class="rm-text"><strong>LaaS (Logistics-as-a-Service):</strong> Lease logistics network and hubs as <strong>'Consignment Sales Channels'</strong>.</span></div></div></div>
+            </div>
+        </div>
+        <div class="p-section" style="background: #f8fafc; border-color: #e2e8f0;">
+            <div class="p-sec-title">🏆 05. Outcome & Impact</div>
+            <div style="text-align:center; margin-bottom:30px;"><p style="font-size:1.1rem; font-weight:700; color:#333; line-height:1.6; word-break: keep-all;">"Key to persuasion was not a grand vision,<br>but a <span style="color:var(--primary);">realistic strategy verified by data</span>."</p><div class="award-tag-container" style="margin-top:15px; justify-content:center;"><span class="award-tag award-gold" style="font-size:1rem; padding:8px 20px;">🏆 3rd Place in Campus Startup Camp</span></div></div>
+            <div class="gray-box" style="background: white; border: 1px solid #e2e8f0; padding: 30px;"><h4 style="margin-bottom:25px; font-size:1.1rem; color:#333; border-bottom:1px solid #eee; padding-bottom:15px;">📝 Key Evaluation Factor</h4><div style="display:flex; flex-direction:column; gap:20px;"><div style="background:#f9f9f9; padding:20px; border-radius:10px; border:1px solid #eee;"><strong style="display:block; color:var(--dark); margin-bottom:8px; font-size:1.05rem;">🎯 Realistic Roadmap</strong><p style="color:#555; line-height:1.6; margin:0; font-size:0.95rem; word-break: keep-all;">"Highly praised for the realistic roadmap of <strong>Gradual Expansion starting from C2C to B2B</strong>, instead of a vain goal of building a platform at once."</p></div><div style="background:#f9f9f9; padding:20px; border-radius:10px; border:1px solid #eee;"><strong style="display:block; color:var(--dark); margin-bottom:8px; font-size:1.05rem;">🔑 Sharp Problem Definition</strong><p style="color:#555; line-height:1.6; margin:0; font-size:0.95rem; word-break: keep-all;">"Accurately struck the 'Vendor Dependency' and 'Margin Structure' issues of Hallyu brands and proposed practical solutions."</p></div></div></div>
+        </div>
+        <div class="p-section">
+            <div class="p-sec-title">🔄 06. Retrospective (KPT)</div>
+            <p style="text-align:center; font-weight:bold; color:#555; margin-bottom:25px;">"Strategy was successful, but reflect on overlooking Hidden Costs."</p>
+            <div class="kpt-item kpt-keep"><span class="kpt-label"><i data-lucide="check-circle-2" size="20"></i> Keep</span><p class="kpt-desc"><strong>Data-Driven Approach:</strong> Verified market entry feasibility based on crawled <strong>Data</strong>, not intuition.<br><strong>Strategic Detour:</strong> Anticipated structural issues (Vendor backlash) and established a realistic entry path via C2C resell market.</p></div>
+            <div class="kpt-item kpt-problem"><span class="kpt-label"><i data-lucide="alert-triangle" size="20"></i> Problem</span><p class="kpt-desc"><strong>Margin Erosion:</strong> Overlooked <strong>additional costs (Storage, OpEx)</strong> due to customs/inspection delays. Lead time delays worsened <strong>Unit Economics</strong>.<br><strong>Optimistic CAC:</strong> Underestimated initial <strong>CAC</strong> by relying solely on organic viral from K-Pop fandoms.</p></div>
+            <div class="kpt-item kpt-try"><span class="kpt-label"><i data-lucide="rocket" size="20"></i> Try</span><p class="kpt-desc"><strong>Cost Buffer:</strong> Will set <strong>10~15% Buffer</strong> for logistics costs to calculate <strong>Conservative Margin</strong>.<br><strong>Smoke Test:</strong> Will precede with a 'Smoke Test' to measure actual <strong>CPA</strong> via small-scale performance marketing before financial planning.</p></div>
+        </div>
+    </div>
+
+    <!-- Hidden Templates: Project 2 EN -->
+    <div id="project2-content-en" style="display:none;">
+        <div class="p-header">
+            <span class="p-badge" style="background:var(--primary); color:white;">☕ PROJECT 02</span>
+            <h1 class="p-title">Hyper-local P2P Delivery</h1>
+            <div class="p-meta">🗓️ Aug 2024 – Nov 2024 &nbsp;·&nbsp; 🛠️ PM & Python Dev &nbsp;·&nbsp; 👥 Team: 2 Members</div>
+            <p class="p-subtitle" style="margin-top:15px;">Campus Gig Economy converting movement data into logistics networks</p>
+        </div>
+        <div class="p-grid-2">
+            <div class="p-section">
+                <div class="p-sec-title">⚠️ 01. Problem Discovery</div>
+                <div class="prob-box">
+                    <h3 style="font-size:1.3rem; color:#111; margin-bottom:25px; text-align:left; font-weight:800; line-height:1.4;">"Potential Demand 'Explodes',<br>Last-mile trapped in 'Inefficiency'"</h3>
+                    <h3>📉 Inefficiency</h3>
+                    <p>Traditional riders move to 'catch orders'. But campuses have complex terrain (hills, security) and restricted entry, making last-mile costs abnormally high.</p>
+                    <h3>😩 Unmet Demand</h3>
+                    <p>Students want coffee but give up due to short break times (10~15 min) preventing round trips to cafes.</p>
+                    <div class="insight-box">
+                        <h3>💡 Insight</h3>
+                        <p class="insight-text">"No need for professional riders. <span style="color:var(--primary);">Students moving to that building anyway</span> can deliver."</p>
+                    </div>
+                </div>
+            </div>
+            <div class="p-section">
+                <div class="p-sec-title">🗺️ 02. Solution Strategy</div>
+                <p style="margin-bottom:20px; font-size:1.05rem; font-weight:bold; color:var(--dark); text-align:center; line-height:1.4;">"<span style="color:var(--primary);">Route-based</span> Dispatch, not Location-based"</p>
+                <div class="gray-box">
+                    <h4 style="margin-bottom:15px; font-size:1.1rem; color:#333; border-bottom:1px solid #ddd; padding-bottom:10px; display:flex; align-items:center; gap:6px;">🔄 Paradigm Shift</h4>
+                    <ul>
+                        <li><strong>(As-Is) Traditional:</strong> <span>Rider moves to order origin → Pickup → Delivery <span style="color:#e53e3e; font-weight:bold;">(Move to Deliver)</span></span></li>
+                        <li><strong>(To-Be) Proposed:</strong> <span>Orderer picks last-mile (dest), matches student moving there <span style="color:var(--primary); font-weight:bold;">(Deliver while Moving)</span></span></li>
+                    </ul>
+                </div>
+                <div class="gray-box" style="background:white; border-color:#eee;">
+                    <h3 style="font-size:1.1rem; color:var(--primary); margin-bottom:8px; display:flex; align-items:center; gap:6px;">⚙️ Mechanism</h3>
+                    <p style="font-size:0.95rem; color:#444; line-height:1.6; margin:0;">Student couriers pick up coffee <strong style="background:rgba(234, 53, 45, 0.1); padding:0 4px; color:#333;">"on their way to class"</strong>.<br><br>This drastically reduces <strong>Delivery Cost</strong> and maximizes mover efficiency.</p>
+                </div>
+            </div>
+        </div>
+        <div class="p-section" style="background:#f8fafc; border-color:#e2e8f0;">
+            <div class="p-sec-title">📊 03. Market Validation</div>
+            <p style="margin-bottom:20px; text-align:center; color:#555; font-weight:600;">"Beyond technical possibility, verifying <span style="color:var(--primary);">Willingness to Participate</span>"</p>
+            <div style="display:grid; grid-template-columns: 1fr 1fr; gap:20px;">
+                <div style="background:white; padding:20px; border-radius:12px; border:1px solid #eee; box-shadow:0 4px 10px rgba(0,0,0,0.03);"><div style="font-size:2rem; margin-bottom:10px;">🙋🏻‍♂️</div><h4 style="margin-bottom:8px; font-weight:800; color:#333;">User Survey</h4><p style="font-size:0.9rem; color:#666; line-height:1.6;">Surveyed 100 students. <span style="color:var(--primary); font-weight:800;">68%</span> positive response: <strong>"Will deliver if route matches 90%"</strong>.<br>Lowered psychological barrier by framing as <strong>'Monetizing Idle Time'</strong>.</p></div>
+                <div style="background:white; padding:20px; border-radius:12px; border:1px solid #eee; box-shadow:0 4px 10px rgba(0,0,0,0.03);"><div style="font-size:2rem; margin-bottom:10px;">💰</div><h4 style="margin-bottom:8px; font-weight:800; color:#333;">Unit Economics</h4><p style="font-size:0.9rem; color:#666; line-height:1.6;">Matched with fee under <strong>1,000 KRW (70% cheaper</strong> than standard 3,000 KRW).<br>Validated potential for <strong>Micro-delivery market</strong>.</p></div>
+            </div>
+        </div>
+        <div class="p-section">
+            <div class="p-sec-title">💓 04. Algorithm Comparison</div>
+            <div class="big-algo-container">
+                <div class="big-algo-box"><div class="big-algo-title">🕰️ Legacy</div><div class="big-visual"><svg viewBox="0 0 300 250" width="100%" height="100%"><path d="M 40,200 L 100,154 L 30,50 L 220,80 L 260,170" class="svg-path" /><circle cx="40" cy="200" r="12" class="svg-node node-start" /><text x="40" y="230" class="svg-label">Rider</text><circle cx="100" cy="154" r="12" class="svg-node node-cafe" /><circle cx="260" cy="170" r="12" class="svg-node node-dest" /><circle r="6" class="dot-legacy" class="anim-legacy"><animateMotion dur="6s" repeatCount="indefinite" rotate="auto"><mpath href="#legacy-path"/></animateMotion></circle></svg></div><div class="big-caption">Rider moves separately for pickup<br><span style="color:#ea352d; font-weight:bold; font-size:0.85rem;">(High Cost / Inefficient)</span></div></div>
+                <div class="big-algo-box"><div class="big-algo-title">⚡ Campus (Proposed)</div><div class="big-visual"><svg viewBox="0 0 300 250" width="100%" height="100%"><path id="campus-path-en" d="M 40,200 L 100,154 L 170,120 L 220,60 L 260,30" class="svg-path-main-dashed" />
+                    <circle cx="40" cy="200" r="12" class="svg-node node-start" /><text x="40" y="230" class="svg-label">Student</text><circle cx="100" cy="154" r="12" class="svg-node node-cafe" /><text x="100" y="130" class="svg-label">Cafe</text><circle cx="170" cy="120" r="10" class="svg-node node-drop" /><text x="170" y="150" class="svg-label">Drop1</text><circle cx="220" cy="60" r="10" class="svg-node node-drop" /><text x="220" y="90" class="svg-label">Drop2</text><circle cx="260" cy="30" r="12" class="svg-node node-dest" /><text x="260" y="15" class="svg-label">Class</text>
+                    <circle r="8" class="dot-campus"><animateMotion dur="6s" repeatCount="indefinite" rotate="auto"><mpath href="#campus-path-en"/></animateMotion></circle></svg></div><div class="big-caption">Pickup on the way to destination<br><span style="color:#ea352d; font-weight:bold; font-size:0.85rem;">(Low Cost / Optimized)</span></div></div>
+            </div>
+        </div>
+        <div class="p-section">
+            <div class="p-sec-title">💻 05. Tech & Verification</div>
+            <p style="margin-bottom:20px; font-size:1.1rem; font-weight:bold; color:var(--dark); text-align:center;">"VRP Simulation using <span style="color:var(--primary);">Google OR-Tools</span>"</p>
+            <div style="display:flex; flex-direction:column; gap:15px;">
+                <div style="background:#f8f9fa; border:1px solid #eee; padding:20px; border-radius:8px;"><h4 style="margin-bottom:8px; color:#333; font-size:1.05rem; display:flex; align-items:center; gap:6px;">🧬 Algorithm</h4><p style="font-size:0.95rem; color:#555; line-height:1.6;">Derived optimal routes using <strong>Google OR-Tools</strong> library to match multiple students (Vehicles) with orders (Nodes).</p></div>
+                <div class="p-grid-2" style="margin-top:0;">
+                    <div style="background:#fff; border:1px solid #eee; padding:20px; border-radius:8px;"><h4 style="margin-bottom:10px; color:#333; font-size:1.05rem; display:flex; align-items:center; gap:6px;">⚠️ Constraints</h4><p style="font-size:0.95rem; color:#555; line-height:1.6; margin-bottom:10px;">Set realistic variables as constraints, not just distance.</p><ul style="padding-left:20px; font-size:0.9rem; color:#444; line-height:1.8;"><li>Time Window (Class time)</li><li>Vertical Time (Building entry)</li><li><strong>Walking Speed</strong></li></ul></div>
+                    <div style="background:#fff5f5; border:1px solid #ffe0e0; padding:20px; border-radius:8px;"><h4 style="margin-bottom:10px; color:var(--primary); font-size:1.05rem; display:flex; align-items:center; gap:6px;">✅ Simulation Result</h4><p style="font-size:0.95rem; color:#333; line-height:1.6;">Modeled campus map data and simulated with Python.</p><div style="margin-top:15px; font-weight:bold; font-size:1.2rem; color:var(--primary); text-align:center;">Total Distance Reduced by<br><span style="font-size:2rem;">40%</span></div></div>
+                </div>
+            </div>
+        </div>
+        <div class="p-section" style="border: 2px solid var(--primary);">
+            <div class="p-sec-title">🏆 06. Outcome & Impact</div>
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px;">
+                <div style="background:#fff; padding:25px; border-radius:12px; border:1px solid #ffe0e0; text-align:center;"><div style="font-size:2.5rem; margin-bottom:10px;">📉</div><h4 style="font-weight:800; color:#333; margin-bottom:10px;">Cost Efficiency</h4><p style="color:#555; font-size:0.95rem; line-height:1.6;">Converted 40% distance reduction to cost.<br>Delivery cost <strong>3,000 KRW → 900 KRW</strong>.<br><span style="color:var(--primary); font-weight:800;">70% Saving Effect</span> proven.</p></div>
+                <div style="background:#fff; padding:25px; border-radius:12px; border:1px solid #eee; text-align:center;"><div style="font-size:2.5rem; margin-bottom:10px;">📦</div><h4 style="font-weight:800; color:#333; margin-bottom:10px;">Deliverable</h4><p style="color:#555; font-size:0.95rem; line-height:1.6;">Developed <strong>Google OR-Tools Optimal Route Matching</strong> algorithm prototype based on actual campus map.</p></div>
+            </div>
+        </div>
+        <div class="p-section">
+            <div class="p-sec-title">💡 07. Retrospective (KPT)</div>
+            <p style="text-align:center; font-weight:bold; color:#555; margin-bottom:25px;">"Discovered realistic operation issues (Supply-Demand Sync) and pondered improvements."</p>
+            <div class="kpt-item kpt-keep"><span class="kpt-label"><i data-lucide="check-circle-2" size="20"></i> Keep</span><p class="kpt-desc">Designed a model utilizing idle resources without extra labor input by approaching with <strong>Route-based</strong> instead of Location-based.</p></div>
+            <div class="kpt-item kpt-problem"><span class="kpt-label"><i data-lucide="alert-triangle" size="20"></i> Problem</span><p class="kpt-desc"><strong>Peak Time Issue:</strong> Discovered <strong>'Supply-Demand Sync'</strong> phenomenon where orders and couriers surge during breaks and vanish during classes. Supply Crunch occurred as couriers also had to attend class.</p></div>
+            <div class="kpt-item kpt-try"><span class="kpt-label"><i data-lucide="rocket" size="20"></i> Try</span><p class="kpt-desc"><strong>Dynamic Pricing:</strong> Induce supply by paying 1.5x incentives during specific times (during class, free periods).<br><strong>Pickup Zone:</strong> Optimize operations by installing 'Pickup Zones' near classrooms to reduce wait time to zero.</p></div>
+        </div>
+    </div>
+
+    <!-- Hidden Templates: Project 3 EN -->
+    <div id="project3-content-en" style="display:none;">
+        <div class="p-header">
+            <span class="p-badge" style="background:var(--primary); color:white;">⚡ PROJECT 03</span>
+            <h1 class="p-title">Digital Asset Trading & UX Strategy</h1>
+            <div class="p-meta">🗓️ Jan 2021 – May 2021 &nbsp;·&nbsp; 🧪 Product Intern (QA) &nbsp;·&nbsp; 🏢 Team: 8 (Cross-functional)</div>
+            <div class="award-tag-container" style="margin-top:20px; margin-bottom:20px;">
+                <span class="award-tag award-gold">💴 Pre-A 300M JPY Investment</span>
+                <span class="award-tag award-gray">💼 Internship</span>
             </div>
             <p class="p-subtitle" style="line-height:1.6; color:#555;">
-                교통 분산 보상(Reward)을 기반으로 한 충전소 거점 핀테크 모델
+                REC & Carbon Credit Trading Blockchain Platform:<br>
+                Designing <strong>'Intuitiveness'</strong> that persuades investors, escaping conventional HTS UI.
             </p>
         </div>
         <div class="p-grid-2">
-            <!-- 1. Market Analysis -->
+            <div class="p-section">
+                <div class="p-sec-title">📝 01. Context & Problem</div>
+                <div class="prob-box">
+                    <h3 style="font-size:1.2rem; color:#111; margin-bottom:20px; text-align:left; font-weight:800; line-height:1.4;">"Conventional HTS UI<br>missed the essence of energy trading"</h3>
+                    <h3>🎤 Background</h3>
+                    <p style="font-size:0.95rem; margin-bottom:20px;">Participated as <strong>QA Intern</strong> in a small team for a new blockchain platform (MVP) trading <strong>REC & Carbon Credits</strong>.</p>
+                    <h3>⚠️ Issue Discovery</h3>
+                    <div style="display:flex; flex-direction:column; gap:15px; margin-bottom:20px;">
+                        <div style="background:#f9f9f9; border-left:4px solid #555; padding:15px; border-radius:0 4px 4px 0;"><strong style="display:block; color:#333; margin-bottom:5px;">🚨 Trigger</strong><span style="font-size:0.95rem; color:#555; line-height:1.6;">Discovered human error caused by confusion due to <strong>'Buy/Sell Button Colors'</strong> being opposite to convention (US vs Asia standards).</span></div>
+                        <div style="background:#f9f9f9; border-left:4px solid #999; padding:15px; border-radius:0 4px 4px 0;"><strong style="display:block; color:#333; margin-bottom:5px;">📉 Root Cause</strong><span style="font-size:0.95rem; color:#555; line-height:1.6;">Our customers are not day traders, but <strong>'Institutional Managers'</strong> managing portfolios. They need <strong>'Accuracy' & 'Condition Comparison'</strong>, not speed. Complex HTS UI caused unnecessary cognitive load.</span></div>
+                    </div>
+                    <div class="insight-box"><h3>💡 Insight</h3><p class="insight-text">"Design an experience (UX) where users trade <span style="color:var(--primary); font-weight:800;">intuitively without hesitation</span>."</p></div>
+                </div>
+            </div>
+            <div class="p-section">
+                <div class="p-sec-title">🎯 02. Hypothesis & Solution</div>
+                <div style="margin-bottom:25px;"><h4 style="margin-bottom:10px; color:#333; font-size:1.05rem;">🚩 Goal: Structure Reform</h4><p style="font-size:0.95rem; color:#555; line-height:1.6;">Hypothesis: "Adopting a <strong>'Bulletin (List) Structure'</strong> with clear information hierarchy will reduce error risk and increase trust." Goal: <strong>'Zero Malfunction & Minimized Learning Cost'</strong>.</p></div>
+                <div style="background:white; border:1px solid #eee; padding:20px; border-radius:12px;"><h4 style="margin-bottom:20px; font-size:1.1rem; color:#333; display:flex; align-items:center; gap:6px;">⚔️ Action: Logic & Prioritization</h4><div style="display:grid; grid-template-columns: 1fr; gap:15px;"><div style="background:#f9f9f9; padding:20px; border-radius:8px; border-left:4px solid #333;"><div style="display:flex; align-items:center; gap:8px; margin-bottom:8px;"><span style="font-size:1.2rem;">📊</span><strong style="color:#333; font-size:1rem;">Data-Driven Persuasion</strong></div><p style="font-size:0.95rem; color:#555; line-height:1.6; margin:0;">Persuaded planning team with <strong>'Color Culture Differences'</strong> and <strong>'F-Pattern Eye Tracking'</strong> data. Proved importance of <strong>'List Visibility'</strong> unlike stocks.</p></div><div style="background:#f9f9f9; padding:20px; border-radius:8px; border-left:4px solid var(--primary);"><div style="display:flex; align-items:center; gap:8px; margin-bottom:8px;"><span style="font-size:1.2rem;">🤝</span><strong style="color:#333; font-size:1rem;">Engineering Collaboration</strong></div><p style="font-size:0.95rem; color:#555; line-height:1.6; margin:0;">Compromised with <strong>CSS/Layout adjustments</strong> instead of full redevelopment. Set <strong>'Structural Intuitiveness' & 'Data Integrity' as Top Priority</strong> to meet MVP deadline.</p></div></div></div>
+            </div>
+        </div>
+        <div class="p-section">
+            <div class="p-sec-title">🔄 03. UX Transformation</div>
+            <div class="big-algo-container"><div class="big-algo-box"><div class="big-algo-title" style="color:#888;">Before: HTS Style</div><div class="big-visual" style="display:flex; justify-content:center; align-items:center; background:#f0f0f0;"><div style="text-align:center; color:#999; font-weight:bold;">Legacy HTS UI Layout</div></div><div class="big-caption"><strong>Color Standard Conflict</strong><br><span style="font-size:0.85rem; color:#e53e3e;">Cognitive dissonance (Red=Up/Down?)</span></div></div><div class="big-algo-box interactive-demo" style="border:2px solid var(--primary);"><div class="big-algo-title" style="color:var(--primary);">After: Bulletin Style</div><div class="big-visual" style="display:flex; justify-content:center; align-items:center;"><div style="text-align:center; color:var(--primary); font-weight:bold;">Optimized List UI</div></div><div class="big-caption"><strong>Clear Hierarchy & List Type</strong><br><span style="font-size:0.85rem; color:var(--primary);">Intuitive & Zero Errors</span></div></div></div>
+        </div>
+        <div class="p-section" style="border: 2px solid var(--primary);">
+            <div class="p-sec-title">🏆 04. Outcome & Impact</div>
+            <div style="display:flex; flex-direction:column; gap:20px;">
+                <div style="background:#fff; border:1px solid #eee; border-radius:12px; padding:20px; display:flex; gap:20px; align-items:center;"><div style="font-size:2.5rem; flex-shrink:0;">💴</div><div><h4 style="font-weight:800; color:#333; margin-bottom:5px;">Macro Impact</h4><p style="color:#555; font-size:0.95rem; line-height:1.5; margin:0;">Secured <strong>Pre-A 300M JPY Investment</strong> demonstrating MVP with improved UX.</p></div></div>
+                <div class="p-grid-2" style="margin-top:0;"><div style="background:#f9f9f9; border-radius:12px; padding:20px; border-left:4px solid #28a745;"><h4 style="font-weight:800; color:#28a745; margin-bottom:8px;">Micro Impact (QA)</h4><p style="color:#555; font-size:0.9rem; line-height:1.5; margin:0;">Recorded <strong>0% Error Rate</strong> in internal Usability Tests after applying 'List UI'.</p></div><div style="background:#f9f9f9; border-radius:12px; padding:20px; border-left:4px solid #007bff;"><h4 style="font-weight:800; color:#007bff; margin-bottom:8px;">Contribution</h4><p style="color:#555; font-size:0.9rem; line-height:1.5; margin:0;">Persuaded planning/design teams as an Intern to pivot core UX direction (HTS → Bulletin).</p></div></div>
+            </div>
+        </div>
+        <div class="p-section">
+            <div class="p-sec-title">💡 05. Retrospective (KPT)</div>
+            <div class="kpt-item kpt-keep"><span class="kpt-label"><i data-lucide="check-circle-2" size="20"></i> Keep</span><p class="kpt-desc"><strong>Data-Driven Persuasion:</strong> Successfully persuaded stakeholders sticking to 'convention' using 'Eye Tracking Data' and 'Cultural Differences' as objective evidence.</p></div>
+            <div class="kpt-item kpt-problem"><span class="kpt-label"><i data-lucide="alert-triangle" size="20"></i> Problem</span><p class="kpt-desc"><strong>Cost of Late Discovery:</strong> Discovered fatal design error only at 'QA Phase'. Forced to choose limited solution (Hotfix) instead of full redesign.</p></div>
+            <div class="kpt-item kpt-try"><span class="kpt-label"><i data-lucide="rocket" size="20"></i> Try</span><p class="kpt-desc"><strong>Shift Left:</strong> Quality control must start from planning. Will become a PM who minimizes <strong>'Rework Cost'</strong> by preceding Usability Tests (UT) at the wireframe stage.</p></div>
+        </div>
+    </div>
+
+    <!-- Hidden Templates: Project 4 EN -->
+    <div id="project4-content-en" style="display:none;">
+        <div class="p-header">
+            <span class="p-badge" style="background:var(--primary); color:white;">🔋 PROJECT 04</span>
+            <h1 class="p-title" style="margin-bottom:15px;">Drive-to-Earn Reward Platform</h1>
+            <div class="p-meta">🗓️ Jun 2021 – Aug 2021 &nbsp;·&nbsp; 🔎 Solo Researcher &nbsp;·&nbsp; 👤 Individual Project</div>
+            <div class="award-tag-container" style="margin-top:20px; margin-bottom:20px;">
+                <span class="award-tag award-gold">🏆 1st Place in Venture Startup Class</span>
+                <span class="award-tag award-gray">Business Model Validation</span>
+            </div>
+            <p class="p-subtitle" style="line-height:1.6; color:#555;">Fintech model based on Traffic Dispersion Rewards</p>
+        </div>
+        <div class="p-grid-2">
             <div class="p-section">
                 <div class="p-sec-title">📊 01. Market Analysis & Opportunity</div>
                 <div class="prob-box">
-                    <h3>✅ Market Validation</h3>
-                    <p>보행자 리워드 앱 '캐시워크'는 연매출 500억을 달성하며 <strong>"행위 기반 보상 모델"</strong>의 수익성을 입증했습니다. 우리는 이를 고성장 EV 시장에 이식합니다.</p>
-                    <h3>💎 Target Quality</h3>
-                    <p>타겟인 <strong>'운전자'</strong>는 일반 보행자 대비 소득이 높고 소비 규모가 큰 고관여 소비자입니다. 동일 트래픽 대비 광고 단가와 결제 전환율이 월등한 <strong>Premium Market</strong>입니다.</p>
-                    <h3>📈 EV Infra Growth</h3>
-                    <p>전기차 시장은 5년 내 1,000% 성장이 예견되나, 급증하는 보급률 대비 <strong>충전 대기 시간(30~60분)</strong>을 소비할 인프라는 턱없이 부족합니다.</p>
+                    <h3>✅ Market Validation</h3><p>Pedestrian reward app 'Cashwalk' reached 50B KRW revenue, proving <strong>"Action-based Reward Model"</strong>. We transplant this to the high-growth EV market.</p>
+                    <h3>💎 Target Quality</h3><p>Target <strong>'Drivers'</strong> are high-involvement consumers with higher income than pedestrians. <strong>Premium Market</strong> with superior ad rates and conversion.</p>
+                    <h3>📈 EV Infra Growth</h3><p>EV market predicted to grow 1,000% in 5 years, but infrastructure to consume <strong>Charging Wait Time (30~60 min)</strong> is severely lacking.</p>
                 </div>
             </div>
-            <!-- 2. Core Solution -->
             <div class="p-section">
                 <div class="p-sec-title">🧠 02. Core Solution: Traffic Balancing</div>
                 <div class="prob-box">
-                    <h3 style="color:#e53e3e;">🛑 Problem: Algorithm Blindspot</h3>
-                    <p>기존 내비게이션은 '시간/거리 최소화'가 목적입니다. 따라서 물리적으로 멀리 돌아가는 우회로는 <strong>알고리즘상 '버려지는 경로(Dead Route)'</strong>입니다.</p>
-                    <h3 style="color:var(--primary);">💡 Solution: Inverse Logic</h3>
-                    <p>"최단 경로가 막힌다고 해도, 우회로는 <strong>그 이상으로 비효율적(Longer Cost)</strong>입니다.<br>그래서 <strong>'보상(Incentive)'</strong> 없이는 절대 선택되지 않습니다."</p>
-                    <div class="insight-box">
-                        <h3>⚙️ Logic</h3>
-                        <p class="insight-text" style="font-weight:400; font-size:0.95rem;">
-                            운전자에게 <strong style="color:var(--primary);">손해를 감수할 만큼의 확실한 보상(Cash)</strong>을 제시하여, 자연스럽게 교통량을 <strong>비선호 경로</strong>로 분산시킵니다.
-                        </p>
-                    </div>
+                    <h3 style="color:#e53e3e;">🛑 Problem: Algorithm Blindspot</h3><p>Existing navigation aims for 'Time/Distance Minimization'. Thus, detours are physically longer and considered <strong>'Dead Routes'</strong> by algorithms.</p>
+                    <h3 style="color:var(--primary);">💡 Solution: Inverse Logic</h3><p>"Even if shortest route is congested, detours are <strong>inefficient (Longer Cost)</strong>.<br>So they are never chosen without <strong>'Incentive'</strong>."</p>
+                    <div class="insight-box"><h3>⚙️ Logic</h3><p class="insight-text" style="font-weight:400; font-size:0.95rem;">Offer <strong style="color:var(--primary);">Rewards (Cash) significant enough to offset loss</strong>, naturally dispersing traffic to <strong>non-preferred routes</strong>.</p></div>
                 </div>
             </div>
         </div>
-        <!-- 3. Spline -->
         <div class="p-section" style="margin-top:30px;">
             <div class="p-sec-title">🏙️ 03. Visualizing the Logic (Simulation)</div>
             <div class="spline-stack">
-                <div class="spline-box">
-                    <div class="spline-label label-red"><span class="label-icon">🛑</span><div><strong>Legacy: Shortest Path</strong><br><span style="font-weight:400; font-size:0.75rem; opacity:0.8;">최단 거리지만 정체됨 (Congested)</span></div></div>
-                    <spline-viewer url="https://prod.spline.design/ThIpVEIWz2sU3wb2/scene.splinecode"></spline-viewer>
-                </div>
-                <div class="spline-box">
-                    <div class="spline-label label-green"><span class="label-icon">⚡</span><div><strong>Proposal: Detour + Reward</strong><br><span style="font-weight:400; font-size:0.75rem; opacity:0.8;">돌아가지만 보상으로 쾌적함 (Traffic Balanced)</span></div></div>
-                    <spline-viewer loading-anim-type="spinner-small-dark" url="https://prod.spline.design/cgbGHnndFCHpx6hk/scene.splinecode"></spline-viewer>
-                </div>
+                <div class="spline-box"><div class="spline-label label-red"><span class="label-icon">🛑</span><div><strong>Legacy: Shortest Path</strong><br><span style="font-weight:400; font-size:0.75rem; opacity:0.8;">Shortest but Congested</span></div></div><spline-viewer url="https://prod.spline.design/ThIpVEIWz2sU3wb2/scene.splinecode"></spline-viewer></div>
+                <div class="spline-box"><div class="spline-label label-green"><span class="label-icon">⚡</span><div><strong>Proposal: Detour + Reward</strong><br><span style="font-weight:400; font-size:0.75rem; opacity:0.8;">Detour but Earn Cash</span></div></div><spline-viewer loading-anim-type="spinner-small-dark" url="https://prod.spline.design/cgbGHnndFCHpx6hk/scene.splinecode"></spline-viewer></div>
             </div>
-            <div class="big-caption" style="margin-top:30px; padding-top:20px; border-top:1px solid #eee; color:#555; font-size:0.95rem; line-height:1.6;">
-                기존 내비게이션은 알고리즘상 <strong>'버려지는 경로(Dead Route)'</strong>였던 우회로를,<br>확실한 <strong>인센티브(Coin)</strong>를 통해 <strong>'선택받는 경로'</strong>로 재설계하여 교통량을 분산시킵니다.
-            </div>
+            <div class="big-caption" style="margin-top:30px; padding-top:20px; border-top:1px solid #eee; color:#555; font-size:0.95rem; line-height:1.6;">Existing navigation treated detours as <strong>'Dead Routes'</strong>. We redesign them as <strong>'Chosen Routes'</strong> via <strong>Incentives (Coin)</strong> to disperse traffic.</div>
         </div>
-        <!-- 4. Business Model -->
         <div class="p-section" style="margin-top:30px;">
             <div class="p-sec-title">💼 04. Business Model (3-Way)</div>
-            <p style="text-align:center; margin-bottom:20px; font-weight:bold; color:#555;">"트래픽(Traffic)을 핀테크(Pay)와 정부 예산(Gov)으로 전환"</p>
+            <p style="text-align:center; margin-bottom:20px; font-weight:bold; color:#555;">"Converting Traffic to Fintech (Pay) and Gov Budget"</p>
             <div class="sol-grid">
-                <div class="sol-card">
-                    <div class="emoji-icon">🛣️</div>
-                    <h4>En-route Ads</h4>
-                    <p>단순 노출이 아닌, 경로상(On-route) 제휴 매장으로의 <strong>우회 방문(Foot Traffic)</strong> 유도 및 광고비 수취</p>
-                </div>
-                <div class="sol-card">
-                    <div class="emoji-icon">💳</div>
-                    <h4>EV Pay Ecosystem</h4>
-                    <p>마일리지를 <strong>자사 PAY</strong>로 전환 유도. 충전 결제뿐만 아니라 <strong>주변 상권(식당/카페) 결제</strong>까지 확장 (Mercari-Merpay 모델)</p>
-                </div>
-                <div class="sol-card">
-                    <div class="emoji-icon">🏛️</div>
-                    <h4>B2G Subsidy</h4>
-                    <p>교통량 분산 및 <strong>사회적 혼잡 비용 절감</strong> 효과를 입증하여 정부/지자체로부터 <strong>보조금 및 운영 예산</strong> 수취</p>
-                </div>
+                <div class="sol-card"><div class="emoji-icon">🛣️</div><h4>En-route Ads</h4><p>Not just impressions, but inducing <strong>Foot Traffic</strong> to partner stores on-route.</p></div>
+                <div class="sol-card"><div class="emoji-icon">💳</div><h4>EV Pay Ecosystem</h4><p>Induce mileage conversion to <strong>Own PAY</strong>. Expand to <strong>surrounding payments</strong> (Mercari-Merpay model).</p></div>
+                <div class="sol-card"><div class="emoji-icon">🏛️</div><h4>B2G Subsidy</h4><p>Prove traffic dispersion and <strong>Social Congestion Cost Reduction</strong> to receive <strong>Subsidies</strong>.</p></div>
             </div>
         </div>
-        <!-- 5. Scalability Roadmap -->
         <div class="p-section" style="border: 2px solid #333; margin-top:30px;">
             <div class="p-sec-title" style="color: #333;">🚀 05. Scalability Strategy</div>
             <div class="roadmap-stack">
-                <div class="roadmap-card">
-                    <div class="rm-header">
-                        <span class="rm-step">PHASE 1</span>
-                        <span class="rm-icon">🌱</span>
-                        <h3 class="rm-title">Seed</h3>
-                        <p class="rm-desc">기반 확보</p>
-                    </div>
-                    <div class="rm-details">
-                        <div class="rm-item"><span class="rm-label">Action</span><span class="rm-text">정부의 '교통 체증 완화 과제' 및 스마트 시티 프로젝트 수주 (초기 자금 및 데이터 확보)</span></div>
-                        <div class="rm-item"><span class="rm-label">Strategy</span><span class="rm-text">마케팅비 제로화: 보상(Incentive) 시스템을 무기로 초기 EV 유저 확보 (CAC 국비 해결)</span></div>
-                         <div class="rm-item"><span class="rm-label">Sales</span><span class="rm-text"><strong>거점 영업 전략:</strong> 충전소 운영사(CPO)와 제휴하여 전기차 충전기를 오프라인 트래픽의 <strong>'앵커(Anchor)'</strong>로 확보</span></div>
-                    </div>
-                </div>
-                <div class="roadmap-card highlight" style="border-color:#ea352d;">
-                    <div class="rm-header">
-                        <span class="rm-step" style="color:#ea352d;">PHASE 2</span>
-                        <span class="rm-icon">⚡</span>
-                        <h3 class="rm-title">Scale-up</h3>
-                        <p class="rm-desc">핀테크 확장</p>
-                    </div>
-                    <div class="rm-details">
-                        <div class="rm-item"><span class="rm-label" style="color:#ea352d;">Action</span><span class="rm-text">확보된 충전소 거점을 중심으로 자체 <strong>PAY 시스템</strong> 도입 및 주변 가맹점 확대</span></div>
-                         <div class="rm-item"><span class="rm-label" style="color:#ea352d;">Target</span><span class="rm-text"><strong>'골든 타임' 공략:</strong> 충전 대기 시간(30~40분) 동안 주변 상권(카페/식당/쇼핑) 소비 유도</span></div>
-                        <div class="rm-item"><span class="rm-label" style="color:#ea352d;">Flywheel</span><span class="rm-text"><strong>'운전 → 적립 → 지역 소비'</strong>의 선순환 구조를 완성하여 결제 시장 침투</span></div>
-                    </div>
-                </div>
-                <div class="roadmap-card">
-                    <div class="rm-header">
-                        <span class="rm-step">PHASE 3</span>
-                        <span class="rm-icon">🏢</span>
-                        <h3 class="rm-title">Smart City</h3>
-                        <p class="rm-desc">데이터 솔루션</p>
-                    </div>
-                    <div class="rm-details">
-                        <div class="rm-item"><span class="rm-label">Data</span><span class="rm-text">축적된 이동/소비 빅데이터로 교통량과 상권 가치를 분석하여 최적 입지 선정</span></div>
-                        <div class="rm-item"><span class="rm-label">Action</span><span class="rm-text"><strong>'종합 쇼핑 프라자(충전+커머스)'</strong> 직접 건설 및 랜드마크화</span></div>
-                        <div class="rm-item"><span class="rm-label">Ultimate</span><span class="rm-text">단순 결제 수수료를 넘어, 이동/소비 데이터를 기반으로 도시 설계를 최적화하는 <strong>'MaaS(Mobility-as-a-Service) 데이터 솔루션'</strong>으로 수익 모델 다각화.</span></div>
-                    </div>
-                </div>
+                <div class="roadmap-card"><div class="rm-header"><span class="rm-step">PHASE 1</span><span class="rm-icon">🌱</span><h3 class="rm-title">Seed</h3><p class="rm-desc">Foundation</p></div><div class="rm-details"><div class="rm-item"><span class="rm-label">Action</span><span class="rm-text">Secure government 'Traffic Relief' projects & Smart City projects (Seed funding & Data).</span></div><div class="rm-item"><span class="rm-label">Strategy</span><span class="rm-text">Zero Marketing Cost: Acquire initial EV users using Incentive system (CAC covered by gov).</span></div><div class="rm-item"><span class="rm-label">Sales</span><span class="rm-text"><strong>Spot Sales Strategy:</strong> Partner with CPOs to secure chargers as offline traffic <strong>'Anchors'</strong>.</span></div></div></div>
+                <div class="roadmap-card highlight" style="border-color:#ea352d;"><div class="rm-header"><span class="rm-step" style="color:#ea352d;">PHASE 2</span><span class="rm-icon">⚡</span><h3 class="rm-title">Scale-up</h3><p class="rm-desc">Fintech Expansion</p></div><div class="rm-details"><div class="rm-item"><span class="rm-label" style="color:#ea352d;">Action</span><span class="rm-text">Introduce <strong>PAY System</strong> centered on secured charger hubs and expand nearby merchants.</span></div><div class="rm-item"><span class="rm-label" style="color:#ea352d;">Target</span><span class="rm-text"><strong>'Golden Time' Strategy:</strong> Induce consumption in nearby commerce during charging wait time (30~40 min).</span></div><div class="rm-item"><span class="rm-label" style="color:#ea352d;">Flywheel</span><span class="rm-text">Complete <strong>'Drive → Earn → Local Spend'</strong> cycle to penetrate payment market.</span></div></div></div>
+                <div class="roadmap-card"><div class="rm-header"><span class="rm-step">PHASE 3</span><span class="rm-icon">🏢</span><h3 class="rm-title">Smart City</h3><p class="rm-desc">Data Solution</p></div><div class="rm-details"><div class="rm-item"><span class="rm-label">Data</span><span class="rm-text">Select optimal locations by analyzing accumulated movement/consumption big data.</span></div><div class="rm-item"><span class="rm-label">Action</span><span class="rm-text">Directly build and landmark <strong>'Charging + Commerce Plaza'</strong>.</span></div><div class="rm-item"><span class="rm-label">Ultimate</span><span class="rm-text">Diversify revenue to <strong>'MaaS Data Solution'</strong> optimizing urban design based on data.</span></div></div></div>
             </div>
         </div>
         <!-- 06. Outcome (NEW) -->
         <div class="p-section" style="background: #f8fafc; border-color: #e2e8f0;">
             <div class="p-sec-title">🏆 06. Outcome & Impact</div>
-            <div style="text-align:center; margin-bottom:30px;">
-                <p style="font-size:1.1rem; font-weight:700; color:#333; line-height:1.6; word-break: keep-all;">
-                    "단순 아이디어가 아니라, <span style="color:var(--primary);">타겟의 구매력(Buying Power)</span>에 기반한<br>비즈니스 모델의 가치를 입증하여 1위를 수상했습니다."
-                </p>
-                <div class="award-tag-container" style="margin-top:15px; justify-content:center;">
-                    <span class="award-tag award-gold" style="font-size:1rem; padding:8px 20px;">🏆 교내 벤처 창업 수업 최우수상 (1st Place)</span>
-                </div>
-            </div>
-            <div class="gray-box" style="background: white; border: 1px solid #e2e8f0; padding: 30px;">
-                <h4 style="margin-bottom:25px; font-size:1.1rem; color:#333; border-bottom:1px solid #eee; padding-bottom:15px;">📝 Key Evaluation Factor (심사평)</h4>
-                <div style="display:flex; flex-direction:column; gap:20px;">
-                    <div style="background:#f9f9f9; padding:20px; border-radius:10px; border:1px solid #eee;">
-                        <strong style="display:block; color:var(--dark); margin-bottom:8px; font-size:1.05rem;">🎯 Target Validation</strong>
-                        <p style="color:#555; line-height:1.6; margin:0; font-size:0.95rem; word-break: keep-all;">
-                            불특정 다수(보행자)를 타겟팅한 '캐시워크'와 달리, <strong>구매력과 광고 단가가 월등히 높은 'EV 차주(High-spending Drivers)'를</strong> 핀테크의 핵심 타겟으로 설정하여 수익성을 입증함.
-                        </p>
-                    </div>
-                    <div style="background:#f9f9f9; padding:20px; border-radius:10px; border:1px solid #eee;">
-                        <strong style="display:block; color:var(--dark); margin-bottom:8px; font-size:1.05rem;">🔑 Key Evaluation</strong>
-                        <p style="color:#555; line-height:1.6; margin:0; font-size:0.95rem; word-break: keep-all;">
-                            "내비게이션 기능 개선을 넘어, '충전 대기 시간'이라는 소비의 빈틈을 핀테크(결제)로 연결한 타겟팅 전략의 정교함을 높게 평가받음."
-                        </p>
-                    </div>
-                </div>
-            </div>
+            <div style="text-align:center; margin-bottom:30px;"><p style="font-size:1.1rem; font-weight:700; color:#333; line-height:1.6; word-break: keep-all;">"Won 1st Place by proving business model value based on<br><span style="color:var(--primary);">Target's Buying Power</span>, not just an idea."</p><div class="award-tag-container" style="margin-top:15px; justify-content:center;"><span class="award-tag award-gold" style="font-size:1rem; padding:8px 20px;">🏆 1st Place in Venture Startup Class</span></div></div>
+            <div class="gray-box" style="background: white; border: 1px solid #e2e8f0; padding: 30px;"><h4 style="margin-bottom:25px; font-size:1.1rem; color:#333; border-bottom:1px solid #eee; padding-bottom:15px;">📝 Key Evaluation Factor</h4><div style="display:flex; flex-direction:column; gap:20px;"><div style="background:#f9f9f9; padding:20px; border-radius:10px; border:1px solid #eee;"><strong style="display:block; color:var(--dark); margin-bottom:8px; font-size:1.05rem;">🎯 Target Validation</strong><p style="color:#555; line-height:1.6; margin:0; font-size:0.95rem; word-break: keep-all;">Unlike 'Cashwalk' targeting pedestrians, targeted <strong>'High-spending Drivers'</strong> with superior ad rates, proving profitability.</p></div><div style="background:#f9f9f9; padding:20px; border-radius:10px; border:1px solid #eee;"><strong style="display:block; color:var(--dark); margin-bottom:8px; font-size:1.05rem;">🔑 Key Evaluation</strong><p style="color:#555; line-height:1.6; margin:0; font-size:0.95rem; word-break: keep-all;">"Highly evaluated for precise targeting strategy connecting 'Charging Wait Time' consumption gaps to Fintech (Payment)."</p></div></div></div>
         </div>
         <!-- 07. Retrospective -->
         <div class="p-section">
             <div class="p-sec-title">💡 07. Retrospective (KPT)</div>
-            <p style="text-align:center; font-weight:bold; color:#555; margin-bottom:25px;">
-                "플랫폼의 영원한 숙제인 '초기 진입(Cold Start)' 문제를 회고합니다."
-            </p>
-            <div class="kpt-item kpt-keep">
-                <span class="kpt-label"><i data-lucide="check-circle-2" size="20"></i> Keep</span>
-                <p class="kpt-desc">
-                    <strong>Behavioral Economics:</strong> '강제'가 아닌 '보상(Incentive)'을 통해 운전자의 행동을 변화시키고, 이를 핀테크 비즈니스로 연결한 설계.
-                </p>
-            </div>
-            <div class="kpt-item kpt-problem">
-                <span class="kpt-label"><i data-lucide="alert-triangle" size="20"></i> Problem</span>
-                <p class="kpt-desc">
-                    <strong>Dependency on Infra:</strong> 서비스가 작동하려면 '제휴 충전소'가 필수적인데, 초기 자본 없이 충전소 네트워크를 확보하는 영업(Sales)의 현실적 장벽을 간과함.
-                </p>
-            </div>
-            <div class="kpt-item kpt-try">
-                <span class="kpt-label"><i data-lucide="rocket" size="20"></i> Try</span>
-                <p class="kpt-desc">
-                    <strong>Anchor Tenant Strategy:</strong> 무리한 전국 확장 대신, 특정 지역(예: 강남구)의 충전소 운영사 1곳과 독점 제휴를 맺어 '성공 사례(Use Case)'를 먼저 만드는 밀도(Density) 전략으로 초기 진입 장벽을 넘겠음.
-                </p>
-            </div>
+            <p style="text-align:center; font-weight:bold; color:#555; margin-bottom:25px;">"Reflecting on the eternal platform issue: 'Cold Start'."</p>
+            <div class="kpt-item kpt-keep"><span class="kpt-label"><i data-lucide="check-circle-2" size="20"></i> Keep</span><p class="kpt-desc"><strong>Behavioral Economics:</strong> Designed to change driver behavior through 'Incentive', not force, connecting it to Fintech.</p></div>
+            <div class="kpt-item kpt-problem"><span class="kpt-label"><i data-lucide="alert-triangle" size="20"></i> Problem</span><p class="kpt-desc"><strong>Dependency on Infra:</strong> Overlooked realistic barrier of securing charger network (Sales) without initial capital.</p></div>
+            <div class="kpt-item kpt-try"><span class="kpt-label"><i data-lucide="rocket" size="20"></i> Try</span><p class="kpt-desc"><strong>Anchor Tenant Strategy:</strong> Instead of nationwide expansion, use Density Strategy: Exclusive partnership with 1 CPO in specific area (e.g., Gangnam) to create a 'Success Case' first.</p></div>
         </div>
     </div>
 
-    <!-- Script Block (Fixed) -->
+    <!-- Script Block -->
     <script>
+        // Language State
+        let currentLang = 'jp'; // Default to JP
+
+        // Translation Data for Main Page
+        const translations = {
+            jp: {
+                "hero-title": `Engineering the Circulation of Value,<br><span>Go Bold</span> with Mercari`,
+                "hero-subtitle": "Ecosystem Architect & Product Manager",
+                "hero-desc": `複雑な問題を構造化し、<strong>価値の循環</strong>を設計するPM、パク・セウォンです。<br>都市の交通網を最適化した視点で、これからは<strong>体験の摩擦</strong>をなくし、滑らかな<strong>エコシステム</strong>を構築します。<br>直感ではなく<strong>データに基づいた仮説検証</strong>を、慣習ではなく執拗な<strong>実行</strong>を通じて、市場が反応するインパクトを生み出します。`,
+                "edu-uni": "University of Seoul",
+                "edu-major": "Transportation Engineering",
+                "edu-gpa": "🏆 理工系国家優秀奨学生 (全額奨学)",
+                "about-phil-title": "PM Philosophy",
+                "about-phil-desc": `<strong>"データは根拠となり、共感は方向となる。"</strong><br>数字の裏に隠れたユーザーの文脈を読み取ることを重要視します。交通工学的思考で<strong>システムのボトルネックと問題点を発見し改善</strong>する方式をプロダクトに適用し、不要な段階を減らして価値の流れを円滑にします。`,
+                "about-lead-title": "Leadership & Soft Skills",
+                "about-lead-desc": `<strong>"調整するリーダーシップ (Coordinating Leadership)"</strong><br>10カ国のグローバル大学および18の企業パートナーとコミュニケーションを取り、プロジェクトを調整した経験があります。多様なステークホルダーの言語を通訳し、共通の目標に向かってチームを整列させるコミュニケーションを目指します。`,
+                "about-eco-title": "Ecosystem & Vision",
+                "about-eco-desc": `<strong>"有機的なエコシステムを設計します。"</strong><br><span class="about-tag">#Startup DNA</span> <span class="about-tag">#Practical Insight</span> <span class="about-tag">#Value Builder</span><br><br><strong>スタートアップコンテストとインターンシップ</strong>を経て、現場で直接ぶつかり得た多様な経験を繋げることに没頭します。<br>それぞれ異なるドメインでの実戦経験を<strong>一つの有機的なエコシステム</strong>として構造化し、顧客に断片的な機能ではなく<strong>統合された価値と経験</strong>を提供することを目指します。`,
+                "nav-p1-desc": `<strong>J-Munikjeom</strong><br>Hybrid Commerce & B2B Pivot<br><span class="nav-link">View Strategy Detail ↗</span>`,
+                "nav-p2-desc": `<strong>Campus Last-mile</strong><br>Route-based P2P Delivery<br><span class="nav-link">View Strategy Detail ↗</span>`,
+                "nav-p3-desc": `<strong>Renewable Energy PF</strong><br>UX Renewal for Data Clarity<br><span class="nav-link">View UX Case Study ↗</span>`,
+                "nav-p4-desc": `<strong>Mobility Fintech</strong><br>Incentive to Payment Lock-in<br><span class="nav-link">View Business Model ↗</span>`
+            },
+            en: {
+                "hero-title": `Engineering the Circulation of Value,<br><span>Go Bold</span> with Mercari`,
+                "hero-subtitle": "Ecosystem Architect & Product Manager",
+                "hero-desc": `I am a PM who structures complex problems and resolves business **bottlenecks** to drive growth.<br>Just as I optimized urban flows, <strong>I now design ecosystems where value circulates.</strong><br>I create market-impacting results through <strong>data-driven hypothesis verification</strong> rather than intuition, and relentless <strong>execution</strong> rather than convention.`,
+                "edu-uni": "University of Seoul",
+                "edu-major": "Transportation Engineering",
+                "edu-gpa": "🏆 National Science & Engineering Scholar (Full Scholarship)",
+                "about-phil-title": "PM Philosophy",
+                "about-phil-desc": `<strong>"Data provides the ground, Empathy sets the direction."</strong><br>I value reading the user context hidden behind numbers. Applying the method of <strong>identifying and debugging system bottlenecks</strong> from transportation engineering to products, I reduce unnecessary steps and streamline the flow of value.`,
+                "about-lead-title": "Leadership & Soft Skills",
+                "about-lead-desc": `<strong>"Coordinating Leadership"</strong><br>Experienced in coordinating projects communicating with global universities in 10 countries and 18 corporate partners. I aim for communication that interprets the languages of various stakeholders and aligns the team towards a common goal.`,
+                "about-eco-title": "Ecosystem & Vision",
+                "about-eco-desc": `<strong>"Designing Organic Ecosystems."</strong><br><span class="about-tag">#Startup DNA</span> <span class="about-tag">#Practical Insight</span> <span class="about-tag">#Value Builder</span><br><br>Immersed in connecting diverse experiences gained from <strong>startup competitions and internships</strong> in the field.<br>I structure practical experiences from different domains into <strong>one organic ecosystem</strong>, aiming to provide customers with <strong>integrated value and experience</strong> rather than fragmented features.`,
+                "nav-p1-desc": `<strong>J-Munikjeom</strong><br>Hybrid Commerce & B2B Pivot<br><span class="nav-link">View Strategy Detail ↗</span>`,
+                "nav-p2-desc": `<strong>Campus Last-mile</strong><br>Route-based P2P Delivery<br><span class="nav-link">View Strategy Detail ↗</span>`,
+                "nav-p3-desc": `<strong>Renewable Energy PF</strong><br>UX Renewal for Data Clarity<br><span class="nav-link">View UX Case Study ↗</span>`,
+                "nav-p4-desc": `<strong>Mobility Fintech</strong><br>Incentive to Payment Lock-in<br><span class="nav-link">View Business Model ↗</span>`
+            }
+        };
+
+        function setLanguage(lang) {
+            currentLang = lang;
+            const buttons = document.querySelectorAll('.lang-btn');
+            buttons.forEach(btn => btn.classList.remove('active'));
+            if(lang === 'jp') buttons[0].classList.add('active');
+            else buttons[1].classList.add('active');
+
+            // Apply translations to Main Page elements
+            const data = translations[lang];
+            for (const key in data) {
+                const el = document.getElementById(key);
+                if (el) el.innerHTML = data[key];
+            }
+
+            // If modal is open, reload content
+            const modal = document.getElementById('projectModal');
+            if (modal.classList.contains('active')) {
+                if (window.currentProjectId) {
+                    openModal(window.currentProjectId);
+                }
+            }
+        }
+
         function openModal(projectId) {
+            window.currentProjectId = projectId; // Store for lang switch
             const modal = document.getElementById('projectModal');
             const contentContainer = document.getElementById('modalContent');
             contentContainer.innerHTML = '';
             
-            const template = document.getElementById('project' + projectId + '-content');
+            // Determine template ID based on language
+            const suffix = currentLang === 'en' ? '-en' : '';
+            const templateId = 'project' + projectId + '-content' + suffix;
+            const template = document.getElementById(templateId);
+
             if (template) {
                 contentContainer.innerHTML = template.innerHTML;
             } else {
-                contentContainer.innerHTML = `
-                    <div style="text-align:center; padding:100px 20px;">
-                        <div style="font-size:3rem; margin-bottom:20px;">🔨</div>
-                        <h2 style="font-size:2rem; font-weight:800; margin-bottom:10px;">Coming Soon</h2>
-                        <p style="color:#666;">해당 프로젝트는 현재 정리 중입니다.</p>
-                    </div>
-                `;
+                // Fallback 
+                const fallbackTemplate = document.getElementById('project' + projectId + '-content');
+                if(fallbackTemplate) {
+                     contentContainer.innerHTML = fallbackTemplate.innerHTML;
+                } else {
+                    contentContainer.innerHTML = `
+                        <div style="text-align:center; padding:100px 20px;">
+                            <div style="font-size:3rem; margin-bottom:20px;">🔨</div>
+                            <h2 style="font-size:2rem; font-weight:800; margin-bottom:10px;">Coming Soon</h2>
+                            <p style="color:#666;">Content not available yet.</p>
+                        </div>
+                    `;
+                }
             }
 
             modal.classList.add('active');
@@ -1366,6 +1387,7 @@
         function closeModal() {
             document.getElementById('projectModal').classList.remove('active');
             document.body.style.overflow = 'auto';
+            window.currentProjectId = null;
         }
 
         function triggerListAnim(element) {
@@ -1379,14 +1401,6 @@
                     overlay.classList.remove('anim-active');
                 }
             }
-        }
-
-        function setLanguage(lang) {
-            const buttons = document.querySelectorAll('.lang-btn');
-            buttons.forEach(btn => btn.classList.remove('active'));
-            if(lang === 'ko') buttons[0].classList.add('active');
-            else buttons[1].classList.add('active');
-            console.log('Language set to:', lang);
         }
 
         document.getElementById('projectModal').addEventListener('click', function(e) {
