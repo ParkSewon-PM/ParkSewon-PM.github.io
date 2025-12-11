@@ -1,68 +1,50 @@
 import { GoogleGenerativeAI } from "@google/generative-ai";
 
 export default async function handler(req, res) {
-  // ----------------------------------------------------
-  // 1. CORS 설정 (GitHub Pages 등 외부 요청 허용)
-  // ----------------------------------------------------
+  // 1. CORS 설정
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
 
-  // 브라우저의 사전 확인(OPTIONS) 요청이면 바로 OK 응답
   if (req.method === 'OPTIONS') {
     return res.status(200).end();
   }
 
-  // ----------------------------------------------------
-  // 2. [진단용] 로그 출력 (Vercel Logs 탭에서 확인 가능)
-  // ----------------------------------------------------
-  const apiKey = process.env.GEMINI_API_KEY;
-
-  console.log("========== [DIAGNOSIS START] ==========");
-  console.log("1. Node Environment:", process.env.NODE_ENV);
-  // 보안상 키 전체를 찍지 않고, 존재 여부와 길이만 확인합니다.
-  if (apiKey) {
-    console.log(`2. API Key Status: ✅ Found (Length: ${apiKey.length})`);
-  } else {
-    console.log("2. API Key Status: ❌ Missing / Undefined");
-  }
-  console.log("=======================================");
-
-  // ----------------------------------------------------
-  // 3. 에러 처리 및 AI 요청 로직
-  // ----------------------------------------------------
   try {
-    // 키가 없으면 여기서 강제로 에러를 발생시킵니다.
-    if (!apiKey) {
-      throw new Error("API Key is missing in Vercel Environment Variables");
+    // ▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼▼
+    // [수정할 곳] 따옴표("") 안에 실제 API 키를 붙여넣으세요.
+    // 예: const apiKey = "AIzaSyD-12345abcdefg..."; 
+    const apiKey = AIzaSyAZVONXKfdHVXPM9oDqt72yR2ni-e5_jNk"; 
+    // ▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲▲
+
+    // 키가 제대로 들어갔는지 확인 (비어있으면 에러)
+    if (!apiKey || apiKey === "여기에_API키를_붙여넣으세요") {
+      throw new Error("코드에 API 키가 입력되지 않았습니다.");
     }
 
+    // 2. Gemini 모델 호출
     const genAI = new GoogleGenerativeAI(apiKey);
     
-    // 사용자가 지정한 모델 (gemini-2.5-flash-preview-09-2025)
+    // 모델 이름 설정 (가장 안정적인 모델 사용)
     const model = genAI.getGenerativeModel({ model: "gemini-2.5-flash-preview-09-2025" });
 
     const { prompt } = req.body;
-
     if (!prompt) {
-      throw new Error("Prompt is missing in request body");
+      throw new Error("요청 본문에 prompt가 없습니다.");
     }
 
-    // 구글에게 질문 요청
     const result = await model.generateContent(prompt);
     const response = await result.response;
     const text = response.text();
 
-    // 성공 시 결과 반환
+    // 3. 결과 반환
     res.status(200).json({ text });
 
   } catch (error) {
-    console.error("API Processing Error:", error);
-    
-    // 에러 내용을 구체적으로 반환 (디버깅 용도)
+    console.error("Error:", error);
     res.status(500).json({ 
-      error: error.message || "Unknown Server Error",
-      details: "Check Vercel Function Logs for more info."
+      error: error.message,
+      details: "서버 내부 오류입니다." 
     });
   }
 }
